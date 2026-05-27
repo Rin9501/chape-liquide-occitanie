@@ -15,6 +15,74 @@ import '../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ── SEO technique ── -->
+  <link rel="canonical" href="https://chapeliquide-occitanie.fr/" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- ── Open Graph complet ── -->
+  <meta property="og:url"        content="https://chapeliquide-occitanie.fr/" />
+  <meta property="og:image"      content="https://chapeliquide-occitanie.fr/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg" />
+  <meta property="og:image:alt"  content="Chantier chape liquide ciment 320 m² à Pamiers, Ariège — Chape Liquide Occitanie" />
+  <meta property="og:locale"     content="fr_FR" />
+  <meta property="og:site_name"  content="Chape Liquide Occitanie" />
+
+  <!-- ── Twitter / X Card ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Chape Liquide Occitanie — Applicateur agréé Sika, Ariège" />
+  <meta name="twitter:description" content="Expert chape liquide ciment en Occitanie. Devis gratuit sous 48h. Ariège, Aude, Haute-Garonne." />
+  <meta name="twitter:image"       content="https://chapeliquide-occitanie.fr/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg" />
+
+  <!-- ── JSON-LD : LocalBusiness (signal local fort) ── -->
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Chape Liquide Occitanie",
+    "legalName": "EURL Balussou Cyril",
+    "description": "Applicateur agréé Sika spécialisé en chape liquide ciment, ravoirage isolant et plancher chauffant en Occitanie. Zone d'intervention : Ariège (09), Aude (11) et Haute-Garonne (31).",
+    "url": "https://chapeliquide-occitanie.fr",
+    "telephone": "+33687613987",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirepoix",
+      "postalCode": "09500",
+      "addressRegion": "Ariège",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.0892,
+      "longitude": 1.8726
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Ariège" },
+      { "@type": "AdministrativeArea", "name": "Aude" },
+      { "@type": "AdministrativeArea", "name": "Haute-Garonne" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Prestations chape liquide en Occitanie",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chape liquide ciment", "description": "Chape fluide haute resistance, ideale pour locaux commerciaux, garages et planchers chauffants." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravoirage isolant", "description": "Mise a niveau et isolation thermique avant coulage de chape." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plancher chauffant hydraulique", "description": "Enrobage de serpentins hydrauliques avec chape liquide Sika." } }
+      ]
+    },
+    "taxID": "533 165 684 00028",
+    "priceRange": "EUR EUR",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:30",
+        "closes": "18:00"
+      }
+    ],
+    "image": "https://chapeliquide-occitanie.fr/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg"
+  }
+  </script>
 </head>
 <body>
 
@@ -31,8 +99,15 @@ import '../styles/global.css';
   </div>
 
   <nav class="header-nav">
-    {['Expertise','Services','Zones d\'intervention','Réalisations','Guide gratuit','Contact'].map((item) => (
-      <a href={`#${item.toLowerCase().replace(/[\s']/g,'-')}`}>{item}</a>
+    {[
+      { label: 'Expertise',            href: '#expertise' },
+      { label: 'Services',             href: '#services' },
+      { label: "Zones d'intervention", href: '#zones-intervention' },
+      { label: 'Réalisations',         href: '#realisations' },
+      { label: 'Guide gratuit',        href: '#guide-gratuit' },
+      { label: 'Contact',              href: '#devis' },
+    ].map(({ label, href }) => (
+      <a href={href}>{label}</a>
     ))}
   </nav>
 
@@ -212,9 +287,9 @@ import '../styles/global.css';
 
   <div class="services-grid grid grid-cols-2 gap-6">
     {[
-      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 800 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg' },
-      { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau et passage des réseaux. Préparation propre avant chape liquide.', specs:['Billes PSE / liège','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg' },
-      { n:'03', title:'Plancher chauffant', desc:'Enrobage des serpentins hydrauliques avec transmission thermique optimale.', specs:['Chape ciment Sika','λ 1,8 W/m·K','Mise en chauffe J+21'], img:'/uploads/plancher-chauffant-montgaillard.jpeg' },
+      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 800 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
+      { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau et passage des réseaux. Préparation propre avant chape liquide.', specs:['Billes PSE / liège','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage isolant avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
+      { n:'03', title:'Plancher chauffant', desc:'Enrobage des serpentins hydrauliques avec transmission thermique optimale.', specs:['Chape ciment Sika','λ 1,8 W/m·K','Mise en chauffe J+21'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
     ].map((s) => (
       <a href={`#service-${s.n}`} class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
         <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
@@ -235,7 +310,7 @@ import '../styles/global.css';
           </div>
         </div>
         <div class="service-img bg-ink overflow-hidden">
-          <img src={s.img} alt={s.title} class="w-full h-full object-cover" />
+          <img src={s.img} alt={s.imgAlt} loading="lazy" class="w-full h-full object-cover" />
         </div>
       </a>
     ))}
@@ -322,7 +397,7 @@ import '../styles/global.css';
     ].map((p, i) => (
       <a href="#realisations" class="block">
         <div class="bg-ink aspect-[4/5] overflow-hidden mb-[14px]">
-          <img src={p.img} alt={p.label} class="w-full h-full object-cover" />
+          <img src={p.img} alt={p.label} loading="lazy" class="w-full h-full object-cover" />
         </div>
         <div class="flex justify-between items-baseline mb-[6px]">
           <span class="font-mono text-[11px] text-accent">{String(i+1).padStart(2,'0')} / 06</span>
@@ -338,7 +413,7 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      06 — ZONE D'INTERVENTION (carte SVG)
 ═══════════════════════════════════════════════════════ -->
-<section id="zones-d'intervention" class="section-pad bg-bg-warm py-[120px] px-16 pb-[100px]">
+<section id="zones-intervention" class="section-pad bg-bg-warm py-[120px] px-16 pb-[100px]">
   <div class="zone-grid grid grid-cols-[0.9fr_1.6fr] gap-20 items-center">
     <div>
       <div class="eyebrow"><span class="num">06</span>Zone d'intervention</div>
@@ -417,6 +492,24 @@ import '../styles/global.css';
       <div class="spec absolute top-3 left-[14px] text-[9px]">Carte d'intervention · 2026</div>
     </div>
   </div>
+
+  <!-- Liste des 14 villes : lisible par Google, masquée visuellement (sr-only) -->
+  <ul class="sr-only" aria-label="Villes desservies par Chape Liquide Occitanie">
+    <li>Mirepoix, Ariège (09) — siège social</li>
+    <li>Pamiers, Ariège (09)</li>
+    <li>Foix, Ariège (09)</li>
+    <li>Lavelanet, Ariège (09)</li>
+    <li>Saverdun, Ariège (09)</li>
+    <li>Tarascon-sur-Ariège, Ariège (09)</li>
+    <li>Saint-Girons, Ariège (09)</li>
+    <li>Ax-les-Thermes, Ariège (09)</li>
+    <li>Limoux, Aude (11)</li>
+    <li>Carcassonne, Aude (11)</li>
+    <li>Castelnaudary, Aude (11)</li>
+    <li>Quillan, Aude (11)</li>
+    <li>Auterive, Haute-Garonne (31)</li>
+    <li>Muret, Haute-Garonne (31)</li>
+  </ul>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -460,6 +553,10 @@ import '../styles/global.css';
           q:'Comment se déroule une journée de coulage ?',
           a:'Arrivée de l\'équipe et mise en place de la pompe Lancy entre 7h30 et 8h. Préparation des seuils et joints périphériques. Coulage et lissage barbotin par nos 2 applicateurs. Nous laissons le chantier balisé et propre.'
         },
+        {
+          q:'Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?',
+          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 14 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement.'
+        },
       ].map((item, i) => (
         <details class="faq-item">
           <summary>
@@ -481,7 +578,7 @@ import '../styles/global.css';
 ═══════════════════════════════════════════════════════ -->
 <section id="devis" class="section-pad relative overflow-hidden bg-ink text-white py-[120px] px-16">
   <img src="/uploads/chape-suzuki-pamiers-hall.jpeg" alt=""
-    class="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale" />
+    loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale" />
   <div class="relative cta-grid">
     <div>
       <div class="eyebrow on-dark"><span class="num">08</span>Devis gratuit</div>

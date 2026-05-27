@@ -32,8 +32,9 @@ test.describe('Page charge correctement', () => {
 
   test('au moins un CTA devis visible', async ({ page }) => {
     await page.goto('/');
-    // Sur mobile, le bouton header est caché — on prend le premier VISIBLE
-    const cta = page.locator('a[href="#devis"]:visible').first();
+    // Le nav "Contact" pointe vers #devis mais n'est pas dans <main>
+    // On cible les vrais CTAs : hero + section devis + barre mobile
+    const cta = page.locator('main a[href="#devis"], .mobile-bar a[href="#devis"]').first();
     await expect(cta).toBeVisible();
     await expect(cta).toContainText(/devis/i);
   });
@@ -54,10 +55,10 @@ test.describe('Page charge correctement', () => {
     await expect(photos).toHaveCount(6);
   });
 
-  test('FAQ accordion : 5 questions présentes', async ({ page }) => {
+  test('FAQ accordion : 6 questions présentes', async ({ page }) => {
     await page.goto('/');
     const faqs = page.locator('details.faq-item');
-    await expect(faqs).toHaveCount(5);
+    await expect(faqs).toHaveCount(6);
   });
 
   test('FAQ accordion : s\'ouvre et se ferme au clic', async ({ page }) => {
