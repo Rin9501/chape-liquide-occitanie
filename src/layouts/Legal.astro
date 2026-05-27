@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} — Chape Liquide Occitanie</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .legal-content h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; margin: 2.5rem 0 0.75rem; color: var(--ink); letter-spacing: -0.02em; }
+    .legal-content h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 1.5rem 0 0.5rem; color: var(--ink); }
+    .legal-content p  { font-size: 15px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 0.9rem; }
+    .legal-content ul { font-size: 15px; line-height: 1.7; color: var(--ink-soft); margin: 0.5rem 0 0.9rem 1.5rem; list-style: disc; }
+    .legal-content li { margin-bottom: 0.3rem; }
+    .legal-content a  { color: var(--accent); border-bottom: 1px solid currentColor; }
+    .legal-content strong { color: var(--ink); font-weight: 600; }
+    .legal-content hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+    .legal-content table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 1rem; }
+    .legal-content th { text-align: left; padding: 10px 14px; background: var(--bg-warm); font-weight: 600; font-size: 12px; color: var(--ink); border-bottom: 1px solid var(--line); }
+    .legal-content td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="header-logo">
+    <div class="header-logo-mark">cl</div>
+    <div class="leading-[1.05]">
+      <div class="font-display font-bold text-[15px] tracking-tight2">Chape Liquide Occitanie</div>
+      <div class="spec text-[10px] mt-[2px]">Applicateur agréé Sika · Ariège</div>
+    </div>
+  </a>
+  <div class="header-cta">
+    <a href="tel:0687613987" class="header-tel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      <div>
+        <div class="spec text-[10px]">Devis téléphone</div>
+        <div class="font-mono font-semibold text-[14px]">06 87 61 39 87</div>
+      </div>
+    </a>
+    <a href="/#devis" class="btn btn-primary py-3 px-[18px] text-[14px]">
+      Devis gratuit <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<section class="bg-bg py-20 px-6 md:px-16">
+  <div class="max-w-[760px] mx-auto">
+
+    <div class="mb-10">
+      <a href="/" class="spec text-[11px] border-b border-line pb-[2px]">← Retour à l'accueil</a>
+    </div>
+
+    <div class="eyebrow mb-5"><span class="num">CLO</span>Informations légales</div>
+    <h1 class="font-display font-bold text-[48px] tracking-[-0.03em] leading-[1.05] mb-4">{title}</h1>
+    <p class="spec text-[12px] mb-12">Mise à jour : mai 2026 · EURL Balussou Cyril</p>
+
+    <div class="legal-content">
+      <slot />
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="bg-dark text-white/40 py-6 px-8 flex flex-wrap gap-4 justify-between text-[12px]">
+  <div>© 2026 EURL Balussou Cyril · Chape Liquide Occitanie · SIRET 533 165 684 00028</div>
+  <div class="flex gap-6">
+    <a href="/mentions-legales" class="hover:text-white/70">Mentions légales</a>
+    <a href="/cgv" class="hover:text-white/70">CGV</a>
+    <a href="/politique-confidentialite" class="hover:text-white/70">Confidentialité</a>
+  </div>
+</footer>
+
+</body>
+</html>
