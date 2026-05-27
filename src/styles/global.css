@@ -2,6 +2,9 @@
    Palette: béton #2C2C2C / terracotta #C4522A / blanc cassé #F5F0EB
    Type: Manrope (display + body), JetBrains Mono (specs techniques) */
 
+/* Tailwind utilities uniquement — pas de @base ni @components (on garde notre reset custom) */
+@tailwind utilities;
+
 :root {
   --bg:        #F5F0EB;
   --bg-deep:   #ECE3D6;
@@ -171,38 +174,42 @@ details[open] .faq-icon { transform: rotate(45deg); }
 
   .section-pad { padding: 72px 20px 56px !important; }
 
-  .hero-grid { grid-template-columns: 1fr !important; }
+  /* minmax(0, 1fr) = le 0 force la colonne à vraiment rétrécir
+     (1fr seul = minmax(auto, 1fr) qui se bloque sur la min-content des items) */
+  .hero-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .hero-img { min-height: 280px; }
   .hero-h1 { font-size: 48px !important; }
-  .hero-stats { grid-template-columns: repeat(3, 1fr) !important; }
+  .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 
-  .trust-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-  .trust-numbers { grid-template-columns: repeat(2, 1fr) !important; }
+  .trust-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  .trust-numbers { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 
-  .split-2col { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .split-2col { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
   .split-2col-lead { padding-top: 0 !important; }
 
-  .reasons-grid { grid-template-columns: 1fr !important; }
+  .reasons-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .reason-card { border-left: 1px solid var(--line) !important; min-height: auto !important; }
 
-  .services-grid { grid-template-columns: 1fr !important; }
-  .service-inner { grid-template-columns: 1fr !important; }
-  .service-img { min-height: 200px; aspect-ratio: 16/9; }
+  /* Service card : grille interne (texte | image) → stack verticalement sur mobile */
+  .services-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .service-card  { grid-template-columns: minmax(0, 1fr) !important; }
+  /* Hauteur fixe uniquement — pas d'aspect-ratio (aspect-ratio + min-height = bug Chromium sur grid items) */
+  .service-img   { height: 200px; }
 
-  .ebook-grid { grid-template-columns: 1fr !important; }
+  .ebook-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .ebook-mockup { height: 280px !important; }
 
-  .realisations-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .realisations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 
-  .zone-grid { grid-template-columns: 1fr !important; }
+  .zone-grid { grid-template-columns: minmax(0, 1fr) !important; }
 
-  .faq-grid { grid-template-columns: 1fr !important; }
+  .faq-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .faq-q { font-size: 16px !important; }
 
-  .cta-grid { grid-template-columns: 1fr !important; }
+  .cta-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .cta-h2 { font-size: 42px !important; }
 
-  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
   .footer-brand { grid-column: 1 / -1; }
 
   .mobile-bar { display: flex; }

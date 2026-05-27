@@ -24,9 +24,9 @@ import '../styles/global.css';
 <header class="site-header">
   <div class="header-logo">
     <div class="header-logo-mark">cl</div>
-    <div style="line-height:1.05">
-      <div style="font-family:var(--f-display);font-weight:700;font-size:15px;letter-spacing:-0.02em">Chape Liquide Occitanie</div>
-      <div class="spec" style="font-size:10px;margin-top:2px">Applicateur agréé Sika · Ariège</div>
+    <div class="leading-[1.05]">
+      <div class="font-display font-bold text-[15px] tracking-tight2">Chape Liquide Occitanie</div>
+      <div class="spec text-[10px] mt-[2px]">Applicateur agréé Sika · Ariège</div>
     </div>
   </div>
 
@@ -42,11 +42,11 @@ import '../styles/global.css';
         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
       </svg>
       <div>
-        <div class="spec" style="font-size:10px">Devis téléphone</div>
-        <div style="font-family:var(--f-mono);font-weight:600;font-size:14px">06 87 61 39 87</div>
+        <div class="spec text-[10px]">Devis téléphone</div>
+        <div class="font-mono font-semibold text-[14px]">06 87 61 39 87</div>
       </div>
     </a>
-    <a href="#devis" class="btn btn-primary" style="padding:12px 18px;font-size:14px">
+    <a href="#devis" class="btn btn-primary py-3 px-[18px] text-[14px]">
       Devis gratuit <span class="arrow">→</span>
     </a>
   </div>
@@ -57,22 +57,22 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      01 — HERO
 ═══════════════════════════════════════════════════════ -->
-<section id="accueil" style="position:relative;background:var(--bg)">
-  <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1.05fr;min-height:720px;align-items:stretch">
+<section id="accueil" class="relative bg-bg">
+  <div class="hero-grid grid grid-cols-[1fr_1.05fr] min-h-[720px] items-stretch">
 
     <!-- Left text panel -->
-    <div style="padding:64px 64px 56px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
-      <span class="cross-mark" style="top:40px;right:40px"></span>
+    <div class="flex flex-col justify-between relative p-5 md:p-[64px_64px_56px]">
+      <span class="cross-mark top-10 right-10"></span>
       <div class="eyebrow"><span class="num">01</span>Accueil — Coulage chape liquide</div>
 
       <div>
-        <h1 class="h-display hero-h1" style="font-size:88px;margin-bottom:32px">
+        <h1 class="h-display hero-h1 text-[88px] mb-8">
           L'expertise chape liquide qui sécurise votre chantier en Occitanie.
         </h1>
-        <p class="lead" style="font-size:21px;max-width:520px;margin-bottom:40px">
+        <p class="lead text-[21px] max-w-[520px] mb-10">
           Chape liquide ciment, planchers chauffants, ravoirage. Posés par des applicateurs agréés Sika. Devis sous 48h, intervention jusqu'à 1h30 autour de Mirepoix.
         </p>
-        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <div class="flex gap-[14px] items-center flex-wrap">
           <a href="#devis" class="btn btn-primary">
             Demander un devis gratuit <span class="arrow">→</span>
           </a>
@@ -83,31 +83,31 @@ import '../styles/global.css';
       </div>
 
       <!-- Spec readout -->
-      <div class="hero-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);padding-top:24px">
+      <div class="hero-stats grid grid-cols-3 border-t border-line pt-6">
         <div>
-          <div class="spec" style="margin-bottom:6px">Surface min.</div>
-          <div style="font-family:var(--f-mono);font-size:22px;font-weight:500;letter-spacing:-0.02em;color:var(--ink)">50 m²</div>
+          <div class="spec mb-[6px]">Surface min.</div>
+          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">50 m²</div>
         </div>
         <div>
-          <div class="spec" style="margin-bottom:6px">Cadence</div>
-          <div style="font-family:var(--f-mono);font-size:22px;font-weight:500;letter-spacing:-0.02em;color:var(--ink)">800 m²/j</div>
+          <div class="spec mb-[6px]">Cadence</div>
+          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">800 m²/j</div>
         </div>
         <div>
-          <div class="spec" style="margin-bottom:6px">Délai devis</div>
-          <div style="font-family:var(--f-mono);font-size:22px;font-weight:500;letter-spacing:-0.02em;color:var(--ink)">&lt; 48 h</div>
+          <div class="spec mb-[6px]">Délai devis</div>
+          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">&lt; 48 h</div>
         </div>
       </div>
     </div>
 
     <!-- Right image panel -->
-    <div class="hero-img" style="position:relative;overflow:hidden;background:var(--ink)">
+    <div class="hero-img relative overflow-hidden bg-ink">
       <img src="/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg" alt="Chape fluide ciment grand local commercial Pamiers Ariège"
-        style="width:100%;height:100%;object-fit:cover;filter:brightness(0.92)" />
-      <div style="position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-end;color:#fff">
-        <div style="display:inline-block;padding:6px 10px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);font-family:var(--f-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase">
+        class="w-full h-full object-cover brightness-[0.92]" />
+      <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white">
+        <div class="inline-block px-[10px] py-[6px] bg-black/50 backdrop-blur-sm font-mono text-[11px] tracking-wide6 uppercase">
           Chantier · 320 m² · Pamiers (09)
         </div>
-        <div class="spec" style="color:rgba(255,255,255,0.7);font-size:10px">CLO · 2025</div>
+        <div class="spec text-white/70 text-[10px]">CLO · 2025</div>
       </div>
     </div>
   </div>
@@ -116,19 +116,19 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      TRUST BAND — Sika + chiffres clés
 ═══════════════════════════════════════════════════════ -->
-<section style="background:var(--ink);color:#fff;padding:36px 64px">
-  <div class="trust-grid" style="display:grid;grid-template-columns:1.1fr 3fr;gap:64px;align-items:center">
+<section class="bg-ink text-white py-9 px-5 md:px-16">
+  <div class="trust-grid grid grid-cols-[1.1fr_3fr] gap-16 items-center">
 
     <!-- Badge Sika -->
-    <div style="display:flex;align-items:center;gap:18px;padding:14px 18px;border:1px solid rgba(255,255,255,0.18);border-radius:3px">
-      <div style="width:56px;height:56px;background:#FFCC00;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:900;font-size:19px;color:#000;letter-spacing:-0.02em;flex-shrink:0">
+    <div class="flex items-center gap-[18px] px-[18px] py-[14px] border border-white/[0.18] rounded-[3px]">
+      <div class="w-14 h-14 bg-[#FFCC00] rounded-[2px] flex items-center justify-center font-display font-black text-[19px] text-black tracking-tight2 shrink-0">
         Sika
       </div>
       <div>
-        <div class="spec" style="color:rgba(255,255,255,0.55);font-size:10px;margin-bottom:4px">Certification</div>
-        <div style="font-family:var(--f-display);font-weight:600;font-size:15px;line-height:1.2">
+        <div class="spec text-white/55 text-[10px] mb-1">Certification</div>
+        <div class="font-display font-semibold text-[15px] leading-[1.2]">
           Applicateur agréé Sika<br />
-          <span class="mono" style="font-size:12px;color:rgba(255,255,255,0.6);font-weight:400">
+          <span class="mono text-[12px] text-white/60 font-normal">
             Ariège · Occitanie
           </span>
         </div>
@@ -136,23 +136,18 @@ import '../styles/global.css';
     </div>
 
     <!-- Chiffres -->
-    <div class="trust-numbers" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
-      <div>
-        <div style="font-family:var(--f-display);font-weight:700;font-size:38px;letter-spacing:-0.03em;line-height:1">480+</div>
-        <div class="spec" style="color:rgba(255,255,255,0.55);margin-top:8px;font-size:11px">Chantiers livrés</div>
-      </div>
-      <div>
-        <div style="font-family:var(--f-display);font-weight:700;font-size:38px;letter-spacing:-0.03em;line-height:1">90 000+</div>
-        <div class="spec" style="color:rgba(255,255,255,0.55);margin-top:8px;font-size:11px">m² coulés</div>
-      </div>
-      <div>
-        <div style="font-family:var(--f-display);font-weight:700;font-size:38px;letter-spacing:-0.03em;line-height:1">10 ans</div>
-        <div class="spec" style="color:rgba(255,255,255,0.55);margin-top:8px;font-size:11px">d'expérience chape</div>
-      </div>
-      <div>
-        <div style="font-family:var(--f-display);font-weight:700;font-size:38px;letter-spacing:-0.03em;line-height:1">48 h</div>
-        <div class="spec" style="color:rgba(255,255,255,0.55);margin-top:8px;font-size:11px">Délai devis garanti</div>
-      </div>
+    <div class="trust-numbers grid grid-cols-4 gap-8">
+      {[
+        { val: '480+',    label: 'Chantiers livrés' },
+        { val: '90 000+', label: 'm² coulés' },
+        { val: '10 ans',  label: "d'expérience chape" },
+        { val: '48 h',    label: 'Délai devis garanti' },
+      ].map(({ val, label }) => (
+        <div>
+          <div class="font-display font-bold text-[38px] tracking-tight3 leading-none">{val}</div>
+          <div class="spec text-white/55 mt-2 text-[11px]">{label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -160,39 +155,39 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      02 — POURQUOI NOUS
 ═══════════════════════════════════════════════════════ -->
-<section class="section-pad" id="expertise" style="padding:120px 64px 100px;background:var(--bg);position:relative">
-  <span class="cross-mark" style="top:60px;left:64px"></span>
-  <span class="cross-mark" style="top:60px;right:64px"></span>
+<section class="section-pad relative bg-bg py-[120px] px-16 pb-[100px]" id="expertise">
+  <span class="cross-mark top-[60px] left-16"></span>
+  <span class="cross-mark top-[60px] right-16"></span>
 
-  <div class="split-2col" style="display:grid;grid-template-columns:0.85fr 2fr;gap:80px;margin-bottom:72px">
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-[72px]">
     <div>
       <div class="eyebrow"><span class="num">02</span>Pourquoi nous</div>
-      <h2 class="h-section" style="font-size:56px;margin-top:24px">
+      <h2 class="h-section text-[56px] mt-6">
         Quatre raisons de signer avec nous, pas avec un autre.
       </h2>
     </div>
-    <div class="split-2col-lead" style="padding-top:48px">
-      <p class="lead" style="font-size:19px;max-width:540px">
+    <div class="split-2col-lead pt-12">
+      <p class="lead text-[19px] max-w-[540px]">
         On ne fait que de la chape liquide. Pas de la maçonnerie, pas du carrelage, pas du second œuvre généraliste. Cette spécialisation, c'est ce qui sécurise votre planning et votre planéité.
       </p>
     </div>
   </div>
 
-  <div class="reasons-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
+  <div class="reasons-grid grid grid-cols-4">
     {[
       { n:'01', title:'Applicateur agréé Sika', body:'La majorité des artisans Ariège travaillent en Lafarge. Nous coulons en Sika Agilia : garantie procédé, traçabilité produit, PV de chantier transmis.', tag:'Différenciation' },
       { n:'02', title:'Devis sous 48 h ouvrées', body:'Mesure des cotes sur plan ou visite gratuite si chantier dans nos 14 villes. Vous recevez le devis ferme et détaillé sous 48 heures, pas un mois plus tard.', tag:'Engagement' },
-      { n:'03', title:'Cadence jusqu\'à 800 m²/jour', body:'Pompe Lancy professionnelle, livraison en camion toupie, équipe de 2 applicateurs. Sur les grandes surfaces (>300 m²), le coulage s\'enchaîne sans rupture de charge.', tag:'Capacité' },
+      { n:'03', title:"Cadence jusqu'à 800 m²/jour", body:"Pompe Lancy professionnelle, livraison en camion toupie, équipe de 2 applicateurs. Sur les grandes surfaces (>300 m²), le coulage s'enchaîne sans rupture de charge.", tag:'Capacité' },
       { n:'04', title:'1h30 autour de Mirepoix', body:'14 villes desservies en Ariège, Aude et Haute-Garonne. Pas de surcoût déplacement dans la zone. Étude possible au-delà sur demande.', tag:'Couverture' },
     ].map((it, i) => (
-      <div class="reason-card" style={`padding:32px 28px 28px;border-left:${i===0?'1px solid var(--line)':'none'};border-right:1px solid var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-warm);min-height:320px;display:flex;flex-direction:column;justify-content:space-between`}>
+      <div class={`reason-card bg-bg-warm flex flex-col justify-between min-h-[320px] p-[32px_28px_28px] border border-line${i > 0 ? ' border-l-0' : ''}`}>
         <div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px">
-            <span style="font-family:var(--f-mono);font-weight:500;color:var(--accent);font-size:13px">{it.n}</span>
-            <span class="spec" style="font-size:9px">{it.tag}</span>
+          <div class="flex justify-between items-baseline mb-7">
+            <span class="font-mono font-medium text-accent text-[13px]">{it.n}</span>
+            <span class="spec text-[9px]">{it.tag}</span>
           </div>
-          <h3 style="font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px">{it.title}</h3>
-          <p style="font-size:14px;line-height:1.55;color:var(--ink-soft)">{it.body}</p>
+          <h3 class="font-display font-bold text-[22px] tracking-tight2 leading-[1.1] mb-4">{it.title}</h3>
+          <p class="text-[14px] leading-[1.55] text-ink-soft">{it.body}</p>
         </div>
       </div>
     ))}
@@ -202,45 +197,45 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      03 — NOS SERVICES
 ═══════════════════════════════════════════════════════ -->
-<section id="services" class="section-pad" style="padding:120px 64px 100px;background:var(--bg-deep)">
-  <div class="split-2col" style="display:grid;grid-template-columns:0.85fr 2fr;gap:80px;margin-bottom:64px;align-items:end">
+<section id="services" class="section-pad bg-bg-deep py-[120px] px-16 pb-[100px]">
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-16 items-end">
     <div>
       <div class="eyebrow"><span class="num">03</span>Nos services</div>
-      <h2 class="h-section" style="font-size:56px;margin-top:24px">Quatre prestations, un seul applicateur.</h2>
+      <h2 class="h-section text-[56px] mt-6">Quatre prestations, un seul applicateur.</h2>
     </div>
-    <div style="padding-bottom:12px">
-      <a href="#expertise" style="font-family:var(--f-display);font-weight:600;font-size:15px;border-bottom:1px solid var(--ink);padding-bottom:4px">
-        Voir le dossier technique complet <span style="font-family:var(--f-mono)">→</span>
+    <div class="pb-3">
+      <a href="#expertise" class="font-display font-semibold text-[15px] border-b border-ink pb-1">
+        Voir le dossier technique complet <span class="font-mono">→</span>
       </a>
     </div>
   </div>
 
-  <div class="services-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+  <div class="services-grid grid grid-cols-2 gap-6">
     {[
-      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales.', specs:['Résistance C20 / C25','Séchage 21-28 j','Jusqu\'à 800 m²/j'], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg' },
+      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 800 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg' },
       { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau et passage des réseaux. Préparation propre avant chape liquide.', specs:['Billes PSE / liège','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg' },
       { n:'03', title:'Plancher chauffant', desc:'Enrobage des serpentins hydrauliques avec transmission thermique optimale.', specs:['Chape ciment Sika','λ 1,8 W/m·K','Mise en chauffe J+21'], img:'/uploads/plancher-chauffant-montgaillard.jpeg' },
     ].map((s) => (
-      <a href={`#service-${s.n}`} class="service-card" style="background:var(--bg-warm);display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);overflow:hidden;min-height:320px">
-        <div class="service-inner" style="padding:32px 32px 28px;display:flex;flex-direction:column;justify-content:space-between">
+      <a href={`#service-${s.n}`} class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
+        <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
           <div>
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px">
-              <span style="font-family:var(--f-mono);color:var(--accent);font-size:13px;font-weight:500">Service · {s.n}</span>
-              <span style="font-family:var(--f-mono);color:var(--ink-mute);font-size:16px">→</span>
+            <div class="flex justify-between items-baseline mb-6">
+              <span class="font-mono text-accent text-[13px] font-medium">Service · {s.n}</span>
+              <span class="font-mono text-ink-mute text-[16px]">→</span>
             </div>
-            <h3 style="font-family:var(--f-display);font-weight:700;font-size:30px;letter-spacing:-0.025em;line-height:1.05;margin-bottom:16px">{s.title}</h3>
-            <p style="font-size:14px;line-height:1.55;color:var(--ink-soft)">{s.desc}</p>
+            <h3 class="font-display font-bold text-[30px] tracking-[-0.025em] leading-[1.05] mb-4">{s.title}</h3>
+            <p class="text-[14px] leading-[1.55] text-ink-soft">{s.desc}</p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-top:24px;border-top:1px dashed var(--line);padding-top:16px">
+          <div class="flex flex-col gap-[6px] mt-6 border-t border-dashed border-line pt-4">
             {s.specs.map((sp) => (
-              <div style="display:flex;justify-content:space-between;align-items:baseline">
-                <span class="spec" style="font-size:10px">{sp}</span>
+              <div class="flex justify-between items-baseline">
+                <span class="spec text-[10px]">{sp}</span>
               </div>
             ))}
           </div>
         </div>
-        <div class="service-img" style="background:var(--ink);overflow:hidden">
-          <img src={s.img} alt={s.title} style="width:100%;height:100%;object-fit:cover" />
+        <div class="service-img bg-ink overflow-hidden">
+          <img src={s.img} alt={s.title} class="w-full h-full object-cover" />
         </div>
       </a>
     ))}
@@ -250,47 +245,49 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      04 — GUIDE GRATUIT (lead magnet)
 ═══════════════════════════════════════════════════════ -->
-<section id="guide-gratuit" class="section-pad" style="padding:100px 64px;background:var(--ink);color:#fff;position:relative">
-  <div class="ebook-grid" style="display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center">
+<section id="guide-gratuit" class="section-pad relative bg-ink text-white py-[100px] px-16">
+  <div class="ebook-grid grid grid-cols-[1.3fr_1fr] gap-20 items-center">
     <div>
       <div class="eyebrow on-dark"><span class="num">04</span>Guide gratuit · Édition 2026</div>
-      <h2 class="h-section" style="font-size:56px;margin-top:24px;margin-bottom:28px;color:#fff">
+      <h2 class="h-section text-[56px] mt-6 mb-7 text-white">
         Chape liquide : le guide pour choisir sans se tromper.
       </h2>
-      <p style="font-family:var(--f-display);font-size:18px;line-height:1.4;color:rgba(255,255,255,0.72);max-width:540px;margin-bottom:36px">
+      <p class="font-display text-[18px] leading-[1.4] text-white/[0.72] max-w-[540px] mb-9">
         8 chapitres, 12 minutes de lecture. Prix réels au m² en 2026, les 5 erreurs classiques chiffrées, checklist avant coulage, tout ce qu'il faut savoir avant de commander une chape.
       </p>
-      <form style="display:flex;gap:12px;align-items:stretch;max-width:520px;margin-bottom:20px" action="/api/ebook" method="POST">
+      <form class="flex gap-3 items-stretch max-w-[520px] mb-5" action="/api/ebook" method="POST">
         <input name="email" type="email" placeholder="votre@email.fr" required
-          style="flex:1;padding:16px 18px;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;font-family:var(--f-display);font-size:15px" />
-        <button type="submit" class="btn btn-primary" style="padding:16px 22px">
+          class="flex-1 min-w-0 px-[18px] py-4 bg-transparent border border-white/25 text-white font-display text-[15px]" />
+        <button type="submit" class="btn btn-primary px-[22px] py-4">
           Recevoir le PDF <span class="arrow">→</span>
         </button>
       </form>
-      <div class="spec" style="color:var(--on-dark-mute);font-size:10px">
+      <div class="spec text-[--on-dark-mute] text-[10px]">
         Aucun spam. Désinscription en 1 clic. Document hébergé en France.
       </div>
     </div>
 
-    <!-- Mockup PDF 3D CSS -->
-    <div class="ebook-mockup" style="position:relative;height:480px;perspective:2000px">
-      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotateY(-18deg) rotateX(4deg) rotateZ(-3deg);transform-style:preserve-3d;width:290px;height:410px;background:var(--bg-warm);box-shadow:40px 40px 80px rgba(0,0,0,0.5),-2px 0 0 rgba(0,0,0,0.4);padding:34px 30px;display:flex;flex-direction:column">
-        <div style="border-left:3px solid var(--accent);padding-left:14px;margin-bottom:36px">
-          <div class="spec" style="font-size:9px;color:var(--accent);margin-bottom:4px">Guide pratique · 2026</div>
-          <div class="spec" style="font-size:9px;color:var(--ink-mute)">Chape Liquide Occitanie</div>
+    <!-- Mockup PDF 3D CSS — les transforms complexes restent en style inline (pas de classe Tailwind équivalente) -->
+    <div class="ebook-mockup relative h-[480px] [perspective:2000px]">
+      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotateY(-18deg) rotateX(4deg) rotateZ(-3deg);transform-style:preserve-3d;width:290px;height:410px;background:var(--bg-warm);box-shadow:40px 40px 80px rgba(0,0,0,0.5),-2px 0 0 rgba(0,0,0,0.4)"
+        class="flex flex-col p-[34px_30px]">
+        <div class="border-l-[3px] border-accent pl-[14px] mb-9">
+          <div class="spec text-[9px] text-accent mb-1">Guide pratique · 2026</div>
+          <div class="spec text-[9px] text-ink-mute">Chape Liquide Occitanie</div>
         </div>
-        <h3 style="font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.025em;line-height:1.05;color:var(--ink);margin-bottom:auto">
+        <h3 class="font-display font-bold text-[28px] tracking-[-0.025em] leading-[1.05] text-ink mb-auto">
           Chape liquide : choisir sans se tromper.
         </h3>
-        <div style="margin-top:auto">
-          <div class="hr-tech" style="margin-bottom:12px"></div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
-            <div class="spec" style="font-size:9px">8 chapitres · 48 pages</div>
-            <div style="font-family:var(--f-mono);font-size:11px;color:var(--ink)">FR · PDF</div>
+        <div class="mt-auto">
+          <div class="hr-tech mb-3"></div>
+          <div class="flex justify-between items-baseline">
+            <div class="spec text-[9px]">8 chapitres · 48 pages</div>
+            <div class="font-mono text-[11px] text-ink">FR · PDF</div>
           </div>
         </div>
       </div>
-      <div style="position:absolute;left:calc(50% + 6px);top:calc(50% + 8px);transform:translate(-50%,-50%) rotateY(-18deg) rotateX(4deg) rotateZ(-3deg);width:290px;height:410px;background:var(--bg-deep);z-index:-1;opacity:0.4"></div>
+      <div style="position:absolute;left:calc(50% + 6px);top:calc(50% + 8px);transform:translate(-50%,-50%) rotateY(-18deg) rotateX(4deg) rotateZ(-3deg);width:290px;height:410px;z-index:-1"
+        class="bg-bg-deep opacity-40"></div>
     </div>
   </div>
 </section>
@@ -298,41 +295,41 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      05 — RÉALISATIONS
 ═══════════════════════════════════════════════════════ -->
-<section id="realisations" class="section-pad" style="padding:120px 64px 100px;background:var(--bg)">
-  <div class="split-2col" style="display:grid;grid-template-columns:0.85fr 2fr;gap:80px;margin-bottom:64px;align-items:end">
+<section id="realisations" class="section-pad bg-bg py-[120px] px-16 pb-[100px]">
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-16 items-end">
     <div>
       <div class="eyebrow"><span class="num">05</span>Réalisations</div>
-      <h2 class="h-section" style="font-size:56px;margin-top:24px">Cinq chantiers récents, photos réelles.</h2>
+      <h2 class="h-section text-[56px] mt-6">Cinq chantiers récents, photos réelles.</h2>
     </div>
-    <div style="padding-bottom:12px">
-      <p class="lead" style="font-size:18px;max-width:540px;margin-bottom:20px">
+    <div class="pb-3">
+      <p class="lead text-[18px] max-w-[540px] mb-5">
         Pas de visuels de catalogue ni de rendus 3D. Toutes les images de ce site sortent de nos camions, prises sur chantier au moment du coulage ou après séchage.
       </p>
-      <a href="#realisations" style="font-family:var(--f-display);font-weight:600;font-size:15px;border-bottom:1px solid var(--ink);padding-bottom:4px">
+      <a href="#realisations" class="font-display font-semibold text-[15px] border-b border-ink pb-1">
         Voir tous les chantiers <span class="mono">→</span>
       </a>
     </div>
   </div>
 
-  <div class="realisations-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+  <div class="realisations-grid grid grid-cols-3 gap-6">
     {[
       { img:'/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg', label:'Local commercial · 320 m²', loc:'Pamiers (09)', date:'2025', tech:'Chape ciment' },
-      { img:'/uploads/coulage-villeneuve-dolmes-baie.jpeg',    label:'Maison neuve · 170 m²',   loc:'Villeneuve d\'Olmes (09)', date:'2025', tech:'Chape ciment' },
-      { img:'/uploads/coulage-ouvrier-villeneuve-dolmes.jpeg', label:'Coulage en cours · 170 m²', loc:'Villeneuve d\'Olmes (09)', date:'2025', tech:'Chape ciment' },
+      { img:'/uploads/coulage-villeneuve-dolmes-baie.jpeg',    label:'Maison neuve · 170 m²',    loc:"Villeneuve d'Olmes (09)", date:'2025', tech:'Chape ciment' },
+      { img:'/uploads/coulage-ouvrier-villeneuve-dolmes.jpeg', label:'Coulage en cours · 170 m²', loc:"Villeneuve d'Olmes (09)", date:'2025', tech:'Chape ciment' },
       { img:'/uploads/preparation-tms-saverdun-kine.jpeg',     label:'Cabinet kiné · préparation', loc:'Saverdun (09)', date:'2025', tech:'Isolation TMS' },
       { img:'/uploads/chape-terminee-saverdun-kine.jpeg',      label:'Cabinet kiné · résultat',   loc:'Saverdun (09)', date:'2025', tech:'Ciment + TMS' },
       { img:'/uploads/ravoirage-mirepoix-gaines.jpeg',         label:'Ravoirage · 160 m²',       loc:'Mirepoix (09)', date:'2025', tech:'Ravoirage' },
     ].map((p, i) => (
-      <a href="#realisations" style="display:block">
-        <div style="background:var(--ink);aspect-ratio:4/5;overflow:hidden;margin-bottom:14px">
-          <img src={p.img} alt={p.label} style="width:100%;height:100%;object-fit:cover" />
+      <a href="#realisations" class="block">
+        <div class="bg-ink aspect-[4/5] overflow-hidden mb-[14px]">
+          <img src={p.img} alt={p.label} class="w-full h-full object-cover" />
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-          <span style="font-family:var(--f-mono);font-size:11px;color:var(--accent)">{String(i+1).padStart(2,'0')} / 06</span>
-          <span class="spec" style="font-size:10px">{p.date}</span>
+        <div class="flex justify-between items-baseline mb-[6px]">
+          <span class="font-mono text-[11px] text-accent">{String(i+1).padStart(2,'0')} / 06</span>
+          <span class="spec text-[10px]">{p.date}</span>
         </div>
-        <h4 style="font-family:var(--f-display);font-weight:600;font-size:18px;letter-spacing:-0.015em;line-height:1.2;margin-bottom:4px">{p.label}</h4>
-        <div style="font-size:13px;color:var(--ink-soft)">{p.loc} <span style="color:var(--ink-mute)">· {p.tech}</span></div>
+        <h3 class="font-display font-semibold text-[18px] tracking-[-0.015em] leading-[1.2] mb-1">{p.label}</h3>
+        <div class="text-[13px] text-ink-soft">{p.loc} <span class="text-ink-mute">· {p.tech}</span></div>
       </a>
     ))}
   </div>
@@ -341,37 +338,37 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      06 — ZONE D'INTERVENTION (carte SVG)
 ═══════════════════════════════════════════════════════ -->
-<section id="zones-d'intervention" class="section-pad" style="padding:120px 64px 100px;background:var(--bg-warm)">
-  <div class="zone-grid" style="display:grid;grid-template-columns:0.9fr 1.6fr;gap:80px;align-items:center">
+<section id="zones-d'intervention" class="section-pad bg-bg-warm py-[120px] px-16 pb-[100px]">
+  <div class="zone-grid grid grid-cols-[0.9fr_1.6fr] gap-20 items-center">
     <div>
       <div class="eyebrow"><span class="num">06</span>Zone d'intervention</div>
-      <h2 class="h-section" style="font-size:52px;margin-top:24px;margin-bottom:24px">
+      <h2 class="h-section text-[34px] md:text-[52px] mt-6 mb-6">
         14 villes, trois départements, 1 h 30 max.
       </h2>
-      <p class="lead" style="font-size:18px;margin-bottom:32px">
+      <p class="lead text-[18px] mb-8">
         Ariège (09), Aude (11) et Haute-Garonne (31). Pas de surcoût déplacement dans la zone, intervention sous 2 à 4 semaines selon la période.
       </p>
-      <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="flex flex-col gap-[10px]">
         {[
           ['09','Ariège','8 villes','#C4522A'],
           ['11','Aude','4 villes','#2C2C2C'],
           ['31','Haute-Garonne','2 villes','#5A5550'],
         ].map(([code, name, count, color]) => (
-          <div style={`display:grid;grid-template-columns:40px 1fr auto;gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)`}>
-            <div style={`width:12px;height:12px;background:${color}`}></div>
+          <div class="grid grid-cols-[40px_1fr_auto] gap-4 items-center py-3 border-t border-line">
+            <div class="w-3 h-3" style={`background:${color}`}></div>
             <div>
-              <span style="font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink)">{code}</span>
-              <span style="font-family:var(--f-display);font-weight:600;font-size:15px;margin-left:14px">{name}</span>
+              <span class="font-mono font-medium text-[13px] text-ink">{code}</span>
+              <span class="font-display font-semibold text-[15px] ml-[14px]">{name}</span>
             </div>
-            <span class="spec" style="font-size:10px">{count}</span>
+            <span class="spec text-[10px]">{count}</span>
           </div>
         ))}
       </div>
     </div>
 
     <!-- Carte SVG -->
-    <div style="position:relative;aspect-ratio:7/5;background:var(--bg);border:1px solid var(--line)">
-      <svg viewBox="0 0 700 500" style="width:100%;height:100%">
+    <div class="relative aspect-[7/5] bg-bg border border-line">
+      <svg viewBox="0 0 700 500" class="w-full h-full">
         <defs>
           <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
             <path d="M40 0H0v40" fill="none" stroke="#DDD2C2" stroke-width="0.5" opacity="0.5" />
@@ -417,7 +414,7 @@ import '../styles/global.css';
           <text x="40" y="-6" font-family="JetBrains Mono,monospace" font-size="9" fill="#8B847C" text-anchor="middle">~ 50 km</text>
         </g>
       </svg>
-      <div class="spec" style="position:absolute;top:12px;left:14px;font-size:9px">Carte d'intervention · 2026</div>
+      <div class="spec absolute top-3 left-[14px] text-[9px]">Carte d'intervention · 2026</div>
     </div>
   </div>
 </section>
@@ -425,16 +422,16 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      07 — FAQ
 ═══════════════════════════════════════════════════════ -->
-<section id="faq" class="section-pad" style="padding:120px 64px 100px;background:var(--bg)">
-  <div class="faq-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:80px">
+<section id="faq" class="section-pad bg-bg py-[120px] px-16 pb-[100px]">
+  <div class="faq-grid grid grid-cols-[0.85fr_2fr] gap-20">
     <div>
       <div class="eyebrow"><span class="num">07</span>Questions fréquentes</div>
-      <h2 class="h-section" style="font-size:56px;margin-top:24px;margin-bottom:32px">
+      <h2 class="h-section text-[56px] mt-6 mb-8">
         Les six questions que tout le monde nous pose.
       </h2>
-      <p class="lead" style="font-size:16px">
+      <p class="lead text-[16px]">
         Si la vôtre n'y est pas, appelez-nous au
-        <a href="tel:0687613987" style="border-bottom:1px solid var(--accent);color:var(--accent)">
+        <a href="tel:0687613987" class="border-b border-accent text-accent">
           <span class="mono">06 87 61 39 87</span>
         </a>.
         Réponse en direct.
@@ -482,27 +479,27 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      08 — CTA FINAL
 ═══════════════════════════════════════════════════════ -->
-<section id="devis" class="section-pad" style="padding:120px 64px;background:var(--ink);color:#fff;position:relative;overflow:hidden">
+<section id="devis" class="section-pad relative overflow-hidden bg-ink text-white py-[120px] px-16">
   <img src="/uploads/chape-suzuki-pamiers-hall.jpeg" alt=""
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;filter:grayscale(1)" />
-  <div style="position:relative" class="cta-grid" data-style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:center">
+    class="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale" />
+  <div class="relative cta-grid">
     <div>
       <div class="eyebrow on-dark"><span class="num">08</span>Devis gratuit</div>
-      <h2 class="h-section cta-h2" style="font-size:76px;margin-top:24px;margin-bottom:32px;color:#fff">
+      <h2 class="h-section cta-h2 text-[76px] mt-6 mb-8 text-white">
         Un chantier dans nos 14 villes ? Parlons-en.
       </h2>
-      <p style="font-family:var(--f-display);font-size:21px;color:rgba(255,255,255,0.75);max-width:600px;line-height:1.35">
+      <p class="font-display text-[21px] text-white/75 max-w-[600px] leading-[1.35]">
         Mesure, étude, devis ferme sous 48 h ouvrées. Pas d'engagement, pas de relance commerciale.
       </p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <a href="#devis" class="btn btn-primary" style="padding:20px 26px;font-size:17px;justify-content:space-between">
+    <div class="flex flex-col gap-[14px]">
+      <a href="#devis" class="btn btn-primary justify-between py-5 px-[26px] text-[17px]">
         Demander un devis <span class="arrow">→</span>
       </a>
-      <a href="tel:0687613987" class="btn btn-ghost-light" style="padding:20px 26px;font-size:17px;justify-content:space-between">
+      <a href="tel:0687613987" class="btn btn-ghost-light justify-between py-5 px-[26px] text-[17px]">
         <span>
-          <span class="spec" style="color:rgba(255,255,255,0.5);display:block;font-size:10px;margin-bottom:2px">Appel direct Cyril</span>
-          <span class="mono" style="font-size:19px;font-weight:600">06 87 61 39 87</span>
+          <span class="spec block text-white/50 text-[10px] mb-[2px]">Appel direct Cyril</span>
+          <span class="mono text-[19px] font-semibold">06 87 61 39 87</span>
         </span>
         <span class="arrow">→</span>
       </a>
@@ -515,43 +512,37 @@ import '../styles/global.css';
 <!-- ═══════════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════════ -->
-<footer style="background:var(--dark);color:rgba(255,255,255,0.6);padding:64px 64px 32px">
-  <div class="footer-grid" style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px">
+<footer class="bg-dark text-white/60 pt-16 px-16 pb-8">
+  <div class="footer-grid grid grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-12">
     <div class="footer-brand">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-        <div style="width:38px;height:38px;background:var(--accent);border-radius:2px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--f-display);font-weight:800;font-size:17px">
+      <div class="flex items-center gap-[14px] mb-5">
+        <div class="w-[38px] h-[38px] bg-accent rounded-[2px] flex items-center justify-center text-white font-display font-extrabold text-[17px]">
           cl
         </div>
-        <div style="font-family:var(--f-display);font-weight:700;font-size:16px;color:#fff">Chape Liquide Occitanie</div>
+        <div class="font-display font-bold text-[16px] text-white">Chape Liquide Occitanie</div>
       </div>
-      <p style="font-size:13px;line-height:1.6;max-width:320px">
+      <p class="text-[13px] leading-[1.6] max-w-[320px]">
         EURL Balussou Cyril · Applicateur agréé Sika.<br />
         Mirepoix, Ariège (09).<br />
         SIRET 533 165 684 00028.
       </p>
     </div>
-    <div>
-      <div class="spec" style="color:rgba(255,255,255,0.4);margin-bottom:16px;font-size:10px">Services</div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        {['Chape ciment','Ravoirage','Plancher chauffant'].map(i => <li style="font-size:14px">{i}</li>)}
-      </ul>
-    </div>
-    <div>
-      <div class="spec" style="color:rgba(255,255,255,0.4);margin-bottom:16px;font-size:10px">Zones</div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        {['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 14 villes →'].map(i => <li style="font-size:14px">{i}</li>)}
-      </ul>
-    </div>
-    <div>
-      <div class="spec" style="color:rgba(255,255,255,0.4);margin-bottom:16px;font-size:10px">Navigation</div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        {['Notre expertise','Réalisations','Guide gratuit','Devis 48h','Contact'].map(i => <li style="font-size:14px">{i}</li>)}
-      </ul>
-    </div>
+    {[
+      { label: 'Services',   items: ['Chape ciment','Ravoirage','Plancher chauffant'] },
+      { label: 'Zones',      items: ['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 14 villes →'] },
+      { label: 'Navigation', items: ['Notre expertise','Réalisations','Guide gratuit','Devis 48h','Contact'] },
+    ].map(({ label, items }) => (
+      <div>
+        <div class="spec text-white/40 mb-4 text-[10px]">{label}</div>
+        <ul class="list-none flex flex-col gap-[10px]">
+          {items.map(i => <li class="text-[14px]">{i}</li>)}
+        </ul>
+      </div>
+    ))}
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:12px">
+  <div class="border-t border-white/10 pt-6 flex justify-between text-[12px] flex-wrap gap-3">
     <div>© 2026 EURL Balussou Cyril · Tous droits réservés</div>
-    <div style="display:flex;gap:24px">
+    <div class="flex gap-6">
       <a href="/mentions-legales">Mentions légales</a>
       <a href="/cgv">CGV</a>
       <a href="/politique-confidentialite">Politique de confidentialité</a>
