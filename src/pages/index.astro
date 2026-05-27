@@ -388,7 +388,14 @@ import '../styles/global.css';
       <p class="font-display text-[18px] leading-[1.4] text-white/[0.72] max-w-[540px] mb-9">
         8 chapitres, 12 minutes de lecture. Prix réels au m² en 2026, les 5 erreurs classiques chiffrées, checklist avant coulage, tout ce qu'il faut savoir avant de commander une chape.
       </p>
-      <form class="flex gap-3 items-stretch max-w-[520px] mb-5" action="/api/ebook" method="POST">
+      <form class="flex gap-3 items-stretch max-w-[520px] mb-5"
+        name="guide-ebook"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/merci">
+        <input type="hidden" name="form-name" value="guide-ebook" />
+        <input type="hidden" name="bot-field" />
         <input name="email" type="email" placeholder="votre@email.fr" required
           class="flex-1 min-w-0 px-[18px] py-4 bg-transparent border border-white/25 text-white font-display text-[15px]" />
         <button type="submit" class="btn btn-primary px-[22px] py-4">
