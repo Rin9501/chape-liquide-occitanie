@@ -12,7 +12,7 @@ import '../styles/global.css';
   <title>Chape Liquide Occitanie — Applicateur agréé Sika, Ariège</title>
   <meta name="description" content="Expert chape liquide ciment en Occitanie. Applicateur agréé Sika. Devis gratuit sous 48h, intervention dès 50m². Ariège (09), Aude (11), Haute-Garonne (31)." />
   <meta property="og:title" content="Chape Liquide Occitanie — Applicateur agréé Sika" />
-  <meta property="og:description" content="Devis gratuit sous 48h. Intervention dès 50m². 14 villes Ariège, Aude, Haute-Garonne." />
+  <meta property="og:description" content="Devis gratuit sous 48h. Intervention dès 50m². 18 villes Ariège, Aude, Haute-Garonne." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -137,7 +137,7 @@ import '../styles/global.css';
         "name": "Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 14 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement."
+          "text": "Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 18 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement."
         }
       }
     ]
@@ -225,7 +225,7 @@ import '../styles/global.css';
         </div>
         <div>
           <div class="spec mb-[6px]">Cadence</div>
-          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">800 m²/j</div>
+          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">400 m²/j</div>
         </div>
         <div>
           <div class="spec mb-[6px]">Délai devis</div>
@@ -274,8 +274,8 @@ import '../styles/global.css';
     <!-- Chiffres -->
     <div class="trust-numbers grid grid-cols-4 gap-8">
       {[
-        { val: '480+',    label: 'Chantiers livrés' },
-        { val: '90 000+', label: 'm² coulés' },
+        { val: 'Centaines',  label: 'de chantiers livrés' },
+        { val: 'Des milliers', label: 'de m² coulés' },
         { val: '10 ans',  label: "d'expérience chape" },
         { val: '48 h',    label: 'Délai devis garanti' },
       ].map(({ val, label }) => (
@@ -312,9 +312,9 @@ import '../styles/global.css';
   <div class="reasons-grid grid grid-cols-4">
     {[
       { n:'01', title:'Applicateur agréé Sika', body:'La majorité des artisans Ariège travaillent en Lafarge. Nous coulons en Sika Agilia : garantie procédé, traçabilité produit, PV de chantier transmis.', tag:'Différenciation' },
-      { n:'02', title:'Devis sous 48 h ouvrées', body:'Mesure des cotes sur plan ou visite gratuite si chantier dans nos 14 villes. Vous recevez le devis ferme et détaillé sous 48 heures, pas un mois plus tard.', tag:'Engagement' },
-      { n:'03', title:"Cadence jusqu'à 800 m²/jour", body:"Pompe Lancy professionnelle, livraison en camion toupie, équipe de 2 applicateurs. Sur les grandes surfaces (>300 m²), le coulage s'enchaîne sans rupture de charge.", tag:'Capacité' },
-      { n:'04', title:'1h30 autour de Mirepoix', body:'14 villes desservies en Ariège, Aude et Haute-Garonne. Pas de surcoût déplacement dans la zone. Étude possible au-delà sur demande.', tag:'Couverture' },
+      { n:'02', title:'Devis sous 48 h ouvrées', body:'Mesure des cotes sur plan ou visite gratuite si chantier dans nos 18 villes. Vous recevez le devis ferme et détaillé sous 48 heures, pas un mois plus tard.', tag:'Engagement' },
+      { n:'03', title:"Cadence jusqu'à 400 m²/jour", body:"Pompe Lancy professionnelle, livraison en camion toupie, équipe de 2 applicateurs. Sur les grandes surfaces (>300 m²), le coulage s'enchaîne sans rupture de charge.", tag:'Capacité' },
+      { n:'04', title:'1h30 autour de Mirepoix', body:'18 villes desservies en Ariège, Aude et Haute-Garonne. Pas de surcoût déplacement dans la zone. Étude possible au-delà sur demande.', tag:'Couverture' },
     ].map((it, i) => (
       <div class={`reason-card bg-bg-warm flex flex-col justify-between min-h-[320px] p-[32px_28px_28px] border border-line${i > 0 ? ' border-l-0' : ''}`}>
         <div>
@@ -348,8 +348,8 @@ import '../styles/global.css';
 
   <div class="services-grid grid grid-cols-2 gap-6">
     {[
-      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 800 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
-      { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau et passage des réseaux. Préparation propre avant chape liquide.', specs:['Billes PSE / liège','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage isolant avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
+      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales. Produits Sika utilisés : ViscoChape, ViscoChape XLS, LevelChape HCS (sans chauffage sol). Option anhydrite (SyntiChape) sur grands projets sur demande.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 400 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
+      { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau thermique et passage des réseaux avec Sika Betomouss — résistance thermique 6× supérieure au ravoirage standard. Idéal en rénovation sur plancher bois ou étages.', specs:['Sika Betomouss','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage isolant avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
       { n:'03', title:'Plancher chauffant', desc:'Enrobage des serpentins hydrauliques avec transmission thermique optimale.', specs:['Chape ciment Sika','λ 1,8 W/m·K','Mise en chauffe J+21'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
     ].map((s) => (
       <a href={`#service-${s.n}`} class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
@@ -406,7 +406,7 @@ import '../styles/global.css';
         </button>
       </form>
       <div class="spec text-[--on-dark-mute] text-[10px]">
-        Aucun spam. Désinscription en 1 clic. Document hébergé en France.
+        Un seul email — le guide, rien d'autre. Document hébergé en France.
       </div>
     </div>
 
@@ -486,7 +486,7 @@ import '../styles/global.css';
     <div>
       <div class="eyebrow"><span class="num">06</span>Zone d'intervention</div>
       <h2 class="h-section text-[34px] md:text-[52px] mt-6 mb-6">
-        14 villes, trois départements, 1 h 30 max.
+        18 villes, trois départements, 1 h 30 max.
       </h2>
       <p class="lead text-[18px] mb-8">
         Ariège (09), Aude (11) et Haute-Garonne (31). Pas de surcoût déplacement dans la zone, intervention sous 2 à 4 semaines selon la période.
@@ -494,8 +494,8 @@ import '../styles/global.css';
       <div class="flex flex-col gap-[10px]">
         {[
           ['09','Ariège','8 villes','#C4522A'],
-          ['11','Aude','4 villes','#2C2C2C'],
-          ['31','Haute-Garonne','2 villes','#5A5550'],
+          ['11','Aude','6 villes','#2C2C2C'],
+          ['31','Haute-Garonne','4 villes','#5A5550'],
         ].map(([code, name, count, color]) => (
           <div class="grid grid-cols-[40px_1fr_auto] gap-4 items-center py-3 border-t border-line">
             <div class="w-3 h-3" style={`background:${color}`}></div>
@@ -540,9 +540,14 @@ import '../styles/global.css';
         <g transform="translate(560,160)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Carcassonne</text></g>
         <g transform="translate(470,130)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Castelnaudary</text></g>
         <g transform="translate(520,290)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Quillan</text></g>
+        <!-- 11 — nouvelles villes -->
+        <g transform="translate(585,175)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Lézignan</text></g>
+        <g transform="translate(615,195)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Narbonne</text></g>
         <!-- 31 -->
         <g transform="translate(240,130)"><circle r="4" fill="#5A5550" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Auterive</text></g>
         <g transform="translate(170,90)"><circle r="4" fill="#5A5550" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Muret</text></g>
+        <g transform="translate(345,100)"><circle r="4" fill="#5A5550" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Villefranche-L.</text></g>
+        <g transform="translate(140,350)"><circle r="4" fill="#5A5550" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Saint-Gaudens</text></g>
         <!-- Compass -->
         <g transform="translate(620,60)">
           <text font-family="JetBrains Mono,monospace" font-size="10" fill="#8B847C" text-anchor="middle">N</text>
@@ -561,7 +566,7 @@ import '../styles/global.css';
     </div>
   </div>
 
-  <!-- Liste des 14 villes : lisible par Google, masquée visuellement (sr-only) -->
+  <!-- Liste des 18 villes : lisible par Google, masquée visuellement (sr-only) -->
   <ul class="sr-only" aria-label="Villes desservies par Chape Liquide Occitanie">
     <li>Mirepoix, Ariège (09) — siège social</li>
     <li>Pamiers, Ariège (09)</li>
@@ -575,8 +580,12 @@ import '../styles/global.css';
     <li>Carcassonne, Aude (11)</li>
     <li>Castelnaudary, Aude (11)</li>
     <li>Quillan, Aude (11)</li>
+    <li>Lézignan-Corbières, Aude (11)</li>
+    <li>Narbonne, Aude (11)</li>
     <li>Auterive, Haute-Garonne (31)</li>
     <li>Muret, Haute-Garonne (31)</li>
+    <li>Villefranche-de-Lauragais, Haute-Garonne (31)</li>
+    <li>Saint-Gaudens, Haute-Garonne (31)</li>
   </ul>
 </section>
 
@@ -623,7 +632,7 @@ import '../styles/global.css';
         },
         {
           q:'Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?',
-          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 14 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement.'
+          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 18 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement.'
         },
       ].map((item, i) => (
         <details class="faq-item">
@@ -651,7 +660,7 @@ import '../styles/global.css';
     <div>
       <div class="eyebrow on-dark"><span class="num">08</span>Devis gratuit</div>
       <h2 class="h-section cta-h2 text-[76px] mt-6 mb-8 text-white">
-        Un chantier dans nos 14 villes ? Parlons-en.
+        Un chantier dans nos 18 villes ? Parlons-en.
       </h2>
       <p class="font-display text-[21px] text-white/75 max-w-[600px] leading-[1.35]">
         Mesure, étude, devis ferme sous 48 h ouvrées. Pas d'engagement, pas de relance commerciale.
@@ -694,7 +703,7 @@ import '../styles/global.css';
     </div>
     {[
       { label: 'Services',   items: ['Chape ciment','Ravoirage','Plancher chauffant'] },
-      { label: 'Zones',      items: ['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 14 villes →'] },
+      { label: 'Zones',      items: ['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 18 villes →'] },
       { label: 'Navigation', items: ['Notre expertise','Réalisations','Guide gratuit','Devis 48h','Contact'] },
     ].map(({ label, items }) => (
       <div>

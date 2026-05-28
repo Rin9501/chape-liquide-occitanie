@@ -1,0 +1,772 @@
+---
+const title = "Chape liquide : le guide pour choisir sans se tromper — Édition 2026";
+const description = "8 chapitres essentiels pour comprendre la chape liquide, choisir le bon applicateur et éviter les erreurs coûteuses.";
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #2C2C2C;
+      --accent: #C4522A;
+      --bg-warm: #F5F0EB;
+      --muted: #7A736C;
+      --line: #DDD2C2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      color: var(--ink);
+      background: #fff;
+      font-size: 11pt;
+      line-height: 1.6;
+    }
+
+    /* --- COUVERTURE --- */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      background: var(--ink);
+      color: #fff;
+      padding: 60px 56px;
+      page-break-after: always;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cover-logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .cover-logo-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.04em;
+    }
+
+    .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 40px; }
+    .cover-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+    .cover-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 36pt;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #fff;
+      max-width: 560px;
+    }
+    .cover-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .cover-subtitle {
+      margin-top: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      max-width: 420px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+    }
+    .cover-footer-left { font-size: 10px; color: rgba(255,255,255,0.4); }
+    .cover-footer-right {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* --- SOMMAIRE --- */
+    .toc-page {
+      padding: 56px;
+      page-break-after: always;
+    }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 36px;
+      color: var(--ink);
+    }
+    .toc-list { list-style: none; border-top: 1px solid var(--line); }
+    .toc-item {
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .toc-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .toc-title { font-size: 13px; font-weight: 600; }
+    .toc-dots { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); }
+
+    /* --- CHAPITRES --- */
+    .chapter {
+      padding: 56px;
+      page-break-before: always;
+    }
+    .chapter-header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--line);
+    }
+    .chapter-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .chapter-title {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .body-text { font-size: 11pt; line-height: 1.7; margin-bottom: 18px; }
+
+    h3 {
+      font-size: 13pt;
+      font-weight: 700;
+      margin: 28px 0 10px;
+      color: var(--ink);
+    }
+
+    .callout {
+      background: var(--bg-warm);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 24px 0;
+      font-size: 10.5pt;
+    }
+    .callout strong { color: var(--accent); }
+
+    ul.guide-list {
+      list-style: none;
+      margin: 16px 0 20px;
+    }
+    ul.guide-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    ul.guide-list li::before {
+      content: '—';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .spec-card {
+      background: var(--bg-warm);
+      padding: 14px 16px;
+    }
+    .spec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .spec-val {
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* Tableau comparatif 3 modes */
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .mode-card {
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+    .mode-card.primary { border-color: var(--accent); border-width: 2px; }
+    .mode-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .mode-label.primary { color: var(--accent); }
+    .mode-name {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+    .mode-detail {
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .mode-detail strong { color: var(--ink); }
+
+    /* Tableau séchage */
+    .sechage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 10pt;
+    }
+    .sechage-table th {
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 9pt;
+      font-weight: 600;
+    }
+    .sechage-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .sechage-table tr:nth-child(even) td { background: var(--bg-warm); }
+
+    /* --- PAGE DE CLOTURE --- */
+    .closing {
+      background: var(--accent);
+      color: #fff;
+      padding: 60px 56px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      page-break-before: always;
+    }
+    .closing h2 {
+      font-size: 28pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .closing p { font-size: 13px; opacity: 0.85; margin-bottom: 12px; max-width: 480px; }
+    .closing .contact-block {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .closing .contact-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    /* --- PRINT --- */
+    @media print {
+      body { font-size: 10.5pt; }
+      .cover { min-height: 100vh; }
+      .chapter { page-break-before: always; }
+      .toc-page { page-break-after: always; }
+      .closing { page-break-before: always; }
+      a { color: inherit; text-decoration: none; }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+
+    /* Bouton d'impression (masqué en print) */
+    .print-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--ink);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 3px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+    @media print { .print-bar { display: none; } }
+  </style>
+</head>
+<body>
+
+<button class="print-bar" onclick="window.print()">
+  ⬇ Enregistrer en PDF
+</button>
+
+<!-- COUVERTURE -->
+<div class="cover">
+  <div class="cover-logo">
+    <div class="cover-logo-mark">CLO</div>
+    <div class="cover-logo-name">Chape Liquide Occitanie<br /><span style="font-weight:400;font-size:11px;opacity:0.6">Applicateur agréé Sika · Ariège · Aude · Haute-Garonne</span></div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-tag">Guide pratique · Édition 2026</div>
+    <h1 class="cover-title">
+      Chape liquide :<br />le guide pour <em>choisir sans se tromper</em>
+    </h1>
+    <p class="cover-subtitle">8 chapitres pour comprendre la chape liquide, maîtriser les modes de pose, et éviter les erreurs coûteuses — rédigé par un applicateur agréé Sika avec 10 ans de chantiers en Occitanie.</p>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-left">
+      Document gratuit · Diffusion libre · chape-liquide-occitanie.fr<br />
+      <span style="font-size:9px;opacity:0.5">Aucune information de prix dans ce guide — devis personnalisé sur demande.</span>
+    </div>
+    <div class="cover-footer-right">8 chapitres · ~12 min</div>
+  </div>
+</div>
+
+<!-- SOMMAIRE -->
+<div class="toc-page">
+  <div class="section-tag">Sommaire</div>
+  <h2 class="page-title">Ce guide couvre<br />l'essentiel.</h2>
+  <ul class="toc-list">
+    {[
+      ["01", "Chape liquide vs chape traditionnelle : quelles différences ?"],
+      ["02", "Les 3 modes de mise en œuvre : flottante, désolidarisée, adhérente"],
+      ["03", "Quand choisir la chape liquide ?"],
+      ["04", "Comment se déroule un chantier chape liquide ?"],
+      ["05", "Délais de séchage et mise en service"],
+      ["06", "Quels supports sont compatibles ?"],
+      ["07", "Les erreurs à éviter"],
+      ["08", "Comment choisir son applicateur ?"],
+    ].map(([num, t]) => (
+      <li class="toc-item">
+        <span class="toc-num">{num}</span>
+        <span class="toc-title">{t}</span>
+        <span class="toc-dots">···</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<!-- CHAPITRE 01 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 01</div>
+    <h2 class="chapter-title">Chape liquide vs chape traditionnelle :<br />quelles différences ?</h2>
+  </div>
+
+  <p class="body-text">La chape traditionnelle est un mortier semi-sec composé de ciment, sable et eau, étalé manuellement à la règle et talochée par un maçon. Elle demande un savoir-faire important, génère naturellement des variations d'épaisseur et de planéité, et reste limitée en cadence d'exécution.</p>
+
+  <p class="body-text">La chape liquide — aussi appelée chape fluide ou chape autonivelante — est un mortier à consistance très fluide, produit en centrale et livré par camion-toupie. Elle est pompée mécaniquement sur le chantier et se nivelle d'elle-même par gravité, sans intervention manuelle de finition.</p>
+
+  <h3>Les avantages concrets de la chape liquide</h3>
+  <ul class="guide-list">
+    <li><strong>Planéité garantie</strong> : tolérance ± 2 mm sous la règle de 2 m, contre ± 5 à 10 mm pour une chape traditionnelle.</li>
+    <li><strong>Cadence élevée</strong> : jusqu'à 400 m² coulés par jour par une équipe, contre 80 à 150 m² en traditionnel.</li>
+    <li><strong>Praticabilité rapide</strong> : marchable dès 24 à 48 h selon les conditions ambiantes.</li>
+    <li><strong>Enrobage parfait du plancher chauffant</strong> : la fluidité enrobe intégralement les serpentins sans point dur ni lame d'air — condition indispensable à l'efficacité thermique.</li>
+    <li><strong>Retrait maîtrisé</strong> : les formulations modernes (Sika ViscoChape XLS) limitent le retrait à moins de 400 μm/m.</li>
+    <li><strong>Fabrication industrielle</strong> : dosage et homogénéité contrôlés en centrale. Pas de variation de qualité entre bétonnées.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>À retenir :</strong> la chape liquide est devenue le standard technique sur les chantiers neufs et les rénovations de surface significative. Ses performances mécaniques (C20 / C25) sont supérieures ou équivalentes à la chape traditionnelle, pour une logistique simplifiée.
+  </div>
+</div>
+
+<!-- CHAPITRE 02 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 02</div>
+    <h2 class="chapter-title">Les 3 modes de mise en œuvre :<br />flottante, désolidarisée, adhérente</h2>
+  </div>
+
+  <p class="body-text">C'est le point le moins bien compris par les maîtres d'ouvrage — et pourtant le plus important. Contrairement à une idée reçue, la chape liquide n'est <strong>presque jamais posée en adhérence directe</strong> sur le support. Dans la très grande majorité des cas, elle est mise en œuvre en <strong>pose flottante ou désolidarisée</strong>.</p>
+
+  <div class="mode-grid">
+    <div class="mode-card primary">
+      <div class="mode-label primary">MODE PRINCIPAL · 90 % des chantiers</div>
+      <div class="mode-name">Pose flottante</div>
+      <div class="mode-detail">
+        Chape coulée <strong>sur un isolant thermique ou phonique</strong> (PSE, laine de roche, PUR…). Aucun contact rigide avec le support porteur. Obligatoire avec plancher chauffant. Épaisseur min. <strong>5 cm</strong> (isolant SC1) ou 6 cm (isolant SC2).
+      </div>
+    </div>
+    <div class="mode-card">
+      <div class="mode-label">MODE ALTERNATIF</div>
+      <div class="mode-name">Pose désolidarisée</div>
+      <div class="mode-detail">
+        Chape coulée sur un <strong>film de désolidarisation</strong> (polyéthylène, membrane bitumineuse…) sans couche isolante. Évite la liaison rigide quand l'isolation n'est pas requise. Épaisseur min. <strong>5 cm</strong>.
+      </div>
+    </div>
+    <div class="mode-card">
+      <div class="mode-label">MODE EXCEPTIONNEL</div>
+      <div class="mode-name">Pose adhérente</div>
+      <div class="mode-detail">
+        Chape collée directement au support béton sain. <strong>Réservée à des configurations très spécifiques</strong> : dallage sur terre-plein sans isolant, ragréage ponctuel. Primaire d'adhérence obligatoire. Épaisseur min. <strong>3 cm</strong>.
+      </div>
+    </div>
+  </div>
+
+  <h3>Pourquoi la pose flottante est quasi-universelle</h3>
+  <ul class="guide-list">
+    <li><strong>Plancher chauffant</strong> : les tuyaux créent une rupture de continuité entre la chape et le support — la pose flottante est la seule solution conforme aux DTU.</li>
+    <li><strong>Réglementation thermique RE2020</strong> : l'isolant est obligatoire dans les constructions neuves. La chape flottante s'intègre naturellement dans ce système.</li>
+    <li><strong>Rénovation</strong> : isolation phonique entre étages, confort thermique et rattrapage de niveau sont gérés simultanément par la pose flottante.</li>
+    <li><strong>Prévention des fissures</strong> : la désolidarisation de la chape lui permet de se mouvoir librement lors des variations thermiques, sans se fissurer.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Ce que fait un bon applicateur :</strong> il visite le chantier, analyse le support et le contexte (neuf/rénovation, plancher chauffant ou non, isolation existante) et choisit le mode de pose adapté — jamais le plus simple, toujours le plus approprié.
+  </div>
+</div>
+
+<!-- CHAPITRE 03 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 03</div>
+    <h2 class="chapter-title">Quand choisir<br />la chape liquide ?</h2>
+  </div>
+
+  <p class="body-text">La chape liquide s'impose dans de nombreuses situations, mais elle n'est pas systématiquement la meilleure solution. Voici les critères objectifs pour décider.</p>
+
+  <h3>Situations où la chape liquide est idéale</h3>
+  <ul class="guide-list">
+    <li><strong>Plancher chauffant hydraulique</strong> : c'est ici que la chape liquide n'a pas d'équivalent. L'enrobage intégral des serpentins garantit un transfert thermique optimal (λ ≥ 1,8 W/m·K). Le produit Sika ViscoChape est spécifiquement formulé pour cette application.</li>
+    <li><strong>Surface à partir de 50 m²</strong> : en dessous, la logistique (camion-toupie + pompe + déplacement) n'est pas rentabilisée.</li>
+    <li><strong>Rénovation avec isolant</strong> : ravoirage isolant Sika Betomouss + chape liquide, même sur plancher bois ou support dégradé.</li>
+    <li><strong>Logements collectifs</strong> : Sika LevelChape HCS est spécifiquement développé pour les grands ensembles résidentiels sans plancher chauffant.</li>
+    <li><strong>Locaux commerciaux et tertiaire</strong> : planéité et résistance mécanique (C25) conformes aux exigences des revêtements professionnels (grandes surfaces, bureaux, entrepôts).</li>
+  </ul>
+
+  <h3>Les produits Sika selon votre configuration</h3>
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-label">Plancher chauffant · Usage intensif</div>
+      <div class="spec-val" style="font-size:11pt;font-weight:700;line-height:1.4">Sika ViscoChape / ViscoChape XLS</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Collectif · Sans plancher chauffant</div>
+      <div class="spec-val" style="font-size:11pt;font-weight:700;line-height:1.4">Sika LevelChape HCS</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Grands projets · Anhydrite (option)</div>
+      <div class="spec-val" style="font-size:11pt;font-weight:700;line-height:1.4">Sika SyntiChape</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Ravoirage isolant préalable</div>
+      <div class="spec-val" style="font-size:11pt;font-weight:700;line-height:1.4">Sika Betomouss</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Cas particulier :</strong> pour les petites surfaces (&lt; 50 m²) ou les configurations très atypiques, une chape traditionnelle peut être plus adaptée. Un applicateur sérieux vous le dira clairement plutôt que de forcer la vente.
+  </div>
+</div>
+
+<!-- CHAPITRE 04 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 04</div>
+    <h2 class="chapter-title">Comment se déroule<br />un chantier chape liquide ?</h2>
+  </div>
+
+  <p class="body-text">Voici les étapes dans l'ordre chronologique. Un chantier bien conduit respecte cette séquence sans exception.</p>
+
+  <h3>Étape 1 — Préparation du support</h3>
+  <p class="body-text">Le support est nettoyé, dépoussiéré, débarrassé de tout résidu de mortier, graisse ou ancienne colle. Les zones creuses ou décollées sont reprises. C'est une étape non négociable : un support mal préparé compromet l'ensemble de l'ouvrage.</p>
+
+  <h3>Étape 2 — Pose de l'isolant ou du film de désolidarisation</h3>
+  <p class="body-text">En pose flottante, les panneaux d'isolant sont posés en quinconce, joints serrés, avec un relevé sur les murs. En pose désolidarisée, un film polyéthylène est déroulé en lés croisés sur toute la surface. C'est cette couche intermédiaire qui désolidarise la chape du support — elle est présente dans la quasi-totalité des chantiers.</p>
+
+  <h3>Étape 3 — Pose des bandes de rive</h3>
+  <p class="body-text">Des bandes résilientes sont fixées en pied de chaque mur, cloison et obstacle traversant. Elles absorbent les mouvements de la chape lors des variations thermiques et empêchent la transmission des vibrations. Elles sont <strong>obligatoires</strong> en pose flottante — leur absence est une non-conformité.</p>
+
+  <h3>Étape 4 — Joints de fractionnement</h3>
+  <p class="body-text">Pour les surfaces supérieures à 40 m² ou les formes allongées (couloir, L), des joints de fractionnement délimitent des zones indépendantes. Ils préviennent les fissures par retrait différentiel.</p>
+
+  <h3>Étape 5 — Coulage de la chape</h3>
+  <p class="body-text">Le camion-toupie livrant la chape prémélangée est connecté à la pompe. L'applicateur guide le tuyau en nappes successives jusqu'à recouvrir la surface entière. La chape se nivelle seule. Un rouleau débulleur est passé immédiatement pour éliminer les bulles d'air en surface. Le chantier est ensuite interdit d'accès.</p>
+
+  <h3>Étape 6 — Séchage et protection</h3>
+  <p class="body-text">Les fenêtres et portes restent fermées pendant les 24 premières heures pour éviter un séchage en surface trop rapide (faïençage). Après 24-48 h, une ventilation modérée accélère l'évacuation de l'humidité résiduelle.</p>
+
+  <div class="callout">
+    <strong>Point clé :</strong> la chape liquide est praticable à pied après 24-48 h, mais elle n'est pas prête pour la pose de revêtement. Ces deux notions sont souvent confondues — avec des conséquences coûteuses.
+  </div>
+</div>
+
+<!-- CHAPITRE 05 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 05</div>
+    <h2 class="chapter-title">Délais de séchage<br />et mise en service</h2>
+  </div>
+
+  <p class="body-text">C'est le point le plus sous-estimé sur les chantiers. La chape est sèche en surface bien avant d'avoir atteint le taux d'humidité résiduelle acceptable pour la pose du revêtement.</p>
+
+  <table class="sechage-table">
+    <thead>
+      <tr>
+        <th>Type de chape</th>
+        <th>Praticable piéton</th>
+        <th>Revêtement céramique</th>
+        <th>Parquet / PVC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ciment</strong> (ViscoChape, LevelChape HCS)</td>
+        <td>24 – 48 h</td>
+        <td>21 – 28 j<br /><small>Humidité ≤ 2 %</small></td>
+        <td>21 – 28 j<br /><small>Humidité ≤ 0,5 – 1 %</small></td>
+      </tr>
+      <tr>
+        <td><strong>Anhydrite</strong> (SyntiChape)</td>
+        <td>24 – 48 h</td>
+        <td>4 – 9 semaines<br /><small>Humidité ≤ 0,5 %</small></td>
+        <td>4 – 9 semaines<br /><small>Humidité ≤ 0,3 %</small></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Facteurs qui influencent le séchage</h3>
+  <ul class="guide-list">
+    <li><strong>Température</strong> : idéalement 15 – 25 °C. En dessous de 5 °C, le séchage est très fortement ralenti. Ne jamais couler par gel.</li>
+    <li><strong>Ventilation</strong> : modérée après les 24 premières heures. Un courant d'air violent dans les premières heures provoque un faïençage de surface.</li>
+    <li><strong>Épaisseur</strong> : règle empirique — 1 semaine de séchage par centimètre jusqu'à 4 cm, puis 2 semaines par centimètre supplémentaire.</li>
+    <li><strong>Hygrométrie ambiante</strong> : un chantier humide (construction récente, dalle fraîche en-dessous) ralentit significativement l'évaporation.</li>
+  </ul>
+
+  <h3>Protocole de mise en chauffe du plancher chauffant</h3>
+  <ul class="guide-list">
+    <li>Attendre minimum 21 jours après le coulage avant de démarrer.</li>
+    <li>Démarrer à 20 °C pendant 3 jours, monter par paliers de 5 °C/jour jusqu'à la température nominale.</li>
+    <li>Maintenir la température maximale 4 jours, puis descendre progressivement.</li>
+    <li>Ne jamais démarrer à pleine puissance — risque de fissuration thermique irréversible.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Obligation avant tout revêtement :</strong> mesurer le taux d'humidité résiduelle avec un hygromètre CM (carbure de calcium). C'est la seule méthode fiable — le ressenti au toucher ou les jauges électroniques ne sont pas suffisants.
+  </div>
+</div>
+
+<!-- CHAPITRE 06 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 06</div>
+    <h2 class="chapter-title">Quels supports<br />sont compatibles ?</h2>
+  </div>
+
+  <p class="body-text">La chape liquide peut être appliquée sur la grande majorité des supports, mais chacun appelle une préparation spécifique. La visite préalable du support est indispensable.</p>
+
+  <h3>Supports courants — directement compatibles</h3>
+  <ul class="guide-list">
+    <li><strong>Dalle béton (neuf ou existant)</strong> : support de référence. Doit être propre, plan, non poussiéreux et sans résidu de décoffrage. Vérifier l'absence de zones creuses par percussion.</li>
+    <li><strong>Chape ciment existante saine</strong> : faisable si la chape est cohésive — aucune zone creuse, aucune fissure évolutive. Un ponçage léger améliore l'accroche de l'isolant.</li>
+    <li><strong>Béton cellulaire, hourdis</strong> : compatibles en pose flottante avec isolant rigide.</li>
+  </ul>
+
+  <h3>Supports spéciaux — ravoirage préalable recommandé</h3>
+  <ul class="guide-list">
+    <li><strong>Plancher bois ancien</strong> : le ravoirage isolant (Sika Betomouss) crée une sous-couche de transition qui absorbe les légères déformations du bois, isole thermiquement et réduit les nuisances phoniques entre niveaux.</li>
+    <li><strong>Support très irrégulier ou en pente</strong> : le ravoirage remet le sol à plat avant la chape finale.</li>
+    <li><strong>Rattrapage de niveaux importants (+ 6 cm)</strong> : un ravoirage allégé est plus léger et économique qu'une chape épaisse.</li>
+  </ul>
+
+  <h3>Ravoirage isolant — Sika Betomouss</h3>
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-label">Isolation thermique</div>
+      <div class="spec-val" style="font-size:12pt;">6× supérieur au ravoirage classique</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Épaisseur</div>
+      <div class="spec-val">4 – 15 cm</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Densité</div>
+      <div class="spec-val">500 – 1 900 kg/m³</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Conformité</div>
+      <div class="spec-val" style="font-size:11pt;">RE2020 compatible</div>
+    </div>
+  </div>
+
+  <h3>Supports incompatibles sans travaux préalables</h3>
+  <ul class="guide-list">
+    <li>Carrelage existant en mauvais état ou non adhérent.</li>
+    <li>Surfaces souillées (huile, peinture, résine) sans décapage préalable.</li>
+    <li>Structures porteuses insuffisantes ou trop flexibles.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Conseil :</strong> un applicateur sérieux inspecte systématiquement le support avant de valider le devis et le mode de pose. Si quelqu'un vous propose un prix sans avoir vu le sol, méfiez-vous.
+  </div>
+</div>
+
+<!-- CHAPITRE 07 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 07</div>
+    <h2 class="chapter-title">Les erreurs<br />à éviter</h2>
+  </div>
+
+  <p class="body-text">Ces erreurs sont commises régulièrement sur les chantiers. Elles sont toutes évitables avec un applicateur compétent et un maître d'ouvrage informé.</p>
+
+  <h3>Erreur 1 — Poser le revêtement trop tôt</h3>
+  <p class="body-text">La chape semble sèche en surface mais contient encore de l'humidité résiduelle en profondeur. Le carrelage se décolle, le parquet gonfle, les moisissures apparaissent sous PVC. La règle est simple : toujours mesurer le taux d'humidité (CM) avant toute pose, même si l'aspect visuel semble bon.</p>
+
+  <h3>Erreur 2 — Omettre les bandes de rive</h3>
+  <p class="body-text">En pose flottante, les bandes résilientes en pied de mur sont obligatoires. Sans elles, la chape bute sur les murs lors de sa dilatation thermique et se fissure ou se soulève. C'est une erreur d'économie de quelques euros qui coûte très cher en reprise.</p>
+
+  <h3>Erreur 3 — Forcer le séchage artificiellement</h3>
+  <p class="body-text">Placer des radiateurs électriques ou des souffleries directement après le coulage crée un gradient thermique qui génère des fissures de surface. La chape doit sécher uniformément, à l'air ambiant, sans chauffage brutal localisé.</p>
+
+  <h3>Erreur 4 — Courant d'air dans les 24 premières heures</h3>
+  <p class="body-text">Ouvrir les fenêtres juste après le coulage provoque un séchage de surface trop rapide, créant une pellicule qui piège l'humidité en dessous — et conduit à un faïençage de surface. Les ouvrants restent fermés pendant les premières 24 heures.</p>
+
+  <h3>Erreur 5 — Oublier les joints de fractionnement</h3>
+  <p class="body-text">Sur une surface de plus de 40 m² ou en forme de L ou U, l'absence de joints de fractionnement conduit à des fissures traversantes. Ces joints délimitent des plots indépendants qui s'accommodent librement des variations dimensionnelles.</p>
+
+  <h3>Erreur 6 — Choisir uniquement sur le prix</h3>
+  <p class="body-text">Un devis sensiblement moins cher peut cacher une formulation hors-agrément, un dosage insuffisant en liants ou l'absence d'assurance décennale. Le coût d'une reprise de chape — dépose du revêtement, démolition, nouvelle chape — dépasse toujours plusieurs fois l'économie initiale.</p>
+
+  <div class="callout">
+    <strong>Bonne pratique :</strong> demandez systématiquement la fiche technique du produit utilisé (nom Sika + référence), le mode de pose prévu (flottante / désolidarisée / adhérente) et l'attestation de formation applicateur. Un professionnel agréé Sika fournit ces documents sans délai.
+  </div>
+</div>
+
+<!-- CHAPITRE 08 -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">Chapitre 08</div>
+    <h2 class="chapter-title">Comment choisir<br />son applicateur ?</h2>
+  </div>
+
+  <p class="body-text">Le choix de l'applicateur est la décision la plus déterminante de votre projet chape. Voici les critères objectifs pour distinguer un professionnel sérieux d'un généraliste.</p>
+
+  <h3>L'agrément fabricant — premier critère</h3>
+  <p class="body-text">Sika, comme les autres fabricants de chapes fluides, délivre des agréments aux applicateurs formés à leurs produits. Ces agréments garantissent une formation aux règles de mise en œuvre, une traçabilité de chantier et un suivi qualité. Un applicateur agréé Sika est référencé sur chapesika.fr — vérifiable en quelques secondes.</p>
+  <ul class="guide-list">
+    <li>L'agrément est nominatif — il concerne l'applicateur, pas l'enseigne commerciale.</li>
+    <li>Demandez le numéro d'agrément et la date de renouvellement.</li>
+  </ul>
+
+  <h3>L'assurance décennale — vérification obligatoire</h3>
+  <p class="body-text">La chape liquide est un ouvrage relevant de la garantie décennale (10 ans). L'attestation doit être à jour, et la mention <em>"chapes et dallages"</em> doit figurer explicitement dans l'objet de la police d'assurance.</p>
+
+  <h3>Les références terrain</h3>
+  <ul class="guide-list">
+    <li>Demandez des photos de chantiers récents avec la surface coulée et la localisation (constructeur, MOA).</li>
+    <li>Un témoignage client vérifiable vaut plus qu'une description générique.</li>
+    <li>La régularité du volume de travail mensuel indique la structuration de l'entreprise.</li>
+  </ul>
+
+  <h3>Le devis — ce qu'il doit contenir</h3>
+  <ul class="guide-list">
+    <li>Le nom commercial du produit utilisé (ex. : Sika ViscoChape) et l'épaisseur de pose.</li>
+    <li>Le mode de pose prévu : flottante, désolidarisée ou adhérente.</li>
+    <li>La résistance mécanique attendue (C20, C25…).</li>
+    <li>Les conditions de réception et le délai de séchage avant revêtement.</li>
+    <li>L'absence de visite préalable sur un chantier de rénovation doit alerter.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Notre engagement :</strong> devis gratuit transmis sous 48 h. Visite préalable systématique. Produits Sika certifiés. Assurance décennale disponible sur demande.
+  </div>
+</div>
+
+<!-- PAGE DE CLÔTURE -->
+<div class="closing">
+  <div>
+    <div class="section-tag" style="color:rgba(255,255,255,0.6)">Chape Liquide Occitanie</div>
+    <h2>Besoin d'un devis<br />pour votre chantier ?</h2>
+    <p>Vous avez maintenant toutes les clés pour préparer votre chantier sereinement et choisir le bon interlocuteur. Si vous êtes en Ariège, Aude ou Haute-Garonne avec une surface de 50 m² ou plus, nous sommes disponibles pour étudier votre projet.</p>
+    <p>Devis gratuit transmis sous 48 h. Visite préalable dans nos 18 villes de couverture. Aucun engagement, aucun frais de déplacement.</p>
+    <div class="contact-block">
+      <div class="contact-line">📞 06 87 61 39 87</div>
+      <div class="contact-line">🌐 chape-liquide-occitanie.fr</div>
+      <div class="contact-line" style="margin-top:8px;opacity:0.6;font-size:9px;">EURL Balussou Cyril · Applicateur agréé Sika · Mirepoix, Ariège (09) · SIRET 533 165 684 00028</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
