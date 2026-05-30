@@ -5,12 +5,16 @@ exports.handler = async function (event) {
   try {
     payload = JSON.parse(event.body);
   } catch {
+    console.log('DEBUG body:', event.body);
     return { statusCode: 400, body: 'Invalid payload' };
   }
 
+  console.log('DEBUG form_name:', payload.form_name);
+  console.log('DEBUG email:', payload.data?.email);
+
   // Ne traiter que le formulaire guide-ebook
   if (payload.form_name !== 'guide-ebook') {
-    return { statusCode: 200, body: 'Ignored' };
+    return { statusCode: 200, body: 'Ignored: ' + payload.form_name };
   }
 
   const email = payload.data?.email;
