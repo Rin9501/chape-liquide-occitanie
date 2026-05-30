@@ -1,3 +1,10 @@
+# ── Redirection www → racine (SEO : évite le duplicate content) ────────────
+[[redirects]]
+  from   = "https://www.chapeliquide-occitanie.fr/*"
+  to     = "https://chapeliquide-occitanie.fr/:splat"
+  status = 301
+  force  = true
+
 [build]
   command   = "npm run build"
   publish   = "dist"
