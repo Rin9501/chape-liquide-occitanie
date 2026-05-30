@@ -28,10 +28,10 @@ exports.handler = async function (event) {
     },
   });
 
-  const siteUrl = 'https://chape-liquide-occitanie.fr';
+  const siteUrl = 'https://chapeliquide-occitanie.fr';
 
   await transporter.sendMail({
-    from: `"Chape Liquide Occitanie" <${process.env.GMAIL_USER}>`,
+    from: '"Chape Liquide Occitanie" <contact@chapeliquide-occitanie.fr>',
     to: email,
     subject: 'Votre guide chape liquide est prêt ✓',
     html: `
