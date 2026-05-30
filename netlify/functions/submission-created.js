@@ -30,7 +30,7 @@ exports.handler = async function (event) {
 
   const siteUrl = 'https://chapeliquide-occitanie.fr';
 
-  await transporter.sendMail({
+  try { await transporter.sendMail({
     from: '"Chape Liquide Occitanie" <contact@chapeliquide-occitanie.fr>',
     to: email,
     subject: 'Votre guide chape liquide est prêt ✓',
@@ -119,6 +119,11 @@ exports.handler = async function (event) {
 </html>
     `,
   });
+
+  } catch (err) {
+    console.error('SMTP ERROR:', err.message);
+    return { statusCode: 500, body: 'Email failed: ' + err.message };
+  }
 
   return { statusCode: 200, body: 'Email sent' };
 };
