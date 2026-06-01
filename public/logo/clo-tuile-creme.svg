@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Chape Liquide Occitanie — tuile blanc cassé">
+  <title>Chape Liquide Occitanie — tuile blanc cassé</title>
+  <rect width="100" height="100" fill="#F5F0EB"></rect>
+  <g transform="translate(15,15) scale(0.7)">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#C4522A" stroke-width="10"></circle>
+    <path d="M46.89 38.98 A13 13 0 1 0 46.89 61.02" fill="none" stroke="#2C2C2C" stroke-width="9"></path>
+    <path d="M58 37 V63" fill="none" stroke="#2C2C2C" stroke-width="9"></path>
+    <path d="M58 63 H70" fill="none" stroke="#C4522A" stroke-width="9"></path></g>
+</svg>
