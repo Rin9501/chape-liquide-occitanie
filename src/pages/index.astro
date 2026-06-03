@@ -43,7 +43,7 @@ import '../styles/global.css';
     "@type": "LocalBusiness",
     "name": "Chape Liquide Occitanie",
     "legalName": "EURL Balussou Cyril",
-    "description": "Applicateur agréé Sika spécialisé en chape liquide ciment, ravoirage isolant et plancher chauffant en Occitanie. Zone d'intervention : Ariège (09), Aude (11) et Haute-Garonne (31).",
+    "description": "Applicateur agréé Sika spécialisé en chape liquide ciment, ravoirage liquide et plancher chauffant en Occitanie. Zone d'intervention : Ariège (09), Aude (11) et Haute-Garonne (31).",
     "url": "https://chapeliquide-occitanie.fr",
     "telephone": "+33687613987",
     "address": {
@@ -68,7 +68,7 @@ import '../styles/global.css';
       "name": "Prestations chape liquide en Occitanie",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chape liquide ciment", "description": "Chape fluide haute resistance, ideale pour locaux commerciaux, garages et planchers chauffants." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravoirage isolant", "description": "Mise a niveau et isolation thermique avant coulage de chape." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravoirage liquide", "description": "Remise à niveau de dalle et passage des réseaux avant coulage de chape." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plancher chauffant hydraulique", "description": "Enrobage de serpentins hydrauliques avec chape liquide Sika." } }
       ]
     },
@@ -344,9 +344,9 @@ import '../styles/global.css';
 
   <div class="services-grid grid grid-cols-2 gap-6">
     {[
-      { n:'01', title:'Chape liquide ciment', desc:'Haute résistance mécanique. Idéale pour locaux humides, garages, sous-sols, surfaces commerciales. Produits Sika utilisés : ViscoChape, ViscoChape XLS, LevelChape HCS (sans chauffage sol). Option anhydrite (SyntiChape) sur grands projets sur demande.', specs:['Résistance C20 / C25','Séchage 21-28 j',"Jusqu'à 400 m²/j"], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
-      { n:'02', title:'Ravoirage isolant', desc:'Mise à niveau thermique et passage des réseaux avec Sika Betomouss — résistance thermique 6× supérieure au ravoirage standard. Idéal en rénovation sur plancher bois ou étages.', specs:['Sika Betomouss','Épaisseur 4-15 cm','Compatible RE2020'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage isolant avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
-      { n:'03', title:'Plancher chauffant', desc:'Enrobage des serpentins hydrauliques avec transmission thermique optimale.', specs:['Chape ciment Sika','λ 1,8 W/m·K','Mise en chauffe J+21'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
+      { n:'01', title:'Chape liquide ciment', desc:"La chape de référence pour maisons individuelles, logements collectifs et locaux tertiaires. Coulée par pompe depuis une centrale béton agréée Sika, elle s'autonivelle parfaitement sans intervention manuelle. Idéale en pose flottante sur isolant, désolidarisée ou adhérente selon le support. Produits mis en œuvre : Sika ViscoChape® et ViscoChape® XLS.", specs:['Circulable dès le lendemain — revêtement posable à 14 jours',"Grands volumes maîtrisés — jusqu'à 400 m²/jour et plus selon chantier",'Compatible carrelage, parquet, PVC, moquette'], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
+      { n:'02', title:'Ravoirage liquide', desc:"En rénovation, la dalle existante est rarement parfaitement plane. Le ravoirage liquide rattrape les défauts de niveau, noie les gaines électriques et canalisations, et crée un support parfaitement plan pour la pose de l'isolant thermo-acoustique — avant la chape de finition. Obligatoire selon DTU 52.10 en cas de défaut d'altimétrie. Circulable en 24 à 36h.", specs:['Remise à niveau de dalle en une journée','Noie gaines, câbles et canalisations existantes','Support idéal pour isolant avant chape de finition'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage liquide avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
+      { n:'03', title:'Plancher chauffant', desc:"L'enrobage des serpentins hydrauliques exige une formulation précise : le contact thermique entre le tube et la masse coulée conditionne le rendement du chauffage. Sika ViscoChape® et ViscoChape® XLS sont certifiées pour cet usage. Compatible avec les planchers chauffants à eau basse température et les systèmes réversibles.", specs:['Enrobage parfait des tubes — rendement chauffage maximal','Mise en chauffe progressive à J+21','Compatible tous systèmes eau basse température'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
     ].map((s) => (
       <a href={`#service-${s.n}`} class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
         <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
