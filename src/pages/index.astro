@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import DevisForm from '../components/DevisForm.astro';
 // TODO: ajouter N° agrément Sika quand confirmé lors du RDV du 1er juin
 ---
 <!DOCTYPE html>
@@ -10,9 +11,9 @@ import '../styles/global.css';
   <!-- Préchargement hero — améliore le LCP (Largest Contentful Paint) -->
   <link rel="preload" as="image" href="/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg" fetchpriority="high" />
   <title>Chape Liquide Occitanie — Applicateur agréé Sika, Ariège</title>
-  <meta name="description" content="Expert chape liquide ciment en Occitanie. Applicateur agréé Sika. Devis gratuit sous 48h, intervention dès 50m². Ariège (09), Aude (11), Haute-Garonne (31)." />
+  <meta name="description" content="Expert chape liquide ciment en Occitanie. Applicateur agréé Sika. Devis gratuit sous 48h. Ariège (09), Aude (11), Haute-Garonne (31)." />
   <meta property="og:title" content="Chape Liquide Occitanie — Applicateur agréé Sika" />
-  <meta property="og:description" content="Devis gratuit sous 48h. Intervention dès 50m². 18 villes Ariège, Aude, Haute-Garonne." />
+  <meta property="og:description" content="Devis gratuit sous 48h. 18 villes Ariège, Aude, Haute-Garonne." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -121,7 +122,7 @@ import '../styles/global.css';
         "name": "Quel est votre délai de séchage avant circulation ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours. Mise en chauffe progressive du plancher chauffant : J+21 minimum."
+          "text": "Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours."
         }
       },
       {
@@ -137,7 +138,7 @@ import '../styles/global.css';
         "name": "Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 18 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement."
+          "text": "Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dans nos 18 villes. Devis sur plan ou visite gratuite sans engagement."
         }
       }
     ]
@@ -214,11 +215,7 @@ import '../styles/global.css';
       </div>
 
       <!-- Spec readout -->
-      <div class="hero-stats grid grid-cols-3 border-t border-line pt-6">
-        <div>
-          <div class="spec mb-[6px]">Surface min.</div>
-          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">50 m²</div>
-        </div>
+      <div class="hero-stats grid grid-cols-2 border-t border-line pt-6">
         <div>
           <div class="spec mb-[6px]">Cadence</div>
           <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">400 m²/j</div>
@@ -346,7 +343,8 @@ import '../styles/global.css';
     {[
       { n:'01', title:'Chape liquide ciment', desc:"La chape de référence pour maisons individuelles, logements collectifs et locaux tertiaires. Coulée par pompe depuis une centrale béton agréée Sika, elle s'autonivelle parfaitement sans intervention manuelle. Idéale en pose flottante sur isolant, désolidarisée ou adhérente selon le support. Produits mis en œuvre : Sika ViscoChape® et ViscoChape® XLS.", specs:['Circulable dès le lendemain — revêtement posable à 14 jours',"Grands volumes maîtrisés — jusqu'à 400 m²/jour et plus selon chantier",'Compatible carrelage, parquet, PVC, moquette'], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
       { n:'02', title:'Ravoirage liquide', desc:"En rénovation, la dalle existante est rarement parfaitement plane. Le ravoirage liquide rattrape les défauts de niveau, noie les gaines électriques et canalisations, et crée un support parfaitement plan pour la pose de l'isolant thermo-acoustique — avant la chape de finition. Obligatoire selon DTU 52.10 en cas de défaut d'altimétrie. Circulable en 24 à 36h.", specs:['Remise à niveau de dalle en une journée','Noie gaines, câbles et canalisations existantes','Support idéal pour isolant avant chape de finition'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage liquide avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
-      { n:'03', title:'Plancher chauffant', desc:"L'enrobage des serpentins hydrauliques exige une formulation précise : le contact thermique entre le tube et la masse coulée conditionne le rendement du chauffage. Sika ViscoChape® et ViscoChape® XLS sont certifiées pour cet usage. Compatible avec les planchers chauffants à eau basse température et les systèmes réversibles.", specs:['Enrobage parfait des tubes — rendement chauffage maximal','Mise en chauffe progressive à J+21','Compatible tous systèmes eau basse température'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
+      { n:'03', title:'Plancher chauffant', desc:"L'enrobage des serpentins hydrauliques exige une formulation précise : le contact thermique entre le tube et la masse coulée conditionne le rendement du chauffage. Sika ViscoChape® et ViscoChape® XLS sont certifiées pour cet usage. Compatible avec les planchers chauffants à eau basse température et les systèmes réversibles.", specs:['Enrobage parfait des tubes — rendement chauffage maximal','Compatible tous systèmes eau basse température','Devis et PV de chantier transmis'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique avec chape Sika — Montgaillard, Ariège (09)' },
+      { n:'04', title:'Chape haute résistance P4S', desc:"Pour les locaux à fortes sollicitations mécaniques : hypermarchés, halls de gare, locaux commerciaux classés P4S. La Sika ViscoChape® P4S est une chape fluide fibrée sous avis technique, spécifiquement développée pour répondre aux exigences du classement UPEC P4S. Mise en œuvre uniquement en pose désolidarisée, sur support neuf ou en rénovation.", specs:['Productivité > 1 000 m²/jour sur grands chantiers','Classement UPEC P4S — exigences commerciales et tertiaires','Sous avis technique DTA — garantie procédé et assurabilité'], img:'/uploads/chape-p4s-commercial.jpeg', imgAlt:'Chape haute résistance P4S en local commercial — Applicateur agréé Sika CLO' },
     ].map((s) => (
       <a href={`#service-${s.n}`} class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
         <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
@@ -620,7 +618,7 @@ import '../styles/global.css';
         },
         {
           q:'Quel est votre délai de séchage avant circulation ?',
-          a:'Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours. Mise en chauffe progressive du plancher chauffant : J+21 minimum.'
+          a:'Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours.'
         },
         {
           q:'Comment se déroule une journée de coulage ?',
@@ -628,7 +626,7 @@ import '../styles/global.css';
         },
         {
           q:'Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?',
-          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dès 50 m² dans nos 18 villes. La surface minimale est liée au transport en camion-toupie, pas à une contrainte technique. Devis sur plan ou visite gratuite sans engagement.'
+          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dans nos 18 villes. Devis sur plan ou visite gratuite sans engagement.'
         },
       ].map((item, i) => (
         <details class="faq-item">
@@ -662,17 +660,8 @@ import '../styles/global.css';
         Mesure, étude, devis ferme sous 48 h ouvrées. Pas d'engagement, pas de relance commerciale.
       </p>
     </div>
-    <div class="flex flex-col gap-[14px]">
-      <a href="#devis" class="btn btn-primary justify-between py-5 px-[26px] text-[17px]">
-        Demander un devis <span class="arrow">→</span>
-      </a>
-      <a href="tel:0687613987" class="btn btn-ghost-light justify-between py-5 px-[26px] text-[17px]">
-        <span>
-          <span class="spec block text-white/50 text-[10px] mb-[2px]">Appel direct Cyril</span>
-          <span class="mono text-[19px] font-semibold">06 87 61 39 87</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
+    <div>
+      <DevisForm />
     </div>
   </div>
 </section>
@@ -695,7 +684,7 @@ import '../styles/global.css';
       </p>
     </div>
     {[
-      { label: 'Services',   items: ['Chape ciment','Ravoirage','Plancher chauffant'] },
+      { label: 'Services',   items: ['Chape ciment','Ravoirage','Plancher chauffant','Chape P4S'] },
       { label: 'Zones',      items: ['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 18 villes →'] },
       { label: 'Navigation', items: ['Notre expertise','Réalisations','Guide gratuit','Devis 48h','Contact'] },
     ].map(({ label, items }) => (

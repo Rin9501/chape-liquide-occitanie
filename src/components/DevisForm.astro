@@ -1,0 +1,103 @@
+---
+// Formulaire de demande de devis — Netlify Forms + Supabase via submission-created.js
+---
+<form
+  name="demande-devis"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci-devis"
+  class="flex flex-col gap-3">
+
+  <input type="hidden" name="form-name" value="demande-devis" />
+  <input type="hidden" name="bot-field" class="hidden" />
+
+  <!-- Nom + Téléphone -->
+  <div class="flex gap-3 max-[520px]:flex-col">
+    <input
+      name="nom"
+      type="text"
+      placeholder="Votre nom / prénom"
+      required
+      class="bg-transparent border border-white/25 text-white placeholder:text-white/40 rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60" />
+    <input
+      name="telephone"
+      type="tel"
+      placeholder="06 XX XX XX XX"
+      required
+      class="bg-transparent border border-white/25 text-white placeholder:text-white/40 rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60" />
+  </div>
+
+  <!-- Email -->
+  <input
+    name="email"
+    type="email"
+    placeholder="votre@email.fr"
+    required
+    class="bg-transparent border border-white/25 text-white placeholder:text-white/40 rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60" />
+
+  <!-- Département + Surface -->
+  <div class="flex gap-3 max-[520px]:flex-col">
+    <select
+      name="departement"
+      required
+      class="bg-ink border border-white/25 text-white rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60 appearance-none">
+      <option value="" disabled selected>Département</option>
+      <option value="09">Ariège (09)</option>
+      <option value="11">Aude (11)</option>
+      <option value="31">Haute-Garonne (31)</option>
+      <option value="autre">Autre</option>
+    </select>
+    <input
+      name="surface_m2"
+      type="number"
+      min="1"
+      placeholder="Surface (m²)"
+      required
+      class="bg-transparent border border-white/25 text-white placeholder:text-white/40 rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60" />
+  </div>
+
+  <!-- Type de chape -->
+  <select
+    name="type_chape"
+    required
+    class="bg-ink border border-white/25 text-white rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60 appearance-none">
+    <option value="" disabled selected>Type de chape</option>
+    <option value="chape-ciment">Chape liquide ciment</option>
+    <option value="plancher-chauffant">Plancher chauffant</option>
+    <option value="ravoirage">Ravoirage liquide</option>
+    <option value="chape-p4s">Chape haute résistance P4S</option>
+    <option value="ne-sais-pas">Je ne sais pas</option>
+  </select>
+
+  <!-- Message optionnel -->
+  <textarea
+    name="message"
+    placeholder="Informations complémentaires (optionnel)"
+    rows="3"
+    class="bg-transparent border border-white/25 text-white placeholder:text-white/40 rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60 resize-none"></textarea>
+
+  <!-- RGPD -->
+  <label class="flex gap-3 items-start text-[12px] text-white/55 leading-[1.5] cursor-pointer">
+    <input type="checkbox" name="rgpd" required class="mt-[3px] shrink-0 accent-accent" />
+    <span>
+      Vos données sont utilisées uniquement pour traiter votre demande de devis.
+      Conformément au RGPD, vous disposez d'un droit d'accès et de suppression.
+      <a href="/politique-confidentialite" class="underline hover:text-white/80">Politique de confidentialité</a>
+    </span>
+  </label>
+
+  <!-- Submit -->
+  <button type="submit" class="btn btn-primary justify-between py-5 px-[26px] text-[17px]">
+    Envoyer ma demande <span class="arrow">→</span>
+  </button>
+
+  <!-- CTA téléphone conservé -->
+  <a href="tel:0687613987" class="btn btn-ghost-light justify-between py-5 px-[26px] text-[17px]">
+    <span>
+      <span class="spec block text-white/50 text-[10px] mb-[2px]">Appel direct Cyril</span>
+      <span class="mono text-[19px] font-semibold">06 87 61 39 87</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+</form>
