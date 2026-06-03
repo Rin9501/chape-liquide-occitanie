@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-const { createClient } = require('@supabase/supabase-js');
 
 exports.handler = async function (event) {
   let payload;
@@ -126,22 +125,30 @@ exports.handler = async function (event) {
     const d = payload.data || {};
     const { nom, telephone, email, departement, surface_m2, type_chape, message } = d;
 
-    // 1. Insert dans Supabase
-    const supabase = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
+    // 1. Insert dans Supabase via REST API (fetch natif Node 20)
+    const supabaseRes = await fetch(
+      `${process.env.SUPABASE_URL}/rest/v1/leads`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': process.env.SUPABASE_SERVICE_ROLE_KEY,
+          'Authorization': `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
+          nom,
+          telephone,
+          email,
+          departement,
+          surface_m2: parseInt(surface_m2) || 0,
+          type_chape,
+          message: message || null,
+        }),
+      }
     );
-    const { error: dbError } = await supabase.from('leads').insert({
-      nom,
-      telephone,
-      email,
-      departement,
-      surface_m2: parseInt(surface_m2) || 0,
-      type_chape,
-      message: message || null,
-    });
-    if (dbError) {
-      console.error('Supabase insert error:', dbError);
+    if (!supabaseRes.ok) {
+      console.error('Supabase insert error:', supabaseRes.status, await supabaseRes.text());
     }
 
     // 2. Email notification à Cyril
