@@ -42,14 +42,16 @@ import SiteFooter from '../components/SiteFooter.astro';
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "name": "Chape Liquide Occitanie",
     "legalName": "EURL Balussou Cyril",
-    "description": "Applicateur agréé Sika n°3197-2025 spécialisé en chape liquide ciment, ravoirage liquide et plancher chauffant en Occitanie. Zone d'intervention : Ariège (09), Aude (11) et Haute-Garonne (31).",
+    "description": "Applicateur agréé Sika n°3197-2025 spécialisé en chape liquide ciment, ravoirage liquide et plancher chauffant en Occitanie. Zone d'intervention : Ariège (09), Aude (11) et Haute-Garonne (31). 480+ chantiers depuis 2016.",
     "url": "https://chapeliquide-occitanie.fr",
     "telephone": "+33687613987",
+    "email": "contact@chapeliquide-occitanie.fr",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "2 rue des artisans",
       "addressLocality": "Mirepoix",
       "postalCode": "09500",
       "addressRegion": "Ariège",
@@ -65,17 +67,24 @@ import SiteFooter from '../components/SiteFooter.astro';
       { "@type": "AdministrativeArea", "name": "Aude" },
       { "@type": "AdministrativeArea", "name": "Haute-Garonne" }
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1"
+    },
+    "sameAs": ["https://share.google/In62pPxyxtGlN47Tg"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Prestations chape liquide en Occitanie",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chape liquide ciment", "description": "Chape fluide haute resistance, ideale pour locaux commerciaux, garages et planchers chauffants." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravoirage liquide", "description": "Remise à niveau de dalle et passage des réseaux avant coulage de chape." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plancher chauffant hydraulique", "description": "Enrobage de serpentins hydrauliques avec chape liquide Sika." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chape liquide ciment", "description": "Chape fluide autonivelante à liant hydraulique, idéale pour construction neuve, rénovation, locaux commerciaux et planchers chauffants. Planéité garantie à 2 mm sous règle de 2 m." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravoirage liquide", "description": "Remise à niveau de dalle existante, enrobage des gaines électriques et canalisations avant coulage de chape de finition." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plancher chauffant hydraulique", "description": "Enrobage de serpentins hydrauliques basse température avec chape liquide Sika Agilia. Épaisseur minimale 28 mm au-dessus des tubes, conformément au DTU 26.2." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chape haute résistance P4S", "description": "Sika ViscoChape® P4S, chape fluide fibrée classement UPEC P4S, sous avis technique DTA, pour locaux à trafic intensif." } }
       ]
     },
     "taxID": "533 165 684 00028",
-    "priceRange": "EUR EUR",
+    "priceRange": "€€",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -99,15 +108,15 @@ import SiteFooter from '../components/SiteFooter.astro';
         "name": "Quel délai entre le coulage et la pose du carrelage ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "28 jours indicatifs pour la chape ciment. Nous vous transmettons le PV de mesure d'humidité avant la pose du revêtement."
+          "text": "La chape liquide Sika Agilia est circulable dès le lendemain du coulage. Pour la pose du revêtement : 14 jours minimum pour carrelage courant (format ≤ 60×60 cm) ; 21 à 28 jours pour grands formats (> 60×60 cm) ou parquet collé. Le seuil d'humidité résiduelle doit être inférieur à 2,5 CM% avant toute pose — nous transmettons le PV de mesure d'humidité. Ces délais sont sensiblement plus courts qu'une chape traditionnelle (4 à 6 semaines)."
         }
       },
       {
         "@type": "Question",
-        "name": "Quel prix au m² en Occitanie en 2026 ?",
+        "name": "Quel prix au m² pour une chape liquide en Occitanie en 2026 ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le tarif dépend de la surface, de l'épaisseur, du type de chape et de l'accessibilité du chantier. Chaque situation est différente : une petite surface ou un accès difficile coûte plus cher au m² qu'une grande surface ouverte. Devis gratuit et précis sous 48h, sans engagement."
+          "text": "Le prix d'une chape liquide varie selon 4 facteurs principaux : la surface (plus c'est grand, moins c'est cher au m²), l'épaisseur (45 mm en pose flottante, 28 mm sur plancher chauffant), le type de chape (ciment, P4S, plancher chauffant) et l'accessibilité du chantier (étage, accès pompe). Nous ne communiquons pas de tarif forfaitaire — chaque devis est établi après visite gratuite ou étude sur plans. Délai de devis : 48h ouvrées. Sans engagement."
         }
       },
       {
@@ -115,15 +124,15 @@ import SiteFooter from '../components/SiteFooter.astro';
         "name": "Travaillez-vous avec les planchers chauffants ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, c'est même 70 % de notre activité. Nous intervenons après pose des nappes par votre plombier-chauffagiste, et nous coulons en respectant les épaisseurs d'enrobage prescrites par le fabricant (4 cm au-dessus du tube en général)."
+          "text": "Oui, c'est 70 % de notre activité. Nous intervenons après la pose des nappes par votre plombier-chauffagiste. L'épaisseur minimale est de 28 mm au-dessus des tubes, conformément au DTU 26.2. La chape liquide Sika Agilia enrobe parfaitement les serpentins hydrauliques, ce qui améliore le rendement thermique par rapport à une chape traditionnelle. Compatible avec tous les systèmes à eau basse température et les planchers réversibles. PV de chantier transmis."
         }
       },
       {
         "@type": "Question",
-        "name": "Quel est votre délai de séchage avant circulation ?",
+        "name": "Quel est le délai de séchage avant circulation ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours."
+          "text": "La chape liquide sèche en 3 paliers selon le DTU 26.2 : circulation piétonne légère possible dès 24 à 48h après coulage ; charges lourdes, échafaudages et pose des cloisons à partir de 7 jours ; pose du revêtement de sol à partir de 14 jours (carrelage courant) ou 21 à 28 jours (grands formats, parquet collé). Ces délais peuvent varier selon la température ambiante et l'hygrométrie du chantier."
         }
       },
       {
@@ -131,7 +140,7 @@ import SiteFooter from '../components/SiteFooter.astro';
         "name": "Comment se déroule une journée de coulage ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Arrivée de l'équipe et mise en place de la pompe Lancy entre 7h30 et 8h. Préparation des seuils et joints périphériques. Coulage et lissage barbotin par nos 2 applicateurs. Nous laissons le chantier balisé et propre."
+          "text": "Arrivée de l'équipe et mise en place de la pompe Lancy entre 7h30 et 8h. La centrale béton agréée Sika livre le produit Sika Agilia directement sur site. Nos 2 applicateurs préparent les seuils, posent les joints périphériques et le film de désolidarisation. Le coulage est continu jusqu'à 400 m²/jour. Lissage barbotin inclus. Chantier balisé et rendu propre en fin de journée."
         }
       },
       {
@@ -139,7 +148,23 @@ import SiteFooter from '../components/SiteFooter.astro';
         "name": "Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dans nos 18 villes. Devis sur plan ou visite gratuite sans engagement."
+          "text": "Les deux, sans distinction. Nous intervenons sur maisons individuelles neuves, rénovations, logements collectifs, locaux commerciaux, EHPAD, hôtels et bâtiments tertiaires. Pas de surface minimale stricte — nous évaluons la faisabilité selon l'accès et la distance. Zone couverte : 18 villes en Ariège (09), Aude (11) et Haute-Garonne (31). Devis sur plan ou visite gratuite, sans engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que l'agrément Sika et pourquoi est-ce important ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'agrément Sika n°3197-2025 certifie que l'applicateur (EURL Balussou Cyril) est formé et habilité à mettre en œuvre les produits Sika Agilia — chapes fluides à liant hydraulique. Concrètement, cela garantit : une formulation maîtrisée conforme aux spécifications Sika, un PV de chantier transmis au maître d'ouvrage, et une traçabilité produit complète. La majorité des applicateurs en Ariège travaillent en Lafarge ; l'agrément Sika est le principal différenciant de Chape Liquide Occitanie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre chape liquide et chape traditionnelle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La chape liquide (ou chape fluide) est pompée et autonivelante : elle s'étale seule sans dressage manuel grâce à sa fluidité. Résultat : planéité à 2 mm sous règle de 2 m (vs 5 mm pour la chape traditionnelle), séchage plus rapide (circulable en 24h vs 48-72h), épaisseur réduite, et cadence jusqu'à 400 m²/jour. La chape traditionnelle est appliquée à la règle par un applicateur — elle reste pertinente pour les très petites surfaces ou les profils atypiques. Pour toute surface supérieure à 50 m² avec plancher chauffant, la chape liquide est systématiquement recommandée."
         }
       }
     ]
@@ -556,7 +581,7 @@ import SiteFooter from '../components/SiteFooter.astro';
     <div>
       <div class="eyebrow"><span class="num">07</span>Questions fréquentes</div>
       <h2 class="h-section text-[56px] mt-6 mb-8">
-        Les six questions que tout le monde nous pose.
+        Les huit questions que tout le monde nous pose.
       </h2>
       <p class="lead text-[16px]">
         Si la vôtre n'y est pas, appelez-nous au
@@ -571,27 +596,35 @@ import SiteFooter from '../components/SiteFooter.astro';
       {[
         {
           q:'Quel délai entre le coulage et la pose du carrelage ?',
-          a:'28 jours indicatifs pour la chape ciment. Nous vous transmettons le PV de mesure d\'humidité avant la pose du revêtement.'
+          a:'La chape liquide Sika Agilia est circulable dès le lendemain du coulage. Pour la pose du revêtement : 14 jours minimum pour carrelage courant (format ≤ 60×60 cm) ; 21 à 28 jours pour grands formats ou parquet collé. Le seuil d\'humidité résiduelle doit être inférieur à 2,5 CM% avant toute pose — nous transmettons le PV de mesure. Ces délais sont plus courts qu\'une chape traditionnelle (4 à 6 semaines).'
         },
         {
-          q:'Quel prix au m² en Occitanie en 2026 ?',
-          a:'Le tarif dépend de la surface, de l\'épaisseur, du type de chape et de l\'accessibilité du chantier. Chaque situation est différente : une petite surface ou un accès difficile coûte plus cher au m² qu\'une grande surface ouverte. Devis gratuit et précis sous 48h, sans engagement.'
+          q:'Quel prix au m² pour une chape liquide en Occitanie en 2026 ?',
+          a:'Le prix varie selon 4 facteurs : la surface (plus c\'est grand, moins c\'est cher au m²), l\'épaisseur (45 mm en pose flottante, 28 mm sur plancher chauffant), le type de chape (ciment, P4S, plancher chauffant) et l\'accessibilité du chantier. Nous ne communiquons pas de tarif forfaitaire — chaque devis est établi après visite gratuite ou étude sur plans. Délai : 48h ouvrées, sans engagement.'
         },
         {
           q:'Travaillez-vous avec les planchers chauffants ?',
-          a:'Oui, c\'est même 70 % de notre activité. Nous intervenons après pose des nappes par votre plombier-chauffagiste, et nous coulons en respectant les épaisseurs d\'enrobage prescrites par le fabricant (4 cm au-dessus du tube en général).'
+          a:'Oui, c\'est 70 % de notre activité. L\'épaisseur minimale est 28 mm au-dessus des tubes, conformément au DTU 26.2. La chape liquide Sika Agilia enrobe parfaitement les serpentins hydrauliques et améliore le rendement thermique vs une chape traditionnelle. Compatible avec tous les systèmes à eau basse température. PV de chantier transmis.'
         },
         {
-          q:'Quel est votre délai de séchage avant circulation ?',
-          a:'Circulation piétonne légère possible 24 à 48h après coulage. Charge lourde, échafaudage, pose des cloisons : 7 jours.'
+          q:'Quel est le délai de séchage avant circulation ?',
+          a:'3 paliers selon le DTU 26.2 : circulation piétonne légère dès 24 à 48h ; charges lourdes et pose des cloisons à partir de 7 jours ; revêtement de sol à partir de 14 jours (carrelage courant) ou 21 à 28 jours (grands formats, parquet collé). Ces délais varient selon la température et l\'hygrométrie du chantier.'
         },
         {
           q:'Comment se déroule une journée de coulage ?',
-          a:'Arrivée de l\'équipe et mise en place de la pompe Lancy entre 7h30 et 8h. Préparation des seuils et joints périphériques. Coulage et lissage barbotin par nos 2 applicateurs. Nous laissons le chantier balisé et propre.'
+          a:'Arrivée entre 7h30 et 8h, mise en place de la pompe Lancy. La centrale béton agréée Sika livre le produit Sika Agilia sur site. Préparation des seuils, joints périphériques et film de désolidarisation. Coulage continu jusqu\'à 400 m²/jour par nos 2 applicateurs. Lissage barbotin inclus. Chantier balisé et rendu propre.'
         },
         {
           q:'Intervenez-vous sur les maisons individuelles ou seulement les chantiers pro ?',
-          a:'Les deux. Maisons neuves, rénovations, locaux commerciaux, EHPAD, hôtels — nous intervenons sur tous types de chantiers dans nos 18 villes. Devis sur plan ou visite gratuite sans engagement.'
+          a:'Les deux, sans distinction. Maisons individuelles neuves, rénovations, logements collectifs, locaux commerciaux, EHPAD, hôtels. Pas de surface minimale stricte. Zone couverte : 18 villes en Ariège (09), Aude (11) et Haute-Garonne (31). Devis sur plan ou visite gratuite, sans engagement.'
+        },
+        {
+          q:'Qu\'est-ce que l\'agrément Sika et pourquoi est-ce important ?',
+          a:'L\'agrément Sika n°3197-2025 certifie que EURL Balussou Cyril est formé et habilité à mettre en œuvre les produits Sika Agilia. Concrètement : formulation maîtrisée conforme aux specs Sika, PV de chantier transmis au maître d\'ouvrage, traçabilité produit complète. La majorité des applicateurs en Ariège travaillent en Lafarge — l\'agrément Sika est le principal différenciant de Chape Liquide Occitanie.'
+        },
+        {
+          q:'Quelle est la différence entre chape liquide et chape traditionnelle ?',
+          a:'La chape liquide est pompée et autonivelante — elle s\'étale seule sans dressage manuel. Planéité à 2 mm sous règle de 2 m (vs 5 mm pour le traditionnel), séchage en 24h (vs 48-72h), épaisseur réduite, cadence jusqu\'à 400 m²/jour. La chape traditionnelle reste pertinente pour les très petites surfaces ou les profils atypiques. Pour toute surface > 50 m² avec plancher chauffant, la chape liquide est systématiquement recommandée.'
         },
       ].map((item, i) => (
         <details class="faq-item">
