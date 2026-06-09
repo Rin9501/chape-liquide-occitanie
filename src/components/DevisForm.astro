@@ -1,5 +1,9 @@
 ---
 // Formulaire de demande de devis — Netlify Forms + Supabase via submission-created.js
+interface Props {
+  dept?: '09' | '11' | '31' | '';
+}
+const { dept = '' } = Astro.props;
 ---
 <form
   name="demande-devis"
@@ -42,10 +46,10 @@
       name="departement"
       required
       class="bg-ink border border-white/25 text-white rounded-[3px] px-4 py-3 text-[15px] w-full focus:outline-none focus:border-white/60 appearance-none">
-      <option value="" disabled selected>Département</option>
-      <option value="09">Ariège (09)</option>
-      <option value="11">Aude (11)</option>
-      <option value="31">Haute-Garonne (31)</option>
+      <option value="" disabled selected={dept === ''}>Département</option>
+      <option value="09" selected={dept === '09'}>Ariège (09)</option>
+      <option value="11" selected={dept === '11'}>Aude (11)</option>
+      <option value="31" selected={dept === '31'}>Haute-Garonne (31)</option>
       <option value="autre">Autre</option>
     </select>
     <input

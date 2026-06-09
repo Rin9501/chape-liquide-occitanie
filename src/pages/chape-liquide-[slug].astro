@@ -1,0 +1,392 @@
+---
+import '../styles/global.css';
+import DevisForm from '../components/DevisForm.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { villes } from '../data/villes';
+import type { VilleData } from '../data/villes';
+
+export function getStaticPaths() {
+  return villes.map((ville) => ({
+    params: { slug: ville.slug },
+    props: { ville },
+  }));
+}
+
+interface Props {
+  ville: VilleData;
+}
+
+const { ville } = Astro.props;
+
+const faqAll = [
+  ...ville.faqLocale,
+  {
+    question: 'Quelle épaisseur pour une chape liquide ?',
+    reponse: 'En pose flottante sur isolant : 45 mm minimum. Sur plancher chauffant : 28 mm minimum au-dessus des tubes. En désolidarisée ou adhérente : 30 à 40 mm selon le support. Ces épaisseurs garantissent la résistance mécanique et évitent la fissuration.',
+  },
+  {
+    question: 'Combien de temps avant de poser le carrelage ?',
+    reponse: 'La chape est circulable dès le lendemain. La pose du carrelage est possible à partir de 14 jours pour des formats courants. Pour les grands formats (>60×60 cm) ou les parquets collés, comptez 21 à 28 jours selon l\'humidité résiduelle.',
+  },
+  {
+    question: 'Intervenez-vous en rénovation et pas seulement en construction neuve ?',
+    reponse: 'Oui, nous intervenons sur les deux. En rénovation, nous réalisons souvent un ravoirage préalable pour remettre à niveau la dalle existante, puis la chape de finition. Devis sur visite gratuite — l\'état du support conditionne la solution technique.',
+  },
+];
+
+const siteUrl = 'https://chapeliquide-occitanie.fr';
+const canonicalUrl = `${siteUrl}/chape-liquide-${ville.slug}`;
+
+const jsonLdLocalBusiness = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  name: `Chape Liquide Occitanie — ${ville.nom}`,
+  description: ville.metaDescription,
+  url: canonicalUrl,
+  telephone: '+33687613987',
+  email: 'contact@chapeliquide-occitanie.fr',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2 rue des artisans',
+    addressLocality: 'Mirepoix',
+    postalCode: '09500',
+    addressRegion: 'Ariège',
+    addressCountry: 'FR',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: ville.nom,
+    postalCode: ville.codePostal,
+    addressRegion: ville.departementNom,
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '1',
+  },
+};
+
+const jsonLdFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqAll.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.reponse,
+    },
+  })),
+};
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" as="image" href={ville.heroImage} fetchpriority="high" />
+  <title>{ville.metaTitle}</title>
+  <meta name="description" content={ville.metaDescription} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={ville.metaTitle} />
+  <meta property="og:description" content={ville.metaDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={`${siteUrl}${ville.heroImage}`} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdLocalBusiness)} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />
+</head>
+<body>
+
+<SiteHeader />
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════
+     01 — HERO localisé
+═══════════════════════════════════════════════════════ -->
+<section class="hero-section relative overflow-hidden bg-bg">
+  <div class="hero-grid grid grid-cols-2 min-h-[640px]">
+
+    <!-- Left content -->
+    <div class="hero-content flex flex-col justify-between p-[80px_64px_64px]">
+      <div>
+        <div class="eyebrow mb-10">
+          <span class="num">01</span>Chape liquide · {ville.nom} ({ville.dept})
+        </div>
+        <h1 class="font-display font-bold text-[52px] tracking-[-0.03em] leading-[1.0] mb-6 text-ink max-w-[560px]">
+          {ville.heroAccroche}
+        </h1>
+        <p class="lead text-[18px] max-w-[480px] mb-10">
+          {ville.heroIntro}
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="#devis" class="btn btn-primary py-4 px-[22px] text-[16px]">
+            Devis gratuit sous 48h <span class="arrow">→</span>
+          </a>
+          <a href="tel:0687613987" class="btn btn-ghost-dark py-4 px-[22px] text-[16px]">
+            <span class="font-mono font-semibold">06 87 61 39 87</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-specs grid grid-cols-2 gap-6 pt-12 border-t border-line mt-12">
+        <div>
+          <div class="spec mb-[6px]">Agrément</div>
+          <div class="font-mono text-[15px] font-medium tracking-tight2 text-ink">Sika n°3197-2025</div>
+        </div>
+        <div>
+          <div class="spec mb-[6px]">Délai devis</div>
+          <div class="font-mono text-[22px] font-medium tracking-tight2 text-ink">&lt; 48 h</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right image panel -->
+    <div class="hero-img relative overflow-hidden bg-ink">
+      <img src={ville.heroImage} alt={ville.heroImageAlt}
+        width="1200" height="900" fetchpriority="high"
+        class="w-full h-full object-cover brightness-[0.92]" />
+      <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white">
+        <div class="inline-block px-[10px] py-[6px] bg-black/50 backdrop-blur-sm font-mono text-[11px] tracking-wide6 uppercase">
+          {ville.nom} · {ville.departementNom} ({ville.dept})
+        </div>
+        <div class="spec text-white/70 text-[10px]">CLO · 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     TRUST BAND — Sika + chiffres clés
+═══════════════════════════════════════════════════════ -->
+<section class="bg-ink text-white py-9 px-5 md:px-16">
+  <div class="trust-grid grid grid-cols-[1.1fr_3fr] gap-16 items-center">
+    <div class="flex items-center gap-[18px] px-[18px] py-[14px] border border-white/[0.18] rounded-[3px]">
+      <img src="/uploads/layout_sika_triangle.png" alt="Logo Sika" class="w-14 h-14 object-contain shrink-0" />
+      <div>
+        <div class="spec text-white/55 text-[10px] mb-1">Agrément</div>
+        <div class="font-display font-semibold text-[15px] leading-[1.2]">
+          Applicateur agréé Sika<br />
+          <span class="mono text-[12px] text-white/60 font-normal">n°3197-2025 · Occitanie</span>
+        </div>
+      </div>
+    </div>
+    <div class="trust-numbers grid grid-cols-4 gap-8">
+      {[
+        { val: 'Centaines',    label: 'de chantiers livrés' },
+        { val: 'Des milliers', label: 'de m² coulés' },
+        { val: '10 ans',       label: "d'expérience chape" },
+        { val: '48 h',         label: 'Délai devis garanti' },
+      ].map(({ val, label }) => (
+        <div>
+          <div class="font-display font-bold text-[38px] tracking-tight3 leading-none">{val}</div>
+          <div class="spec text-white/55 mt-2 text-[11px]">{label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     02 — POURQUOI NOUS
+═══════════════════════════════════════════════════════ -->
+<section class="section-pad relative bg-bg py-[120px] px-16 pb-[100px]" id="expertise">
+  <span class="cross-mark top-[60px] left-16"></span>
+  <span class="cross-mark top-[60px] right-16"></span>
+
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-[72px]">
+    <div>
+      <div class="eyebrow"><span class="num">02</span>Pourquoi nous</div>
+      <h2 class="h-section text-[56px] mt-6">
+        Quatre raisons de signer avec nous, pas avec un autre.
+      </h2>
+    </div>
+    <div class="split-2col-lead pt-12">
+      <p class="lead text-[19px] max-w-[540px]">
+        On ne fait que de la chape liquide. Pas de la maçonnerie, pas du carrelage, pas du second œuvre généraliste. Cette spécialisation, c'est ce qui sécurise votre planning et votre planéité.
+      </p>
+    </div>
+  </div>
+
+  <div class="reasons-grid grid grid-cols-4">
+    {[
+      { n:'01', title:'Applicateur agréé Sika', body:'La majorité des artisans Ariège travaillent en Lafarge. Nous coulons en Sika Agilia : garantie procédé n°3197-2025, traçabilité produit, PV de chantier transmis.', tag:'Différenciation' },
+      { n:'02', title:'Devis sous 48 h ouvrées', body:'Mesure des cotes sur plan ou visite gratuite si chantier dans nos 18 villes. Vous recevez le devis ferme et détaillé sous 48 heures, pas un mois plus tard.', tag:'Engagement' },
+      { n:'03', title:"Cadence jusqu'à 400 m²/jour", body:"Pompe Lancy professionnelle, livraison en camion toupie, équipe de 2 applicateurs. Sur les grandes surfaces (>300 m²), le coulage s'enchaîne sans rupture de charge.", tag:'Capacité' },
+      { n:'04', title:'1h30 autour de Mirepoix', body:'18 villes desservies en Ariège, Aude et Haute-Garonne. Pas de surcoût déplacement dans la zone. Étude possible au-delà sur demande.', tag:'Couverture' },
+    ].map((it, i) => (
+      <div class={`reason-card bg-bg-warm flex flex-col justify-between min-h-[320px] p-[32px_28px_28px] border border-line${i > 0 ? ' border-l-0' : ''}`}>
+        <div>
+          <div class="flex justify-between items-baseline mb-7">
+            <span class="font-mono font-medium text-accent text-[13px]">{it.n}</span>
+            <span class="spec text-[9px]">{it.tag}</span>
+          </div>
+          <h3 class="font-display font-bold text-[22px] tracking-tight2 leading-[1.1] mb-4">{it.title}</h3>
+          <p class="text-[14px] leading-[1.55] text-ink-soft">{it.body}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     03 — NOS SERVICES
+═══════════════════════════════════════════════════════ -->
+<section id="services" class="section-pad bg-bg-deep py-[120px] px-16 pb-[100px]">
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-16 items-end">
+    <div>
+      <div class="eyebrow"><span class="num">03</span>Nos services</div>
+      <h2 class="h-section text-[56px] mt-6">Quatre prestations, un seul applicateur.</h2>
+    </div>
+    <div class="pb-3">
+      <a href="#expertise" class="font-display font-semibold text-[15px] border-b border-ink pb-1">
+        Voir le dossier technique complet <span class="font-mono">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="services-grid grid grid-cols-2 gap-6">
+    {[
+      { n:'01', title:'Chape liquide ciment', desc:"La chape de référence pour maisons individuelles, logements collectifs et locaux tertiaires. Coulée par pompe depuis une centrale béton agréée Sika, elle s'autonivelle parfaitement sans intervention manuelle. Idéale en pose flottante sur isolant, désolidarisée ou adhérente selon le support.", specs:['Circulable dès le lendemain — revêtement posable à 14 jours',"Grands volumes maîtrisés — jusqu'à 400 m²/jour",'Compatible carrelage, parquet, PVC, moquette'], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment" },
+      { n:'02', title:'Ravoirage liquide', desc:"En rénovation, la dalle existante est rarement parfaitement plane. Le ravoirage liquide rattrape les défauts de niveau, noie les gaines électriques et canalisations, et crée un support parfaitement plan pour la pose de l'isolant thermo-acoustique.", specs:['Remise à niveau de dalle en une journée','Noie gaines, câbles et canalisations existantes','Support idéal pour isolant avant chape de finition'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage liquide avec passage de gaines' },
+      { n:'03', title:'Plancher chauffant', desc:"L'enrobage des serpentins hydrauliques exige une formulation précise : le contact thermique entre le tube et la masse coulée conditionne le rendement du chauffage. Compatible avec les planchers chauffants à eau basse température et les systèmes réversibles.", specs:['Enrobage parfait des tubes — rendement chauffage maximal','Compatible tous systèmes eau basse température','PV de chantier transmis'], img:'/uploads/plancher-chauffant-montgaillard.jpeg', imgAlt:'Enrobage plancher chauffant hydraulique' },
+      { n:'04', title:'Chape haute résistance P4S', desc:"Pour les locaux à fortes sollicitations mécaniques : hypermarchés, halls de gare, locaux commerciaux classés P4S. La Sika ViscoChape® P4S est une chape fluide fibrée sous avis technique, spécifiquement développée pour le classement UPEC P4S.", specs:['Productivité > 1 000 m²/jour sur grands chantiers','Classement UPEC P4S — exigences commerciales','Sous avis technique DTA — garantie procédé'], img:'/uploads/Chape-P4S-commercial.jpg', imgAlt:'Chape haute résistance P4S en local commercial' },
+    ].map((s) => (
+      <div class="service-card bg-bg-warm grid grid-cols-2 border border-line overflow-hidden min-h-[320px]">
+        <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
+          <div>
+            <div class="flex justify-between items-baseline mb-6">
+              <span class="font-mono text-accent text-[13px] font-medium">Service · {s.n}</span>
+            </div>
+            <h3 class="font-display font-bold text-[30px] tracking-[-0.025em] leading-[1.05] mb-4">{s.title}</h3>
+            <p class="text-[14px] leading-[1.55] text-ink-soft">{s.desc}</p>
+          </div>
+          <div class="flex flex-col gap-[6px] mt-6 border-t border-dashed border-line pt-4">
+            {s.specs.map((sp) => (
+              <div class="flex justify-between items-baseline">
+                <span class="spec text-[10px]">{sp}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="service-img bg-ink overflow-hidden">
+          <img src={s.img} alt={s.imgAlt} loading="lazy" width="1200" height="900" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     04 — RÉALISATION LOCALE
+═══════════════════════════════════════════════════════ -->
+<section id="realisations" class="section-pad bg-bg py-[120px] px-16 pb-[100px]">
+  <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-16">
+    <div>
+      <div class="eyebrow"><span class="num">04</span>Réalisation locale</div>
+      <h2 class="h-section text-[40px] mt-6">
+        Un chantier réel près de {ville.nom}.
+      </h2>
+    </div>
+    <div class="pt-12">
+      <p class="lead text-[18px] max-w-[560px]">
+        Chaque chantier est documenté : surface, type de chape, contexte. Ces photos sont issues de chantiers réels — aucune image de banque.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-[1.1fr_1fr] gap-12 items-start">
+    <div class="relative overflow-hidden bg-ink aspect-[4/3]">
+      <img src={ville.realisation.image} alt={ville.realisation.imageAlt}
+        loading="lazy" width="1200" height="900"
+        class="w-full h-full object-cover brightness-[0.92]" />
+    </div>
+    <div class="flex flex-col justify-center py-8">
+      <div class="spec text-[10px] mb-4 text-ink-mute">Référence chantier</div>
+      <h3 class="font-display font-bold text-[32px] tracking-[-0.025em] leading-[1.1] mb-6">
+        {ville.realisation.titre}
+      </h3>
+      <p class="text-[16px] leading-[1.6] text-ink-soft mb-8">
+        {ville.realisation.description}
+      </p>
+      <a href="#devis" class="btn btn-primary py-4 px-[22px] text-[15px] self-start">
+        Demander un devis similaire <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     05 — FAQ
+═══════════════════════════════════════════════════════ -->
+<section id="faq" class="section-pad bg-bg-warm py-[120px] px-16 pb-[100px]">
+  <div class="faq-grid grid grid-cols-[0.85fr_2fr] gap-20">
+    <div>
+      <div class="eyebrow"><span class="num">05</span>Questions fréquentes</div>
+      <h2 class="h-section text-[42px] mt-6">
+        Chape liquide à {ville.nom} — vos questions.
+      </h2>
+    </div>
+    <div class="flex flex-col pt-6">
+      {faqAll.map((item, i) => (
+        <details class="faq-item">
+          <summary>
+            <div class="faq-q-wrap">
+              <span class="faq-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="faq-q">{item.question}</span>
+            </div>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer"><p>{item.reponse}</p></div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     06 — CTA FINAL
+═══════════════════════════════════════════════════════ -->
+<section id="devis" class="section-pad relative overflow-hidden bg-ink text-white py-[120px] px-16">
+  <img src="/uploads/chape-suzuki-pamiers-hall.jpeg" alt=""
+    loading="lazy" width="1200" height="900" class="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale" />
+  <div class="relative cta-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="num">06</span>Devis gratuit</div>
+      <h2 class="h-section cta-h2 text-[64px] mt-6 mb-8 text-white">
+        Un chantier à {ville.nom} ? Parlons-en.
+      </h2>
+      <p class="font-display text-[21px] text-white/75 max-w-[600px] leading-[1.35]">
+        Mesure, étude, devis ferme sous 48 h ouvrées. Pas d'engagement, pas de relance commerciale.
+      </p>
+    </div>
+    <div>
+      <DevisForm dept={ville.dept} />
+    </div>
+  </div>
+</section>
+
+</main>
+
+<SiteFooter />
+
+<style>
+  #devis .cta-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; }
+  @media (max-width: 768px) {
+    #devis .cta-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+
+</body>
+</html>

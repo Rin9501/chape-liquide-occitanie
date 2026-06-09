@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import DevisForm from '../components/DevisForm.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -146,42 +148,7 @@ import DevisForm from '../components/DevisForm.astro';
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     HEADER sticky
-═══════════════════════════════════════════════════════ -->
-<header class="site-header">
-  <a href="/" class="header-logo">
-    <img src="/logo/clo-horizontal-positif.svg" alt="Chape Liquide Occitanie" height="44" style="height:44px;width:auto;display:block;" />
-  </a>
-
-  <nav class="header-nav">
-    {[
-      { label: 'Expertise',            href: '#expertise' },
-      { label: 'Services',             href: '#services' },
-      { label: "Zones d'intervention", href: '#zones-intervention' },
-      { label: 'Réalisations',         href: '#realisations' },
-      { label: 'Guide gratuit',        href: '#guide-gratuit' },
-      { label: 'Contact',              href: '#devis' },
-    ].map(({ label, href }) => (
-      <a href={href}>{label}</a>
-    ))}
-  </nav>
-
-  <div class="header-cta">
-    <a href="tel:0687613987" class="header-tel">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-      </svg>
-      <div>
-        <div class="spec text-[10px]">Devis téléphone</div>
-        <div class="font-mono font-semibold text-[14px]">06 87 61 39 87</div>
-      </div>
-    </a>
-    <a href="#devis" class="btn btn-primary py-3 px-[18px] text-[14px]">
-      Devis gratuit <span class="arrow">→</span>
-    </a>
-  </div>
-</header>
+<SiteHeader />
 
 <main>
 
@@ -519,8 +486,8 @@ import DevisForm from '../components/DevisForm.astro';
           <text x="14" y="4" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" fill="#C4522A">MIREPOIX · QG</text>
         </g>
         <!-- 09 -->
-        <g transform="translate(320,200)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Pamiers</text></g>
-        <g transform="translate(340,290)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Foix</text></g>
+        <a href="/chape-liquide-pamiers"><g transform="translate(320,200)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Pamiers</text></g></a>
+        <a href="/chape-liquide-foix"><g transform="translate(340,290)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Foix</text></g></a>
         <g transform="translate(410,320)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Lavelanet</text></g>
         <g transform="translate(310,160)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Saverdun</text></g>
         <g transform="translate(350,360)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Tarascon</text></g>
@@ -528,8 +495,8 @@ import DevisForm from '../components/DevisForm.astro';
         <g transform="translate(380,410)"><circle r="4" fill="#C4522A" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Ax-les-Thermes</text></g>
         <!-- 11 -->
         <g transform="translate(500,220)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Limoux</text></g>
-        <g transform="translate(560,160)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Carcassonne</text></g>
-        <g transform="translate(470,130)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Castelnaudary</text></g>
+        <a href="/chape-liquide-carcassonne"><g transform="translate(560,160)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Carcassonne</text></g></a>
+        <a href="/chape-liquide-castelnaudary"><g transform="translate(470,130)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Castelnaudary</text></g></a>
         <g transform="translate(520,290)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Quillan</text></g>
         <!-- 11 — nouvelles villes -->
         <g transform="translate(585,175)"><circle r="4" fill="#2C2C2C" /><text x="8" y="4" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#2C2C2C">Lézignan</text></g>
@@ -560,16 +527,16 @@ import DevisForm from '../components/DevisForm.astro';
   <!-- Liste des 18 villes : lisible par Google, masquée visuellement (sr-only) -->
   <ul class="sr-only" aria-label="Villes desservies par Chape Liquide Occitanie">
     <li>Mirepoix, Ariège (09) — siège social</li>
-    <li>Pamiers, Ariège (09)</li>
-    <li>Foix, Ariège (09)</li>
+    <li><a href="/chape-liquide-pamiers">Pamiers, Ariège (09)</a></li>
+    <li><a href="/chape-liquide-foix">Foix, Ariège (09)</a></li>
     <li>Lavelanet, Ariège (09)</li>
     <li>Saverdun, Ariège (09)</li>
     <li>Tarascon-sur-Ariège, Ariège (09)</li>
     <li>Saint-Girons, Ariège (09)</li>
     <li>Ax-les-Thermes, Ariège (09)</li>
     <li>Limoux, Aude (11)</li>
-    <li>Carcassonne, Aude (11)</li>
-    <li>Castelnaudary, Aude (11)</li>
+    <li><a href="/chape-liquide-carcassonne">Carcassonne, Aude (11)</a></li>
+    <li><a href="/chape-liquide-castelnaudary">Castelnaudary, Aude (11)</a></li>
     <li>Quillan, Aude (11)</li>
     <li>Lézignan-Corbières, Aude (11)</li>
     <li>Narbonne, Aude (11)</li>
@@ -665,58 +632,7 @@ import DevisForm from '../components/DevisForm.astro';
 
 </main>
 
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════════════ -->
-<footer class="bg-dark text-white/60 pt-16 px-16 pb-8">
-  <div class="footer-grid grid grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-12">
-    <div class="footer-brand">
-      <div class="mb-5">
-        <img src="/logo/clo-horizontal-monochrome-blanc.svg" alt="Chape Liquide Occitanie" height="36" style="height:36px;width:auto;display:block;" />
-      </div>
-      <p class="text-[13px] leading-[1.6] max-w-[320px]">
-        EURL Balussou Cyril · Applicateur agréé Sika n°3197-2025.<br />
-        Mirepoix, Ariège (09).<br />
-        SIRET 533 165 684 00028.
-      </p>
-    </div>
-    {[
-      { label: 'Services',   items: ['Chape ciment','Ravoirage','Plancher chauffant','Chape P4S'] },
-      { label: 'Zones',      items: ['Mirepoix','Pamiers','Foix','Carcassonne','Voir les 18 villes →'] },
-      { label: 'Navigation', items: ['Notre expertise','Réalisations','Guide gratuit','Devis 48h','Contact'] },
-    ].map(({ label, items }) => (
-      <div>
-        <div class="spec text-white/40 mb-4 text-[10px]">{label}</div>
-        <ul class="list-none flex flex-col gap-[10px]">
-          {items.map(i => <li class="text-[14px]">{i}</li>)}
-        </ul>
-      </div>
-    ))}
-  </div>
-  <div class="border-t border-white/10 pt-6 flex justify-between text-[12px] flex-wrap gap-3">
-    <div>© 2026 EURL Balussou Cyril · Tous droits réservés</div>
-    <div class="flex gap-6">
-      <a href="/mentions-legales">Mentions légales</a>
-      <a href="/cgv">CGV</a>
-      <a href="/politique-confidentialite">Politique de confidentialité</a>
-    </div>
-  </div>
-</footer>
-
-<!-- ═══════════════════════════════════════════════════════
-     BARRE MOBILE STICKY
-═══════════════════════════════════════════════════════ -->
-<div class="mobile-bar">
-  <a href="tel:0687613987" class="btn btn-ghost-light">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-    </svg>
-    Appeler
-  </a>
-  <a href="#devis" class="btn btn-primary">
-    Devis gratuit <span class="arrow">→</span>
-  </a>
-</div>
+<SiteFooter />
 
 <!-- CTA grid layout fix (inline style avec data-style non exécuté côté serveur) -->
 <style>

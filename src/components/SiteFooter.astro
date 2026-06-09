@@ -1,0 +1,69 @@
+---
+// Footer + barre mobile sticky — partagés entre index.astro et pages villes
+---
+
+<footer class="bg-dark text-white/60 pt-16 px-16 pb-8">
+  <div class="footer-grid grid grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-12">
+    <div class="footer-brand">
+      <div class="mb-5">
+        <img src="/logo/clo-horizontal-monochrome-blanc.svg" alt="Chape Liquide Occitanie" height="36" style="height:36px;width:auto;display:block;" />
+      </div>
+      <p class="text-[13px] leading-[1.6] max-w-[320px]">
+        EURL Balussou Cyril · Applicateur agréé Sika n°3197-2025.<br />
+        Mirepoix, Ariège (09).<br />
+        SIRET 533 165 684 00028.
+      </p>
+    </div>
+
+    <div>
+      <div class="spec text-white/40 mb-4 text-[10px]">Services</div>
+      <ul class="list-none flex flex-col gap-[10px]">
+        {['Chape ciment','Ravoirage','Plancher chauffant','Chape P4S'].map(i => (
+          <li class="text-[14px]">{i}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <div class="spec text-white/40 mb-4 text-[10px]">Zones</div>
+      <ul class="list-none flex flex-col gap-[10px]">
+        <li class="text-[14px]"><a href="/chape-liquide-pamiers" class="hover:text-white/90 transition-colors">Pamiers</a></li>
+        <li class="text-[14px]"><a href="/chape-liquide-foix" class="hover:text-white/90 transition-colors">Foix</a></li>
+        <li class="text-[14px]"><a href="/chape-liquide-carcassonne" class="hover:text-white/90 transition-colors">Carcassonne</a></li>
+        <li class="text-[14px]"><a href="/chape-liquide-castelnaudary" class="hover:text-white/90 transition-colors">Castelnaudary</a></li>
+        <li class="text-[14px]"><a href="/#zones-intervention" class="hover:text-white/90 transition-colors">Voir les 18 villes →</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="spec text-white/40 mb-4 text-[10px]">Navigation</div>
+      <ul class="list-none flex flex-col gap-[10px]">
+        <li class="text-[14px]"><a href="/#expertise" class="hover:text-white/90 transition-colors">Notre expertise</a></li>
+        <li class="text-[14px]"><a href="/#realisations" class="hover:text-white/90 transition-colors">Réalisations</a></li>
+        <li class="text-[14px]"><a href="/#guide-gratuit" class="hover:text-white/90 transition-colors">Guide gratuit</a></li>
+        <li class="text-[14px]"><a href="/#devis" class="hover:text-white/90 transition-colors">Devis 48h</a></li>
+        <li class="text-[14px]"><a href="/#devis" class="hover:text-white/90 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 pt-6 flex justify-between text-[12px] flex-wrap gap-3">
+    <div>© 2026 EURL Balussou Cyril · Tous droits réservés</div>
+    <div class="flex gap-6">
+      <a href="/mentions-legales" class="hover:text-white/80">Mentions légales</a>
+      <a href="/cgv" class="hover:text-white/80">CGV</a>
+      <a href="/politique-confidentialite" class="hover:text-white/80">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:0687613987" class="btn btn-ghost-light">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    Appeler
+  </a>
+  <a href="/#devis" class="btn btn-primary">
+    Devis gratuit <span class="arrow">→</span>
+  </a>
+</div>
