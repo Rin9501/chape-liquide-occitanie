@@ -3,6 +3,7 @@ import '../styles/global.css';
 import DevisForm from '../components/DevisForm.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import { villes } from '../data/villes';
 import type { VilleData } from '../data/villes';
 
@@ -388,6 +389,8 @@ const jsonLdFaq = {
     #devis .cta-grid { grid-template-columns: 1fr; gap: 40px; }
   }
 </style>
+
+<CookieConsent />
 
 </body>
 </html>

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import DevisForm from '../components/DevisForm.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -675,6 +676,8 @@ import SiteFooter from '../components/SiteFooter.astro';
     #devis .cta-grid { grid-template-columns: 1fr; gap: 40px; }
   }
 </style>
+
+<CookieConsent />
 
 </body>
 </html>
