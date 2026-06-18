@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Panneau Chantier — Chape Liquide Occitanie</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --beton:      #2C2C2C;
+    --terra:      #C4522A;
+    --terra-dark: #A8421F;
+    --creme:      #F5F0EB;
+  }
+  body {
+    background: #161616;
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+  /* 60×40 cm — ratio 3:2 — 900×600px */
+  .panel {
+    width: 900px;
+    height: 600px;
+    background: var(--beton);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+  }
+
+  .p-bar {
+    width: 14px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--terra) 0%, var(--terra-dark) 100%);
+  }
+
+  .p-c1 { position: absolute; bottom: -100px; right: -100px; width: 420px; height: 420px; border: 88px solid rgba(196,82,42,0.07); border-radius: 50%; }
+  .p-c2 { position: absolute; bottom: -18px;  right: -18px;  width: 200px; height: 200px; border: 3px  solid rgba(196,82,42,0.13); border-radius: 50%; }
+  .p-c3 { position: absolute; top: -80px; right: 100px; width: 240px; height: 240px; border: 48px solid rgba(255,255,255,0.025); border-radius: 50%; }
+
+  .p-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 54px 36px 44px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ─── TOP : logo + slogan + badge ─── */
+  .p-top { display: flex; align-items: flex-start; justify-content: space-between; }
+  .p-logo { width: 310px; height: auto; }
+  .p-sep  { width: 40px; height: 3px; background: var(--terra); margin-top: 14px; }
+  .p-slogan {
+    font-size: 21px; font-weight: 500;
+    color: rgba(255,255,255,0.46);
+    font-style: italic;
+    letter-spacing: 0.005em;
+    margin-top: 10px;
+  }
+  .p-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(196,82,42,0.11); border: 1px solid rgba(196,82,42,0.25);
+    border-radius: 5px; padding: 6px 13px; flex-shrink: 0;
+  }
+  .p-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); flex-shrink: 0; }
+  .p-badge span { font-size: 10px; font-weight: 700; color: var(--terra); letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap; }
+
+  /* ─── PRÉ-TÉLÉPHONE : "devis gratuit" ─── */
+  .p-pre-phone {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .p-pre-line { flex: 1; height: 1px; background: rgba(196,82,42,0.25); }
+  .p-pre-phone span {
+    font-size: 11px; font-weight: 800;
+    color: var(--terra);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+
+  /* ─── TÉLÉPHONE ─── */
+  .p-mid { display: flex; align-items: center; gap: 20px; }
+  .p-phone-ico { width: 48px; height: 48px; flex-shrink: 0; opacity: 0.9; }
+  .p-phone {
+    font-size: 112px;
+    font-weight: 800;
+    color: var(--terra);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  /* ─── NOM + TITRE ─── */
+  .p-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .p-identity-name {
+    font-size: 16px; font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: -0.01em;
+  }
+  .p-identity-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--terra); opacity: 0.6; flex-shrink: 0; }
+  .p-identity-role {
+    font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── BOTTOM : QR + zone ─── */
+  .p-bot { display: flex; align-items: flex-end; justify-content: space-between; }
+
+  .p-qr-zone { display: flex; align-items: center; gap: 18px; }
+  .p-qr-box {
+    width: 84px; height: 84px;
+    background: var(--creme);
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  #qr-img { width: 74px; height: 74px; display: block; }
+  .p-qr-info { display: flex; flex-direction: column; gap: 5px; }
+  .p-qr-label { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .p-qr-sub   { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.25); letter-spacing: 0.09em; text-transform: uppercase; }
+
+  .p-bot-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; text-align: right; }
+  .p-zone { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.14em; text-transform: uppercase; }
+  .p-exp  { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.2); letter-spacing: 0.12em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <div class="p-bar"></div>
+  <div class="p-c1"></div>
+  <div class="p-c2"></div>
+  <div class="p-c3"></div>
+
+  <div class="p-body">
+
+    <!-- TOP -->
+    <div class="p-top">
+      <div>
+        <svg class="p-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 64" role="img" aria-label="Chape Liquide Occitanie">
+          <g transform="translate(1,1) scale(0.62)"><circle cx="50" cy="50" r="40" fill="none" stroke="#C4522A" stroke-width="10"/><path d="M46.89 38.98 A13 13 0 1 0 46.89 61.02" fill="none" stroke="#fff" stroke-width="9"/><path d="M58 37 V63" fill="none" stroke="#fff" stroke-width="9"/><path d="M58 63 H70" fill="none" stroke="#C4522A" stroke-width="9"/></g>
+          <path d="M94.61 28.42Q91.59 28.42 89.40 27.10Q87.21 25.79 86.02 23.42Q84.84 21.06 84.84 17.92Q84.84 14.78 86.02 12.42Q87.21 10.05 89.40 8.74Q91.59 7.42 94.61 7.42Q98.08 7.42 100.44 9.14Q102.80 10.86 103.77 13.80L99.93 14.87Q99.37 13.03 98.04 12.02Q96.71 11.00 94.61 11.00Q92.69 11.00 91.41 11.86Q90.13 12.71 89.49 14.27Q88.84 15.82 88.84 17.92Q88.84 20.02 89.49 21.57Q90.13 23.13 91.41 23.98Q92.69 24.84 94.61 24.84Q96.71 24.84 98.04 23.81Q99.37 22.79 99.93 20.97L103.77 22.04Q102.80 24.98 100.44 26.70Q98.08 28.42 94.61 28.42Z M110.66 28L106.85 28L106.85 7.84L110.66 7.84L110.66 16.13L119.67 16.13L119.67 7.84L123.48 7.84L123.48 28L119.67 28L119.67 19.68L110.66 19.68L110.66 28Z M129.92 28L126 28L132.16 7.84L137.84 7.84L144.00 28L140.08 28L138.78 23.80L131.19 23.80L129.92 28ZM132.27 20.24L137.69 20.24L134.96 11.41L132.27 20.24Z M150.33 28L146.52 28L146.52 7.84L155.04 7.84Q155.33 7.84 155.83 7.86Q156.32 7.88 156.72 7.95Q158.52 8.23 159.68 9.14Q160.83 10.05 161.38 11.43Q161.92 12.81 161.92 14.50Q161.92 16.20 161.37 17.58Q160.82 18.96 159.66 19.87Q158.51 20.78 156.72 21.06Q156.32 21.11 155.82 21.14Q155.32 21.17 155.04 21.17L150.33 21.17L150.33 28ZM150.33 11.40L150.33 17.61L154.87 17.61Q155.16 17.61 155.51 17.58Q155.86 17.56 156.16 17.47Q156.93 17.26 157.35 16.77Q157.77 16.27 157.93 15.66Q158.09 15.05 158.09 14.50Q158.09 13.96 157.93 13.35Q157.77 12.74 157.35 12.24Q156.93 11.75 156.16 11.54Q155.86 11.45 155.51 11.42Q155.16 11.40 154.87 11.40L150.33 11.40Z M177.88 28L164.72 28L164.72 7.84L177.88 7.84L177.88 11.40L168.53 11.40L168.53 15.71L176.20 15.71L176.20 19.26L168.53 19.26L168.53 24.44L177.88 24.44L177.88 28Z M199.61 28L187.12 28L187.12 7.84L190.93 7.84L190.93 24.44L199.61 24.44L199.61 28Z M206.08 28L202.27 28L202.27 7.84L206.08 7.84L206.08 28Z M228.37 26.07L226.04 28.42L224.50 26.88Q224.32 26.99 224.15 27.10Q221.96 28.42 218.93 28.42Q215.91 28.42 213.72 27.10Q211.53 25.79 210.34 23.42Q209.16 21.06 209.16 17.92Q209.16 14.78 210.34 12.42Q211.53 10.05 213.72 8.74Q215.91 7.42 218.93 7.42Q221.96 7.42 224.15 8.74Q226.34 10.05 227.52 12.42Q228.70 14.78 228.70 17.92Q228.70 21.06 227.53 23.42Q227.22 24.02 226.86 24.56L228.37 26.07ZM218.93 24.84Q220.61 24.86 221.80 24.21L220.16 22.57L222.52 20.22L223.99 21.69Q224.04 21.59 224.67 20.02Q224.67 20.02 224.67 17.92Q224.67 15.82 224.03 14.28Q223.40 12.74 222.12 11.89Q220.85 11.03 218.93 11.00Q217.01 10.98 215.74 11.83Q214.47 12.68 213.83 14.25Q213.19 15.82 213.19 17.92Q213.19 20.02 213.83 21.56Q214.47 23.10 215.74 23.95Q217.01 24.81 218.93 24.84Z M239.71 28.42Q237.27 28.42 235.42 27.43Q233.58 26.45 232.54 24.65Q231.50 22.86 231.50 20.44L231.50 7.87L235.37 7.84L235.37 20.41Q235.37 21.41 235.70 22.22Q236.04 23.03 236.63 23.62Q237.23 24.21 238.02 24.52Q238.81 24.84 239.71 24.84Q240.63 24.84 241.42 24.51Q242.21 24.19 242.80 23.60Q243.39 23.02 243.72 22.20Q244.05 21.39 244.05 20.41L244.05 7.84L247.91 7.84L247.91 20.44Q247.91 22.86 246.88 24.65Q245.84 26.45 243.99 27.43Q242.14 28.42 239.71 28.42Z M255.92 28L252.11 28L252.11 7.84L255.92 7.84L255.92 28Z M266.64 28L260.12 28L260.12 7.84L266.64 7.84Q266.88 7.84 267.62 7.85Q268.37 7.87 269.05 7.95Q271.49 8.25 273.18 9.65Q274.88 11.05 275.76 13.20Q276.64 15.36 276.64 17.92Q276.64 20.48 275.76 22.64Q274.88 24.79 273.18 26.19Q271.49 27.59 269.05 27.89Q268.37 27.97 267.62 27.99Q266.88 28 266.64 28ZM263.98 11.42L263.98 24.42L266.64 24.42Q267.02 24.42 267.67 24.39Q268.31 24.37 268.83 24.28Q270.14 24.01 270.98 23.04Q271.81 22.08 272.21 20.72Q272.61 19.36 272.61 17.92Q272.61 16.41 272.19 15.05Q271.78 13.69 270.94 12.75Q270.10 11.82 268.83 11.56Q268.31 11.45 267.67 11.44Q267.02 11.42 266.64 11.42L263.98 11.42Z M293.16 28L280.00 28L280.00 7.84L293.16 7.84L293.16 11.40L283.81 11.40L283.81 15.71L291.48 15.71L291.48 19.26L283.81 19.26L283.81 24.44L293.16 24.44L293.16 28Z" fill="#fff"/>
+          <rect x="84" y="44.5" width="18" height="3" fill="#C4522A"/>
+          <text x="113" y="50" font-family="Manrope,sans-serif" font-size="9" fill="#fff" fill-opacity="0.7" letter-spacing="1.2">OCCITANIE · ARIÈGE · AUDE · 31</text>
+        </svg>
+        <div class="p-sep"></div>
+        <div class="p-slogan">Un sol parfait, du premier coup.</div>
+      </div>
+      <div class="p-badge">
+        <div class="p-badge-dot"></div>
+        <span>Ciment · Anhydrite · Allégée · Plancher chauffant</span>
+      </div>
+    </div>
+
+    <!-- PRÉ-TÉLÉPHONE -->
+    <div class="p-pre-phone">
+      <div class="p-pre-line"></div>
+      <span>Devis gratuit sous 48h</span>
+      <div class="p-pre-line"></div>
+    </div>
+
+    <!-- TÉLÉPHONE -->
+    <div class="p-mid">
+      <svg class="p-phone-ico" viewBox="0 0 24 24" fill="none" stroke="#C4522A" stroke-width="1.7" stroke-linecap="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.09.02h3a2 2 0 012 1.72c.13.96.36 1.90.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92v2z"/>
+      </svg>
+      <div class="p-phone">06 87 61 39 87</div>
+    </div>
+
+    <!-- NOM + TITRE -->
+    <div class="p-identity">
+      <div class="p-identity-name">Cyril Balussou</div>
+      <div class="p-identity-sep"></div>
+      <div class="p-identity-role">Applicateur chape liquide · 10 ans d'expérience</div>
+    </div>
+
+    <!-- BOTTOM : QR + zone -->
+    <div class="p-bot">
+      <div class="p-qr-zone">
+        <div class="p-qr-box">
+          <img id="qr-img" src="" width="74" height="74" alt="QR code chapeliquide-occitanie.fr">
+        </div>
+        <div class="p-qr-info">
+          <div class="p-qr-label">chapeliquide-occitanie.fr</div>
+          <div class="p-qr-sub">Scanner pour accéder au site</div>
+        </div>
+      </div>
+      <div class="p-bot-right">
+        <div class="p-zone">Ariège (09) · Aude (11) · Haute-Garonne (31)</div>
+        <div class="p-exp">Devis gratuit · Intervention sous 2 semaines</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
