@@ -330,7 +330,7 @@ import CookieConsent from '../components/CookieConsent.astro';
     </div>
   </div>
 
-  <div class="services-grid grid grid-cols-2 gap-6">
+  <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-6">
     {[
       { n:'01', title:'Chape liquide ciment', desc:"La chape de référence pour maisons individuelles, logements collectifs et locaux tertiaires. Coulée par pompe depuis une centrale béton agréée Sika, elle s'autonivelle parfaitement sans intervention manuelle. Idéale en pose flottante sur isolant, désolidarisée ou adhérente selon le support. Produits mis en œuvre : Sika ViscoChape® et ViscoChape® XLS.", specs:['Circulable dès le lendemain — revêtement posable à 14 jours',"Grands volumes maîtrisés — jusqu'à 400 m²/jour et plus selon chantier",'Compatible carrelage, parquet, PVC, moquette'], img:'/uploads/coulage-villeneuve-dolmes-salon.jpeg', imgAlt:"Coulage chape liquide ciment en salon — Villeneuve-d'Olmes, Ariège (09)" },
       { n:'02', title:'Ravoirage liquide', desc:"En rénovation, la dalle existante est rarement parfaitement plane. Le ravoirage liquide rattrape les défauts de niveau, noie les gaines électriques et canalisations, et crée un support parfaitement plan pour la pose de l'isolant thermo-acoustique — avant la chape de finition. Obligatoire selon DTU 52.10 en cas de défaut d'altimétrie. Circulable en 24 à 36h.", specs:['Remise à niveau de dalle en une journée','Noie gaines, câbles et canalisations existantes','Support idéal pour isolant avant chape de finition'], img:'/uploads/ravoirage-mirepoix-gaines.jpeg', imgAlt:'Ravoirage liquide avec passage de gaines chauffantes — Mirepoix, Ariège (09)' },
@@ -338,8 +338,8 @@ import CookieConsent from '../components/CookieConsent.astro';
       { n:'04', title:'Chape haute résistance P4S', desc:"Pour les locaux à fortes sollicitations mécaniques : hypermarchés, halls de gare, locaux commerciaux classés P4S. La Sika ViscoChape® P4S est une chape fluide fibrée sous avis technique, spécifiquement développée pour répondre aux exigences du classement UPEC P4S. Mise en œuvre uniquement en pose désolidarisée, sur support neuf ou en rénovation.", specs:['Productivité > 1 000 m²/jour sur grands chantiers','Classement UPEC P4S — exigences commerciales et tertiaires','Sous avis technique DTA — garantie procédé et assurabilité'], img:'/uploads/Chape-P4S-commercial.jpg', imgAlt:'Chape haute résistance P4S en local commercial — Applicateur agréé Sika CLO' },
       { n:'05', title:'Chape allégée rénovation', desc:"En rénovation sur planchers bois, combles aménagés ou supports à charges limitées, la chape ciment standard est trop lourde. La chape allégée Betostyrène intègre des billes de polystyrène expansé (EPS) dans la formulation : résultat, 50 % de poids en moins qu'une chape ciment, sans sacrifier la planéité ni la résistance à la circulation. Coulage par pompe identique à la chape ciment.", specs:['50 % moins lourde — solution sur plancher bois, combles et supports fragiles','Isolation thermique intégrée par les billes de polystyrène','Coulage par pompe — même organisation de chantier que la chape ciment'], img:null, imgAlt:'' },
     ].map((s, i) => (
-      <a href={`#service-${s.n}`} class={`service-card bg-bg-warm grid border border-line overflow-hidden min-h-[320px]${i === 4 ? ' col-span-2 grid-cols-[1fr_auto]' : ' grid-cols-2'}`}>
-        <div class="service-inner flex flex-col justify-between p-[32px_32px_28px]">
+      <a href={`#service-${s.n}`} class={`service-card bg-bg-warm grid border border-line overflow-hidden md:min-h-[320px]${i === 4 ? ' md:col-span-2 grid-cols-1 md:grid-cols-[1fr_auto]' : ' grid-cols-1 md:grid-cols-2'}`}>
+        <div class="service-inner flex flex-col justify-between p-[20px_20px_20px] md:p-[32px_32px_28px]">
           <div>
             <div class="flex justify-between items-baseline mb-6">
               <span class="font-mono text-accent text-[13px] font-medium">Service · {s.n}</span>
@@ -357,8 +357,8 @@ import CookieConsent from '../components/CookieConsent.astro';
           </div>
         </div>
         {s.img
-          ? <div class="service-img bg-ink overflow-hidden"><img src={s.img} alt={s.imgAlt} loading="lazy" width="5712" height="4284" class="w-full h-full object-cover" /></div>
-          : <div class="bg-accent w-[320px] flex-shrink-0"></div>
+          ? <div class="service-img bg-ink overflow-hidden h-[200px] md:h-auto"><img src={s.img} alt={s.imgAlt} loading="lazy" width="5712" height="4284" class="w-full h-full object-cover" /></div>
+          : <div class="hidden md:block bg-accent w-[320px] flex-shrink-0"></div>
         }
       </a>
     ))}
