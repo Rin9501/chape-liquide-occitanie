@@ -23,6 +23,12 @@ export interface VilleData {
   faqLocale: Array<{ question: string; reponse: string }>;
 }
 
+// Positionnement partagé : applicateur multi-fournisseur (Sika, Cemex) plutôt qu'exclusif Sika.
+// Modifier ici pour changer la formulation dans toutes les fiches villes.
+export const POSITIONNEMENT_TITRE = 'Applicateur Multi-Fournisseur';
+export const POSITIONNEMENT_FOURNISSEUR = 'applicateur multi-fournisseur (Sika, Cemex)';
+export const POSITIONNEMENT_FOURNISSEUR_MAJ = 'Applicateur multi-fournisseur (Sika, Cemex)';
+
 export const villes: VilleData[] = [
   {
     slug: 'pamiers',
@@ -31,11 +37,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09100',
 
-    metaTitle: 'Chape Liquide Pamiers (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Pamiers (Ariège, 09100). Applicateur agréé Sika n°3197-2025. Plancher chauffant, ravoirage, P4S. Devis gratuit sous 48h. 480+ chantiers depuis 2016.',
+    metaTitle: `Chape Liquide Pamiers (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Pamiers (Ariège, 09100). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, P4S. Devis gratuit sous 48h. 480+ chantiers depuis 2016.`,
 
-    heroAccroche: 'Chape liquide à Pamiers — applicateur agréé Sika en Ariège',
-    heroIntro: 'Pamiers est notre zone principale d\'intervention en Ariège (09). EURL Balussou Cyril, basé à Mirepoix à 25 km, réalise vos chapes liquides sur mesure : construction neuve, rénovation, plancher chauffant. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Pamiers — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
+    heroIntro: `Pamiers est notre zone principale d'intervention en Ariège (09). EURL Balussou Cyril, basé à Mirepoix à 25 km, réalise vos chapes liquides sur mesure : construction neuve, rénovation, plancher chauffant. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg',
     heroImageAlt: 'Chape liquide coulée à Pamiers — chantier Suzuki 320 m²',
 
@@ -69,11 +75,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09000',
 
-    metaTitle: 'Chape Liquide Foix (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Foix (Ariège, 09000). Applicateur agréé Sika n°3197-2025. Plancher chauffant, ravoirage, chape ciment. Devis gratuit sous 48h. Intervention depuis Mirepoix.',
+    metaTitle: `Chape Liquide Foix (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Foix (Ariège, 09000). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, chape ciment. Devis gratuit sous 48h. Intervention depuis Mirepoix.`,
 
-    heroAccroche: 'Chape liquide à Foix — applicateur agréé Sika en Ariège',
-    heroIntro: 'Foix, capitale de l\'Ariège, est à 20 minutes de notre base à Mirepoix. EURL Balussou Cyril intervient sur tous vos chantiers chape liquide dans le secteur de Foix : maisons individuelles, collectifs, locaux commerciaux. Agrément Sika n°3197-2025, 480+ chantiers depuis 2016.',
+    heroAccroche: `Chape liquide à Foix — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
+    heroIntro: `Foix, capitale de l'Ariège, est à 20 minutes de notre base à Mirepoix. EURL Balussou Cyril intervient sur tous vos chantiers chape liquide dans le secteur de Foix : maisons individuelles, collectifs, locaux commerciaux. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, 480+ chantiers depuis 2016.`,
     heroImage: '/uploads/plancher-chauffant-montgaillard.jpeg',
     heroImageAlt: 'Plancher chauffant en cours de pose secteur Foix-Montgaillard',
 
@@ -107,11 +113,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11400',
 
-    metaTitle: 'Chape Liquide Castelnaudary (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Castelnaudary (Aude, 11400). Applicateur agréé Sika n°3197-2025. Construction neuve, plancher chauffant, ravoirage. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Castelnaudary (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Castelnaudary (Aude, 11400). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Construction neuve, plancher chauffant, ravoirage. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Castelnaudary — applicateur agréé Sika dans l\'Aude',
-    heroIntro: 'Castelnaudary (11400) et le Lauragais font partie de notre zone d\'intervention dans l\'Aude. EURL Balussou Cyril assure vos chapes liquides dans le neuf et la rénovation : maisons BBC, locaux commerciaux, planchers chauffants. Agrément Sika n°3197-2025, devis gratuit sous 48h.',
+    heroAccroche: `Chape liquide à Castelnaudary — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
+    heroIntro: `Castelnaudary (11400) et le Lauragais font partie de notre zone d'intervention dans l'Aude. EURL Balussou Cyril assure vos chapes liquides dans le neuf et la rénovation : maisons BBC, locaux commerciaux, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit sous 48h.`,
     heroImage: '/uploads/Chape-P4S-commercial.jpg',
     heroImageAlt: 'Chape liquide haute résistance P4S sur local commercial — secteur Aude',
 
@@ -145,11 +151,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11000',
 
-    metaTitle: 'Chape Liquide Carcassonne (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Carcassonne (Aude, 11000). Applicateur agréé Sika n°3197-2025. Plancher chauffant, ravoirage, construction neuve. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Carcassonne (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Carcassonne (Aude, 11000). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, construction neuve. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Carcassonne — applicateur agréé Sika dans l\'Aude',
-    heroIntro: 'Carcassonne (11000) est l\'un de nos secteurs d\'intervention dans l\'Aude. EURL Balussou Cyril réalise vos chapes liquides sur mesure : construction neuve BBC, rénovation, plancher chauffant. Agrément Sika n°3197-2025, 480+ chantiers depuis 2016, devis sous 48h.',
+    heroAccroche: `Chape liquide à Carcassonne — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
+    heroIntro: `Carcassonne (11000) est l'un de nos secteurs d'intervention dans l'Aude. EURL Balussou Cyril réalise vos chapes liquides sur mesure : construction neuve BBC, rénovation, plancher chauffant. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, 480+ chantiers depuis 2016, devis sous 48h.`,
     heroImage: '/uploads/IMG_3934.JPEG',
     heroImageAlt: 'Chape liquide en cours de coulage secteur Carcassonne',
 
@@ -185,11 +191,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09700',
 
-    metaTitle: 'Chape Liquide Saverdun (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Saverdun (Ariège, 09700). Applicateur agréé Sika n°3197-2025. Plancher chauffant, ravoirage, construction neuve. Devis gratuit sous 48h. Base à Mirepoix à 25 km.',
+    metaTitle: `Chape Liquide Saverdun (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Saverdun (Ariège, 09700). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, construction neuve. Devis gratuit sous 48h. Base à Mirepoix à 25 km.`,
 
-    heroAccroche: 'Chape liquide à Saverdun — applicateur agréé Sika en Ariège',
-    heroIntro: 'Saverdun (09700) et le bassin de Pamiers sont à 25 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides dans le neuf et la rénovation : maisons individuelles, locaux professionnels, planchers chauffants. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Saverdun — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
+    heroIntro: `Saverdun (09700) et le bassin de Pamiers sont à 25 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides dans le neuf et la rénovation : maisons individuelles, locaux professionnels, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/preparation-tms-saverdun-kine.jpeg',
     heroImageAlt: 'Préparation chantier chape liquide Saverdun — cabinet kinésithérapie',
 
@@ -223,11 +229,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09300',
 
-    metaTitle: 'Chape Liquide Lavelanet (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Lavelanet (Ariège, 09300). Applicateur agréé Sika n°3197-2025. Pays d\'Olmes, construction neuve, plancher chauffant. Devis gratuit sous 48h. Base à Mirepoix à 22 km.',
+    metaTitle: `Chape Liquide Lavelanet (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Lavelanet (Ariège, 09300). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Pays d'Olmes, construction neuve, plancher chauffant. Devis gratuit sous 48h. Base à Mirepoix à 22 km.`,
 
-    heroAccroche: 'Chape liquide à Lavelanet — applicateur agréé Sika, Pays d\'Olmes',
-    heroIntro: 'Lavelanet (09300) et le Pays d\'Olmes sont à 22 km de notre base à Mirepoix — l\'une de nos zones d\'intervention principales en Ariège. EURL Balussou Cyril réalise vos chapes liquides sur mesure : maisons individuelles, planchers chauffants, rénovation. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Lavelanet — ${POSITIONNEMENT_FOURNISSEUR}, Pays d'Olmes`,
+    heroIntro: `Lavelanet (09300) et le Pays d'Olmes sont à 22 km de notre base à Mirepoix — l'une de nos zones d'intervention principales en Ariège. EURL Balussou Cyril réalise vos chapes liquides sur mesure : maisons individuelles, planchers chauffants, rénovation. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/coulage-villeneuve-dolmes-salon.jpeg',
     heroImageAlt: 'Coulage chape liquide salon — secteur Pays d\'Olmes',
 
@@ -261,11 +267,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09400',
 
-    metaTitle: 'Chape Liquide Tarascon-sur-Ariège (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Tarascon-sur-Ariège (09400). Applicateur agréé Sika n°3197-2025. Plancher chauffant, chape ciment, ravoirage. Devis gratuit sous 48h. Intervention depuis Mirepoix.',
+    metaTitle: `Chape Liquide Tarascon-sur-Ariège (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Tarascon-sur-Ariège (09400). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, chape ciment, ravoirage. Devis gratuit sous 48h. Intervention depuis Mirepoix.`,
 
-    heroAccroche: 'Chape liquide à Tarascon-sur-Ariège — applicateur agréé Sika',
-    heroIntro: 'Tarascon-sur-Ariège (09400) et la vallée de l\'Ariège sont à 30 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide : maisons individuelles, planchers chauffants hydrauliques, locaux. Agrément Sika n°3197-2025, 480+ chantiers depuis 2016.',
+    heroAccroche: `Chape liquide à Tarascon-sur-Ariège — ${POSITIONNEMENT_FOURNISSEUR}`,
+    heroIntro: `Tarascon-sur-Ariège (09400) et la vallée de l'Ariège sont à 30 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide : maisons individuelles, planchers chauffants hydrauliques, locaux. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, 480+ chantiers depuis 2016.`,
     heroImage: '/uploads/plancher-chauffant-montgaillard.jpeg',
     heroImageAlt: 'Plancher chauffant chape liquide — secteur Tarascon-sur-Ariège',
 
@@ -299,11 +305,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09200',
 
-    metaTitle: 'Chape Liquide Saint-Girons (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Saint-Girons (Ariège, 09200). Applicateur agréé Sika n°3197-2025. Couserans, construction neuve, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Saint-Girons (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Saint-Girons (Ariège, 09200). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Couserans, construction neuve, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Saint-Girons — applicateur agréé Sika en Ariège',
-    heroIntro: 'Saint-Girons (09200) et le Couserans sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide dans le Couserans selon la surface et l\'accessibilité. Agrément Sika n°3197-2025, devis gratuit, visite sur site sous 48h.',
+    heroAccroche: `Chape liquide à Saint-Girons — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
+    heroIntro: `Saint-Girons (09200) et le Couserans sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide dans le Couserans selon la surface et l'accessibilité. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit, visite sur site sous 48h.`,
     heroImage: '/uploads/IMG_2311.JPEG',
     heroImageAlt: 'Chape liquide en cours de coulage — secteur Saint-Girons Ariège',
 
@@ -337,11 +343,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09110',
 
-    metaTitle: 'Chape Liquide Ax-les-Thermes (09) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Ax-les-Thermes (Ariège, 09110). Applicateur agréé Sika n°3197-2025. Plancher chauffant, construction neuve, haute vallée de l\'Ariège. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Ax-les-Thermes (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Ax-les-Thermes (Ariège, 09110). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, construction neuve, haute vallée de l'Ariège. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Ax-les-Thermes — applicateur agréé Sika',
-    heroIntro: 'Ax-les-Thermes (09110) et la haute vallée de l\'Ariège sont à 45 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides : planchers chauffants, construction neuve, rénovation. Spécialiste chape sur plancher chauffant hydraulique. Agrément Sika n°3197-2025.',
+    heroAccroche: `Chape liquide à Ax-les-Thermes — ${POSITIONNEMENT_FOURNISSEUR}`,
+    heroIntro: `Ax-les-Thermes (09110) et la haute vallée de l'Ariège sont à 45 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides : planchers chauffants, construction neuve, rénovation. Spécialiste chape sur plancher chauffant hydraulique. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025.`,
     heroImage: '/uploads/IMG_2775.JPEG',
     heroImageAlt: 'Chape liquide coulée — secteur Ax-les-Thermes Ariège',
 
@@ -375,11 +381,11 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09500',
 
-    metaTitle: 'Chape Liquide Mirepoix (09) — Notre Base | Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Mirepoix (Ariège, 09500). Base de l\'EURL Balussou Cyril, applicateur agréé Sika n°3197-2025. Devis gratuit, intervention ultra-rapide. 480+ chantiers depuis 2016.',
+    metaTitle: `Chape Liquide Mirepoix (09) — Notre Base | ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Mirepoix (Ariège, 09500). Base de l'EURL Balussou Cyril, ${POSITIONNEMENT_FOURNISSEUR}. Devis gratuit, intervention ultra-rapide. 480+ chantiers depuis 2016.`,
 
     heroAccroche: 'Chape liquide à Mirepoix — notre base, votre chantier',
-    heroIntro: 'Mirepoix (09500) est la base de l\'EURL Balussou Cyril. Nous réalisons vos chapes liquides à Mirepoix et dans un rayon de 1h30 en Ariège, Aude et Haute-Garonne. Intervention ultra-rapide sur place, agrément Sika n°3197-2025, devis sous 48h.',
+    heroIntro: `Mirepoix (09500) est la base de l'EURL Balussou Cyril. Nous réalisons vos chapes liquides à Mirepoix et dans un rayon de 1h30 en Ariège, Aude et Haute-Garonne. Intervention ultra-rapide sur place, ${POSITIONNEMENT_FOURNISSEUR} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/ravoirage-mirepoix-gaines.jpeg',
     heroImageAlt: 'Ravoirage chape liquide avec passage de gaines — chantier Mirepoix',
 
@@ -415,11 +421,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11300',
 
-    metaTitle: 'Chape Liquide Limoux (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Limoux (Aude, 11300). Applicateur agréé Sika n°3197-2025. Construction neuve BBC, plancher chauffant, ravoirage. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Limoux (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Limoux (Aude, 11300). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Construction neuve BBC, plancher chauffant, ravoirage. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Limoux — applicateur agréé Sika dans l\'Aude',
-    heroIntro: 'Limoux (11300) et le Razès sont à 45 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides dans l\'Aude : construction neuve BBC, rénovation, plancher chauffant. Agrément Sika n°3197-2025, devis gratuit sous 48h.',
+    heroAccroche: `Chape liquide à Limoux — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
+    heroIntro: `Limoux (11300) et le Razès sont à 45 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides dans l'Aude : construction neuve BBC, rénovation, plancher chauffant. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit sous 48h.`,
     heroImage: '/uploads/IMG_3286.JPEG',
     heroImageAlt: 'Chape liquide coulée — secteur Limoux Aude',
 
@@ -453,11 +459,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11500',
 
-    metaTitle: 'Chape Liquide Quillan (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Quillan (Aude, 11500). Applicateur agréé Sika n°3197-2025. Haute vallée de l\'Aude, construction neuve, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Quillan (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Quillan (Aude, 11500). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Haute vallée de l'Aude, construction neuve, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Quillan — applicateur agréé Sika, haute vallée de l\'Aude',
-    heroIntro: 'Quillan (11500) et la haute vallée de l\'Aude sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides sur mesure : maisons individuelles, planchers chauffants, rénovation. Agrément Sika n°3197-2025, devis gratuit sous 48h.',
+    heroAccroche: `Chape liquide à Quillan — ${POSITIONNEMENT_FOURNISSEUR}, haute vallée de l'Aude`,
+    heroIntro: `Quillan (11500) et la haute vallée de l'Aude sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides sur mesure : maisons individuelles, planchers chauffants, rénovation. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit sous 48h.`,
     heroImage: '/uploads/IMG_3288.JPEG',
     heroImageAlt: 'Chape liquide en cours — secteur Quillan haute vallée de l\'Aude',
 
@@ -491,11 +497,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11200',
 
-    metaTitle: 'Chape Liquide Lézignan-Corbières (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Lézignan-Corbières (Aude, 11200). Applicateur agréé Sika n°3197-2025. Construction neuve, locaux d\'activité, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Lézignan-Corbières (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Lézignan-Corbières (Aude, 11200). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Construction neuve, locaux d'activité, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Lézignan-Corbières — applicateur agréé Sika dans l\'Aude',
-    heroIntro: 'Lézignan-Corbières (11200) et le Minervois sont à 75 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide dans la plaine audoise : construction neuve, locaux d\'activité, planchers chauffants. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Lézignan-Corbières — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
+    heroIntro: `Lézignan-Corbières (11200) et le Minervois sont à 75 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur vos chantiers chape liquide dans la plaine audoise : construction neuve, locaux d'activité, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/IMG_3290.JPEG',
     heroImageAlt: 'Chape liquide coulée — secteur Lézignan-Corbières Aude',
 
@@ -529,11 +535,11 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11100',
 
-    metaTitle: 'Chape Liquide Narbonne (11) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Narbonne (Aude, 11100). Applicateur agréé Sika n°3197-2025. Construction neuve, locaux commerciaux, plancher chauffant. Intervention sur chantiers significatifs. Devis gratuit.',
+    metaTitle: `Chape Liquide Narbonne (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Narbonne (Aude, 11100). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Construction neuve, locaux commerciaux, plancher chauffant. Intervention sur chantiers significatifs. Devis gratuit.`,
 
-    heroAccroche: 'Chape liquide à Narbonne — applicateur agréé Sika dans l\'Aude',
-    heroIntro: 'Narbonne (11100) est dans notre zone d\'intervention dans l\'Aude, à 1h de Mirepoix. EURL Balussou Cyril intervient sur les chantiers d\'envergure à Narbonne et son agglomération : construction neuve, locaux commerciaux, planchers chauffants. Agrément Sika n°3197-2025, devis gratuit.',
+    heroAccroche: `Chape liquide à Narbonne — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
+    heroIntro: `Narbonne (11100) est dans notre zone d'intervention dans l'Aude, à 1h de Mirepoix. EURL Balussou Cyril intervient sur les chantiers d'envergure à Narbonne et son agglomération : construction neuve, locaux commerciaux, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit.`,
     heroImage: '/uploads/IMG_3495.JPEG',
     heroImageAlt: 'Chape liquide coulée secteur Narbonne — Aude',
 
@@ -569,11 +575,11 @@ export const villes: VilleData[] = [
     departementNom: 'Haute-Garonne',
     codePostal: '31190',
 
-    metaTitle: 'Chape Liquide Auterive (31) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Auterive (Haute-Garonne, 31190). Applicateur agréé Sika n°3197-2025. Vallée de l\'Ariège, construction neuve, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Auterive (31) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Auterive (Haute-Garonne, 31190). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Vallée de l'Ariège, construction neuve, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Auterive — applicateur agréé Sika en Haute-Garonne',
-    heroIntro: 'Auterive (31190) et la vallée de l\'Ariège côté Haute-Garonne sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril couvre la couronne sud de Toulouse : maisons individuelles, planchers chauffants, construction neuve. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Auterive — ${POSITIONNEMENT_FOURNISSEUR} en Haute-Garonne`,
+    heroIntro: `Auterive (31190) et la vallée de l'Ariège côté Haute-Garonne sont à 55 km de notre base à Mirepoix. EURL Balussou Cyril couvre la couronne sud de Toulouse : maisons individuelles, planchers chauffants, construction neuve. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/IMG_3295.JPEG',
     heroImageAlt: 'Chape liquide en cours — secteur Auterive Haute-Garonne',
 
@@ -607,11 +613,11 @@ export const villes: VilleData[] = [
     departementNom: 'Haute-Garonne',
     codePostal: '31600',
 
-    metaTitle: 'Chape Liquide Muret (31) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Muret (Haute-Garonne, 31600). Applicateur agréé Sika n°3197-2025. Couronne sud Toulouse, construction neuve, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Muret (31) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Muret (Haute-Garonne, 31600). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Couronne sud Toulouse, construction neuve, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Muret — applicateur agréé Sika en Haute-Garonne',
-    heroIntro: 'Muret (31600) et la couronne sud-ouest de Toulouse sont à 70 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur les chantiers de construction neuve et rénovation dans le secteur de Muret. Agrément Sika n°3197-2025, applicateur Sika — pas Lafarge. Devis sous 48h.',
+    heroAccroche: `Chape liquide à Muret — ${POSITIONNEMENT_FOURNISSEUR} en Haute-Garonne`,
+    heroIntro: `Muret (31600) et la couronne sud-ouest de Toulouse sont à 70 km de notre base à Mirepoix. EURL Balussou Cyril intervient sur les chantiers de construction neuve et rénovation dans le secteur de Muret. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, indépendant d'une seule centrale. Devis sous 48h.`,
     heroImage: '/uploads/IMG_2827.JPEG',
     heroImageAlt: 'Coulage chape liquide — secteur Muret Haute-Garonne',
 
@@ -625,11 +631,11 @@ export const villes: VilleData[] = [
     faqLocale: [
       {
         question: 'Vous couvrez Muret, Auterive et la couronne sud de Toulouse ?',
-        reponse: 'Oui. Muret (31600) est à 70 km de Mirepoix. Nous couvrons la couronne sud de Toulouse : Muret, Auterive, Villefranche-de-Lauragais. La concurrence est dense sur Toulouse intra-muros — nous ciblons la couronne sud où notre positionnement Sika fait la différence.',
+        reponse: 'Oui. Muret (31600) est à 70 km de Mirepoix. Nous couvrons la couronne sud de Toulouse : Muret, Auterive, Villefranche-de-Lauragais. La concurrence est dense sur Toulouse intra-muros — nous ciblons la couronne sud où notre positionnement multi-fournisseur fait la différence.',
       },
       {
         question: 'Pourquoi choisir CLO plutôt qu\'un applicateur toulousain pour un chantier à Muret ?',
-        reponse: 'La majorité des applicateurs autour de Toulouse travaillent en Lafarge. Nous coulons exclusivement en Sika Agilia (agrément n°3197-2025) : traçabilité produit, PV de chantier, garantie procédé. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
+        reponse: 'La majorité des applicateurs autour de Toulouse ne travaillent qu\'avec une seule centrale (souvent Lafarge). Nous travaillons avec plusieurs fournisseurs — Sika Agilia (agrément n°3197-2025) et les gammes Cemex (Cemexa, Anhydritec) : traçabilité produit, PV de chantier, garantie procédé, et la flexibilité de choisir la formule adaptée à votre chantier plutôt qu\'un seul catalogue. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
       },
       {
         question: 'Quel délai pour un devis chape liquide à Muret ?',
@@ -645,11 +651,11 @@ export const villes: VilleData[] = [
     departementNom: 'Haute-Garonne',
     codePostal: '31290',
 
-    metaTitle: 'Chape Liquide Villefranche-de-Lauragais (31) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Villefranche-de-Lauragais (Haute-Garonne, 31290). Applicateur agréé Sika n°3197-2025. Lauragais, construction neuve BBC, plancher chauffant. Devis gratuit sous 48h.',
+    metaTitle: `Chape Liquide Villefranche-de-Lauragais (31) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Villefranche-de-Lauragais (Haute-Garonne, 31290). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Lauragais, construction neuve BBC, plancher chauffant. Devis gratuit sous 48h.`,
 
-    heroAccroche: 'Chape liquide à Villefranche-de-Lauragais — applicateur agréé Sika',
-    heroIntro: 'Villefranche-de-Lauragais (31290) et le Lauragais côté Haute-Garonne sont à 45 km de notre base à Mirepoix, sur l\'axe Toulouse–Carcassonne. EURL Balussou Cyril réalise vos chapes liquides dans le neuf et la rénovation. Agrément Sika n°3197-2025, devis sous 48h.',
+    heroAccroche: `Chape liquide à Villefranche-de-Lauragais — ${POSITIONNEMENT_FOURNISSEUR}`,
+    heroIntro: `Villefranche-de-Lauragais (31290) et le Lauragais côté Haute-Garonne sont à 45 km de notre base à Mirepoix, sur l'axe Toulouse–Carcassonne. EURL Balussou Cyril réalise vos chapes liquides dans le neuf et la rénovation. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
     heroImage: '/uploads/IMG_2829.JPEG',
     heroImageAlt: 'Chape liquide coulée — secteur Villefranche-de-Lauragais',
 
@@ -667,7 +673,7 @@ export const villes: VilleData[] = [
       },
       {
         question: 'Chape liquide pour maison BBC en Lauragais : quelles garanties ?',
-        reponse: 'La chape liquide Sika Agilia est compatible BBC et RE2020. L\'agrément n°3197-2025 couvre la mise en œuvre : PV de chantier transmis, traçabilité du produit, garantie procédé Sika. Pour les constructeurs exigeant un dossier technique, nous le fournissons.',
+        reponse: 'Nos chapes liquides — Sika Agilia comme les gammes Cemex (Cemexa) — sont compatibles BBC et RE2020. Que ce soit sous agrément Sika n°3197-2025 ou avec Cemex, chaque mise en œuvre est tracée : PV de chantier transmis, traçabilité du produit, garantie procédé. Pour les constructeurs exigeant un dossier technique, nous le fournissons quel que soit le fournisseur retenu.',
       },
       {
         question: 'Quel délai pour un devis à Villefranche-de-Lauragais ?',
@@ -683,11 +689,11 @@ export const villes: VilleData[] = [
     departementNom: 'Haute-Garonne',
     codePostal: '31800',
 
-    metaTitle: 'Chape Liquide Saint-Gaudens (31) — Applicateur Agréé Sika | Cyril Balussou',
-    metaDescription: 'Chape liquide à Saint-Gaudens (Haute-Garonne, 31800). Applicateur agréé Sika n°3197-2025. Comminges, construction neuve, chape haute résistance P4S. Devis gratuit.',
+    metaTitle: `Chape Liquide Saint-Gaudens (31) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
+    metaDescription: `Chape liquide à Saint-Gaudens (Haute-Garonne, 31800). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Comminges, construction neuve, chape haute résistance P4S. Devis gratuit.`,
 
-    heroAccroche: 'Chape liquide à Saint-Gaudens — applicateur agréé Sika en Comminges',
-    heroIntro: 'Saint-Gaudens (31800) et le Comminges sont à 1h10 de notre base à Mirepoix. EURL Balussou Cyril intervient sur les chantiers significatifs dans le Comminges : construction neuve, locaux commerciaux, chape haute résistance P4S. Agrément Sika n°3197-2025, devis gratuit.',
+    heroAccroche: `Chape liquide à Saint-Gaudens — ${POSITIONNEMENT_FOURNISSEUR} en Comminges`,
+    heroIntro: `Saint-Gaudens (31800) et le Comminges sont à 1h10 de notre base à Mirepoix. EURL Balussou Cyril intervient sur les chantiers significatifs dans le Comminges : construction neuve, locaux commerciaux, chape haute résistance P4S. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit.`,
     heroImage: '/uploads/Chape-P4S-commercial.jpg',
     heroImageAlt: 'Chape haute résistance P4S — secteur Saint-Gaudens Haute-Garonne',
 
