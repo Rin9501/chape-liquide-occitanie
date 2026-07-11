@@ -5,6 +5,25 @@
 /* Tailwind utilities uniquement — pas de @base ni @components (on garde notre reset custom) */
 @tailwind utilities;
 
+/* Polices auto-hébergées (fichiers variables, sous-ensemble latin) — évite le CSS
+   render-blocking cross-origin de fonts.googleapis.com qui retardait l'affichage
+   du H1 (élément LCP réel de cette page, cf. audit perf). Un seul fichier par
+   famille couvre toute la plage de graisses utilisée (font-weight en intervalle). */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/manrope-variable-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-variable-latin.woff2') format('woff2');
+}
+
 :root {
   --bg:        #F5F0EB;
   --bg-deep:   #ECE3D6;

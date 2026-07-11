@@ -85,6 +85,8 @@ const jsonLdFaq = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preload" as="image" href={ville.heroImage} fetchpriority="high" />
+  <!-- Police auto-hébergée (voir global.css) — preload de la police du H1 -->
+  <link rel="preload" href="/fonts/manrope-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
   <title>{ville.metaTitle}</title>
   <meta name="description" content={ville.metaDescription} />
   <link rel="canonical" href={canonicalUrl} />
