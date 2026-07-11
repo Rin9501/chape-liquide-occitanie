@@ -1,6 +1,21 @@
 ---
-// Header partagé — utilisé sur index.astro et pages villes
-// Les liens nav pointent vers /#section pour fonctionner depuis n'importe quelle page
+// Header partagé — utilisé sur index.astro et pages villes.
+// Les pages villes n'ont pas toutes les sections de la home (pas de #expertise,
+// #zones-intervention, #guide-gratuit) : pour ces ancres-là on renvoie toujours
+// vers la home. Les sections qui existent sur les deux gabarits (#services,
+// #realisations, #devis) restent locales à la page courante pour ne pas éjecter
+// le visiteur d'une page ville vers la home alors que la section est juste en dessous.
+interface Props {
+  isVillePage?: boolean;
+}
+const { isVillePage = false } = Astro.props;
+
+const sharedSections = new Set(['services', 'realisations', 'devis']);
+
+function navHref(id: string) {
+  if (!isVillePage || sharedSections.has(id)) return `#${id}`;
+  return `/#${id}`;
+}
 ---
 <header class="site-header">
   <a href="/" class="header-logo">
@@ -9,14 +24,14 @@
 
   <nav class="header-nav">
     {[
-      { label: 'Expertise',            href: '/#expertise' },
-      { label: 'Services',             href: '/#services' },
-      { label: "Zones d'intervention", href: '/#zones-intervention' },
-      { label: 'Réalisations',         href: '/#realisations' },
-      { label: 'Guide gratuit',        href: '/#guide-gratuit' },
-      { label: 'Contact',              href: '/#devis' },
-    ].map(({ label, href }) => (
-      <a href={href}>{label}</a>
+      { label: 'Expertise',            id: 'expertise' },
+      { label: 'Services',             id: 'services' },
+      { label: "Zones d'intervention", id: 'zones-intervention' },
+      { label: 'Réalisations',         id: 'realisations' },
+      { label: 'Guide gratuit',        id: 'guide-gratuit' },
+      { label: 'Contact',              id: 'devis' },
+    ].map(({ label, id }) => (
+      <a href={navHref(id)}>{label}</a>
     ))}
   </nav>
 
@@ -30,7 +45,7 @@
         <div class="font-mono font-semibold text-[14px]">06 87 61 39 87</div>
       </div>
     </a>
-    <a href="/#devis" class="btn btn-primary py-3 px-[18px] text-[14px]">
+    <a href={navHref('devis')} class="btn btn-primary py-3 px-[18px] text-[14px]">
       Devis gratuit <span class="arrow">→</span>
     </a>
   </div>

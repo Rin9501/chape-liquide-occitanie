@@ -326,11 +326,6 @@ import AvisClients from '../components/AvisClients.astro';
       <div class="eyebrow"><span class="num">03</span>Nos services</div>
       <h2 class="h-section text-[56px] mt-6">Quatre prestations, un seul applicateur.</h2>
     </div>
-    <div class="pb-3">
-      <a href="#expertise" class="font-display font-semibold text-[15px] border-b border-ink pb-1">
-        Voir le dossier technique complet <span class="font-mono">→</span>
-      </a>
-    </div>
   </div>
 
   <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -432,15 +427,12 @@ import AvisClients from '../components/AvisClients.astro';
   <div class="split-2col grid grid-cols-[0.85fr_2fr] gap-20 mb-16 items-end">
     <div>
       <div class="eyebrow"><span class="num">05</span>Réalisations</div>
-      <h2 class="h-section text-[56px] mt-6">Cinq chantiers récents, photos réelles.</h2>
+      <h2 class="h-section text-[56px] mt-6">Six chantiers récents, photos réelles.</h2>
     </div>
     <div class="pb-3">
       <p class="lead text-[18px] max-w-[540px] mb-5">
         Pas de visuels de catalogue ni de rendus 3D. Toutes les images de ce site sortent de nos camions, prises sur chantier au moment du coulage ou après séchage.
       </p>
-      <a href="#realisations" class="font-display font-semibold text-[15px] border-b border-ink pb-1">
-        Voir tous les chantiers <span class="mono">→</span>
-      </a>
     </div>
   </div>
 
@@ -453,7 +445,7 @@ import AvisClients from '../components/AvisClients.astro';
       { img:'/uploads/chape-terminee-saverdun-kine.jpeg',      label:'Cabinet kiné · résultat',   loc:'Saverdun (09)', date:'2025', tech:'Ciment + TMS' },
       { img:'/uploads/ravoirage-mirepoix-gaines.jpeg',         label:'Ravoirage · 160 m²',       loc:'Mirepoix (09)', date:'2025', tech:'Ravoirage' },
     ].map((p, i) => (
-      <a href="#realisations" class="block">
+      <div>
         <div class="bg-ink aspect-[4/5] overflow-hidden mb-[14px]">
           <img src={p.img} alt={p.label} loading="lazy" width="5712" height="4284" class="w-full h-full object-cover" />
         </div>
@@ -463,7 +455,7 @@ import AvisClients from '../components/AvisClients.astro';
         </div>
         <h3 class="font-display font-semibold text-[18px] tracking-[-0.015em] leading-[1.2] mb-1">{p.label}</h3>
         <div class="text-[13px] text-ink-soft">{p.loc} <span class="text-ink-mute">· {p.tech}</span></div>
-      </a>
+      </div>
     ))}
   </div>
 </section>

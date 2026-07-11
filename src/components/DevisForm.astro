@@ -11,7 +11,7 @@ const { dept = '' } = Astro.props;
   data-netlify="true"
   netlify-honeypot="bot-field"
   action="/merci-devis"
-  class="flex flex-col gap-3">
+  class="devis-form flex flex-col gap-3">
 
   <input type="hidden" name="form-name" value="demande-devis" />
   <input type="hidden" name="bot-field" class="hidden" />
@@ -92,8 +92,9 @@ const { dept = '' } = Astro.props;
   </label>
 
   <!-- Submit -->
-  <button type="submit" class="btn btn-primary justify-between py-5 px-[26px] text-[17px]">
-    Envoyer ma demande <span class="arrow">→</span>
+  <button type="submit" class="devis-submit btn btn-primary justify-between py-5 px-[26px] text-[17px]">
+    <span class="devis-submit-label">Envoyer ma demande</span>
+    <span class="arrow devis-submit-arrow">→</span>
   </button>
 
   <!-- CTA téléphone conservé -->
@@ -105,3 +106,22 @@ const { dept = '' } = Astro.props;
     <span class="arrow">→</span>
   </a>
 </form>
+
+<script>
+  // Feedback de chargement au submit : évite les doubles envois pendant le
+  // round-trip réseau (form Netlify = POST classique avec redirection serveur,
+  // pas de fetch). Le submit natif ne se déclenche qu'une fois la validation
+  // HTML5 passée, donc désactiver le bouton ici n'empêche jamais un envoi valide.
+  document.querySelectorAll<HTMLFormElement>('form.devis-form').forEach((form) => {
+    form.addEventListener('submit', () => {
+      const button = form.querySelector<HTMLButtonElement>('.devis-submit');
+      if (!button || button.disabled) return;
+      button.disabled = true;
+      button.classList.add('opacity-70', 'cursor-wait');
+      const label = button.querySelector('.devis-submit-label');
+      const arrow = button.querySelector('.devis-submit-arrow');
+      if (label) label.textContent = 'Envoi en cours…';
+      if (arrow) arrow.textContent = '';
+    });
+  });
+</script>
