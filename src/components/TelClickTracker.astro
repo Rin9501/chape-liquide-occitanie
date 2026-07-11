@@ -1,0 +1,37 @@
+---
+// Tracking des clics sur les liens tel: — composant réutilisable tel quel sur
+// les futurs sites clients (seule la fonction Netlify cible change de projet
+// Supabase). À inclure une fois par page (n'importe où dans <body>).
+//
+// Fonctionnement : délégation d'événement sur document (pas besoin d'attacher
+// un listener par lien, capte aussi les liens tel: ajoutés dynamiquement), et
+// navigator.sendBeacon pour l'envoi — fire-and-forget, ne bloque jamais le
+// clic ni le décrochage du téléphone, tolère que la page parte en arrière-plan.
+//
+// Chaque lien tel: doit porter un attribut data-tel-section="..." pour que la
+// mesure distingue d'où vient l'appel (header, hero, footer, formulaire...).
+// Sans cet attribut, la section remonte comme "unknown" plutôt que d'échouer
+// silencieusement — sert de garde-fou pour repérer un lien oublié.
+---
+<script>
+  const ENDPOINT = '/.netlify/functions/track-call-click';
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const link = target.closest('a[href^="tel:"]');
+    if (!link) return;
+
+    const payload = JSON.stringify({
+      page: location.pathname,
+      section: link.getAttribute('data-tel-section') || 'unknown',
+    });
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(ENDPOINT, new Blob([payload], { type: 'application/json' }));
+    } else {
+      fetch(ENDPOINT, { method: 'POST', body: payload, keepalive: true }).catch(() => {});
+    }
+  });
+</script>

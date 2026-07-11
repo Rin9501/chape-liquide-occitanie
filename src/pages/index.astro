@@ -5,6 +5,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import AvisClients from '../components/AvisClients.astro';
+import TelClickTracker from '../components/TelClickTracker.astro';
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -174,6 +175,7 @@ import AvisClients from '../components/AvisClients.astro';
 </head>
 <body>
 
+<TelClickTracker />
 <SiteHeader />
 
 <main>
@@ -589,7 +591,7 @@ import AvisClients from '../components/AvisClients.astro';
       </h2>
       <p class="lead text-[16px]">
         Si la vôtre n'y est pas, appelez-nous au
-        <a href="tel:0687613987" class="border-b border-accent text-accent">
+        <a href="tel:0687613987" class="border-b border-accent text-accent" data-tel-section="faq">
           <span class="mono">06 87 61 39 87</span>
         </a>.
         Réponse en direct.
