@@ -635,7 +635,7 @@ export const villes: VilleData[] = [
       },
       {
         question: 'Pourquoi choisir CLO plutôt qu\'un applicateur toulousain pour un chantier à Muret ?',
-        reponse: 'La majorité des applicateurs autour de Toulouse ne travaillent qu\'avec une seule centrale (souvent Lafarge). Nous travaillons avec plusieurs fournisseurs — Sika Agilia (agrément n°3197-2025) et les gammes Cemex (Cemexa, Anhydritec) : traçabilité produit, PV de chantier, garantie procédé, et la flexibilité de choisir la formule adaptée à votre chantier plutôt qu\'un seul catalogue. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
+        reponse: 'La majorité des applicateurs autour de Toulouse ne travaillent qu\'avec une seule centrale (souvent Lafarge). Nous travaillons avec plusieurs fournisseurs — Sika Agilia (agrément n°3197-2025) et les gammes Cemex (Cemexa, Anhydritec) : traçabilité produit, PV de chantier, garantie procédé, et la flexibilité de choisir la formule adaptée à votre chantier plutôt que de se limiter à un seul catalogue. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
       },
       {
         question: 'Quel délai pour un devis chape liquide à Muret ?',
