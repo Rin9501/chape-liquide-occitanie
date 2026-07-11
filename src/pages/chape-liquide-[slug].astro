@@ -49,7 +49,6 @@ const jsonLdLocalBusiness = {
   email: 'contact@chapeliquide-occitanie.fr',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '2 rue des artisans',
     addressLocality: 'Mirepoix',
     postalCode: '09500',
     addressRegion: 'Ariège',
@@ -61,11 +60,9 @@ const jsonLdLocalBusiness = {
     postalCode: ville.codePostal,
     addressRegion: ville.departementNom,
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: '1',
-  },
+  // Pas d'aggregateRating ici : les avis ne sont affichés visuellement que sur la home
+  // (voir AvisClients.astro). Un aggregateRating sans avis visible sur la page enfreint
+  // les consignes structured data de Google — cf. audit.
   sameAs: ['https://share.google/In62pPxyxtGlN47Tg'],
 };
 

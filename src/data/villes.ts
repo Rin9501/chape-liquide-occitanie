@@ -399,7 +399,7 @@ export const villes: VilleData[] = [
     faqLocale: [
       {
         question: 'Vous êtes bien basés à Mirepoix — intervention immédiate possible ?',
-        reponse: 'Oui, EURL Balussou Cyril est basé au 2 rue des artisans, Mirepoix (09500). Pour un chantier à Mirepoix, nous pouvons souvent planifier la visite le jour même et prioriser l\'intervention. Appelez-nous directement au 06 87 61 39 87.',
+        reponse: 'Oui, EURL Balussou Cyril est basé à Mirepoix (09500). Pour un chantier à Mirepoix, nous pouvons souvent planifier la visite le jour même et prioriser l\'intervention. Appelez-nous directement au 06 87 61 39 87.',
       },
       {
         question: 'Quelle différence entre ravoirage et chape liquide à Mirepoix ?',
