@@ -118,11 +118,15 @@ export const villes: VilleData[] = [
     departementNom: 'Aude',
     codePostal: '11400',
 
-    metaTitle: `Chape Liquide Castelnaudary (11) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
-    metaDescription: `Chape liquide à Castelnaudary (Aude, 11400). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Construction neuve, plancher chauffant, ravoirage. Devis gratuit sous 48h.`,
+    // Cible prioritaire SEO (04/08/2026) : GSC montrait position 11.78 / 37 impressions / 1 clic —
+    // même logique que Saverdun (poids H1/corps à renforcer, pas un problème de clic). Le chantier
+    // réel (locaux commerciaux Lauragais, ViscoChape P4S) était déjà en donnée mais absent du texte
+    // lu par Google. Revoir GSC mi-septembre 2026 avec Foix et Saverdun.
+    metaTitle: `Chape Liquide à Castelnaudary (11) — Devis Gratuit sous 48h | CLO`,
+    metaDescription: `Chape liquide à Castelnaudary (11400), secteur Lauragais. Devis sous 48h. Sika ou Cemex selon le chantier, pas un fournisseur imposé. 480+ chantiers depuis 2016.`,
 
-    heroAccroche: `Chape liquide à Castelnaudary — ${POSITIONNEMENT_FOURNISSEUR} dans l'Aude`,
-    heroIntro: `Castelnaudary (11400) et le Lauragais font partie de notre zone d'intervention dans l'Aude. EURL Balussou Cyril assure vos chapes liquides dans le neuf et la rénovation : maisons BBC, locaux commerciaux, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis gratuit sous 48h.`,
+    heroAccroche: `Chape liquide à Castelnaudary — P4S haute résistance pour locaux commerciaux`,
+    heroIntro: `Castelnaudary (11400) et le Lauragais font partie de notre zone d'intervention dans l'Aude, à environ une heure de Mirepoix. EURL Balussou Cyril y a livré une chape ViscoChape P4S haute résistance sur 180 m² de locaux commerciaux — finition extra-plate, résistance mécanique renforcée pour trafic intensif. Le même savoir-faire s'applique aux maisons BBC et aux planchers chauffants du secteur. Sika ou Cemex selon ce que demande le chantier, devis gratuit sous 48h.`,
     heroImage: '/uploads/Chape-P4S-commercial.jpg',
     heroImageAlt: 'Chape liquide haute résistance P4S sur local commercial — secteur Aude',
 
