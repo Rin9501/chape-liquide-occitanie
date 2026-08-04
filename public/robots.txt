@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chapeliquide-occitanie.fr/sitemap.xml
+Sitemap: https://chapeliquide-occitanie.fr/sitemap-index.xml

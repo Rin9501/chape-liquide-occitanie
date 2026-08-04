@@ -15,6 +15,7 @@
     "images:compress:check": "node scripts/compress-images.mjs --dry-run"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^6.0.2",
     "@supabase/supabase-js": "^2.107.0",
     "astro": "^4.0.0",
