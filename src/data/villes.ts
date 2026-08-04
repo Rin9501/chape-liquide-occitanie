@@ -75,11 +75,16 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09000',
 
-    metaTitle: `Chape Liquide Foix (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
-    metaDescription: `Chape liquide à Foix (Ariège, 09000). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, chape ciment. Devis gratuit sous 48h. Intervention depuis Mirepoix.`,
+    // Test SEO copywriting isolé sur cette ville uniquement (03/08/2026) : GSC montrait
+    // position 22 / 37 impressions / 0 clic — title/H1 remplacés par des preuves concrètes
+    // (agrément, nombre de chantiers) plutôt que le label "applicateur multi-fournisseur",
+    // repris tel quel via la constante sur les 17 autres villes. Ne pas généraliser ce
+    // texte aux autres fiches avant d'avoir mesuré l'effet ici (revoir GSC mi-septembre 2026).
+    metaTitle: `Chape Liquide à Foix (09) — Devis Gratuit sous 48h | CLO`,
+    metaDescription: `Chape liquide à Foix (09000), à 20 min de Mirepoix. Devis sous 48h. Sika ou Cemex selon le chantier, pas un fournisseur imposé. 480+ chantiers en Ariège.`,
 
-    heroAccroche: `Chape liquide à Foix — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
-    heroIntro: `Foix, capitale de l'Ariège, est à 20 minutes de notre base à Mirepoix. EURL Balussou Cyril intervient sur tous vos chantiers chape liquide dans le secteur de Foix : maisons individuelles, collectifs, locaux commerciaux. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, 480+ chantiers depuis 2016.`,
+    heroAccroche: `Chape liquide à Foix — agrément Sika n°3197-2025, depuis Mirepoix`,
+    heroIntro: `Foix, capitale de l'Ariège, est à vingt minutes de notre base de Mirepoix — assez proche pour ne rien perdre en réactivité. EURL Balussou Cyril y réalise des chapes liquides pour maisons individuelles, collectifs et locaux commerciaux, en choisissant entre les gammes Sika et Cemex selon ce que demande le chantier. 480 chantiers coulés en Ariège depuis 2016.`,
     heroImage: '/uploads/plancher-chauffant-montgaillard.jpeg',
     heroImageAlt: 'Plancher chauffant en cours de pose secteur Foix-Montgaillard',
 
@@ -191,11 +196,15 @@ export const villes: VilleData[] = [
     departementNom: 'Ariège',
     codePostal: '09700',
 
-    metaTitle: `Chape Liquide Saverdun (09) — ${POSITIONNEMENT_TITRE} | Cyril Balussou`,
-    metaDescription: `Chape liquide à Saverdun (Ariège, 09700). ${POSITIONNEMENT_FOURNISSEUR_MAJ}. Plancher chauffant, ravoirage, construction neuve. Devis gratuit sous 48h. Base à Mirepoix à 25 km.`,
+    // Cible prioritaire SEO (04/08/2026) : GSC montrait position 13.47 / 91 impressions / 3 clics —
+    // Google comprend déjà la pertinence de la page, il manquait du poids (mot-clé + preuve concrète
+    // dans le H1/corps), pas un problème de clic comme sur Foix (quick win, 03/08). Décision indépendante
+    // du test Foix, basée sur les données propres à cette page. Revoir GSC mi-septembre 2026 avec Foix.
+    metaTitle: `Chape Liquide à Saverdun (09) — Devis Gratuit sous 48h | CLO`,
+    metaDescription: `Chape liquide à Saverdun (09700), à 25 km de Mirepoix. Devis sous 48h. Sika ou Cemex selon le chantier, pas un fournisseur imposé. 480+ chantiers en Ariège.`,
 
-    heroAccroche: `Chape liquide à Saverdun — ${POSITIONNEMENT_FOURNISSEUR} en Ariège`,
-    heroIntro: `Saverdun (09700) et le bassin de Pamiers sont à 25 km de notre base à Mirepoix. EURL Balussou Cyril réalise vos chapes liquides dans le neuf et la rénovation : maisons individuelles, locaux professionnels, planchers chauffants. ${POSITIONNEMENT_FOURNISSEUR_MAJ} — agrément Sika n°3197-2025, devis sous 48h.`,
+    heroAccroche: `Chape liquide à Saverdun — planchers chauffants, depuis Mirepoix`,
+    heroIntro: `Saverdun (09700) est à 25 km de Mirepoix, dans le bassin de Pamiers. EURL Balussou Cyril y coule des chapes liquides pour le neuf comme la rénovation — maisons individuelles, locaux professionnels, planchers chauffants. Dernier chantier livré sur la commune : un cabinet de kinésithérapie de 120 m², chape fluide sur plancher chauffant basse température, finition prête à recevoir un carrelage antidérapant aux normes ERP. Sika ou Cemex selon ce que demande le chantier, devis sous 48h.`,
     heroImage: '/uploads/preparation-tms-saverdun-kine.jpeg',
     heroImageAlt: 'Préparation chantier chape liquide Saverdun — cabinet kinésithérapie',
 
@@ -635,7 +644,7 @@ export const villes: VilleData[] = [
       },
       {
         question: 'Pourquoi choisir CLO plutôt qu\'un applicateur toulousain pour un chantier à Muret ?',
-        reponse: 'La majorité des applicateurs autour de Toulouse ne travaillent qu\'avec une seule centrale (souvent Lafarge). Nous travaillons avec plusieurs fournisseurs — Sika Agilia (agrément n°3197-2025) et les gammes Cemex (Cemexa, Anhydritec) : traçabilité produit, PV de chantier, garantie procédé, et la flexibilité de choisir la formule adaptée à votre chantier plutôt que de se limiter à un seul catalogue. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
+        reponse: 'La majorité des applicateurs autour de Toulouse ne travaillent qu\'avec une seule centrale (souvent Lafarge). Nous travaillons avec plusieurs fournisseurs — Sika (LevelChape, ViscoChape — agrément n°3197-2025) et les gammes Cemex (Cemexa, Anhydritec) : traçabilité produit, PV de chantier, garantie procédé, et la flexibilité de choisir la formule adaptée à votre chantier plutôt que de se limiter à un seul catalogue. Pour les maîtres d\'ouvrage exigeants, c\'est un différenciant réel.',
       },
       {
         question: 'Quel délai pour un devis chape liquide à Muret ?',
@@ -673,7 +682,7 @@ export const villes: VilleData[] = [
       },
       {
         question: 'Chape liquide pour maison BBC en Lauragais : quelles garanties ?',
-        reponse: 'Nos chapes liquides — Sika Agilia comme les gammes Cemex (Cemexa) — sont compatibles BBC et RE2020. Que ce soit sous agrément Sika n°3197-2025 ou avec Cemex, chaque mise en œuvre est tracée : PV de chantier transmis, traçabilité du produit, garantie procédé. Pour les constructeurs exigeant un dossier technique, nous le fournissons quel que soit le fournisseur retenu.',
+        reponse: 'Nos chapes liquides — Sika LevelChape comme les gammes Cemex (Cemexa) — sont compatibles BBC et RE2020. Que ce soit sous agrément Sika n°3197-2025 ou avec Cemex, chaque mise en œuvre est tracée : PV de chantier transmis, traçabilité du produit, garantie procédé. Pour les constructeurs exigeant un dossier technique, nous le fournissons quel que soit le fournisseur retenu.',
       },
       {
         question: 'Quel délai pour un devis à Villefranche-de-Lauragais ?',
