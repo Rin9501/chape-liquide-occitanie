@@ -14,10 +14,14 @@ import TelClickTracker from '../components/TelClickTracker.astro';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Préchargement hero — améliore le LCP (Largest Contentful Paint) -->
   <link rel="preload" as="image" href="/uploads/chape-suzuki-pamiers-vue-ensemble.jpeg" fetchpriority="high" />
-  <title>Chape Liquide Occitanie — Applicateur Multi-Fournisseur, Ariège</title>
-  <meta name="description" content="Expert chape liquide ciment, chape allégée rénovation et plancher chauffant en Occitanie. Applicateur multi-fournisseur (Sika, Cemex). Devis gratuit sous 48h. Ariège (09), Aude (11), Haute-Garonne (31)." />
-  <meta property="og:title" content="Chape Liquide Occitanie — Applicateur Multi-Fournisseur" />
-  <meta property="og:description" content="Devis gratuit sous 48h. 18 villes Ariège, Aude, Haute-Garonne." />
+  <!-- Quick win SEO (04/08/2026) : GSC montrait "chape liquide" en position 3.45 / 219 impressions
+       mais seulement 5 clics (CTR 2.28%, très sous la moyenne attendue en top 3) — bon classement,
+       snippet pas assez engageant. Title/meta réécrits avec une preuve concrète (480+ chantiers,
+       pas de fournisseur imposé) plutôt que le tag générique partagé. Revoir GSC mi-septembre 2026. -->
+  <title>Chape Liquide Occitanie — Devis Gratuit sous 48h | 480+ Chantiers</title>
+  <meta name="description" content="Chape liquide en Occitanie (09/11/31) : Sika ou Cemex selon le chantier, jamais un fournisseur imposé. Devis gratuit sous 48h, 480+ chantiers réalisés." />
+  <meta property="og:title" content="Chape Liquide Occitanie — Devis Gratuit sous 48h" />
+  <meta property="og:description" content="Sika ou Cemex selon le chantier, jamais un fournisseur imposé. 480+ chantiers réalisés en Ariège, Aude, Haute-Garonne." />
   <meta property="og:type" content="website" />
   <!-- Police auto-hébergée (voir global.css) — preload de la police du H1 (élément LCP) -->
   <link rel="preload" href="/fonts/manrope-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -193,7 +197,7 @@ import TelClickTracker from '../components/TelClickTracker.astro';
 
       <div>
         <h1 class="h-display hero-h1 text-[88px] mb-8">
-          L'expertise chape liquide qui sécurise votre chantier en Occitanie.
+          Chape liquide en Occitanie — l'expertise qui sécurise votre chantier.
         </h1>
         <p class="lead text-[21px] max-w-[520px] mb-10">
           Chape liquide ciment, chape allégée rénovation, planchers chauffants, ravoirage. Posés par un applicateur multi-fournisseur (Sika, Cemex). Devis sous 48h, intervention jusqu'à 1h30 autour de Mirepoix.
