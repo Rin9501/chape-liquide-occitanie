@@ -19,6 +19,16 @@ export const avisGoogle: AvisGoogle[] = [
     note: 5,
     texte: 'Super travail, je recommande.',
   },
+  {
+    nom: 'Maxime Alhinc',
+    note: 5,
+    texte: 'Super travail sérieux et pro, je recommande.',
+  },
+  {
+    nom: 'Loïc Cazas',
+    note: 5,
+    texte: 'Société très pro et réactive. Travail de qualité et large choix de prestations. Je recommande à 100 %.',
+  },
 ];
 
 export const lienAvisGoogle = 'https://share.google/In62pPxyxtGlN47Tg';
