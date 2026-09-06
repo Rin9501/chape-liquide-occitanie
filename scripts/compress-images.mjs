@@ -45,6 +45,51 @@ function humanKB(bytes) {
   return `${(bytes / 1024).toFixed(0)} Kio`;
 }
 
+function webpPathFor(filePath) {
+  const ext = path.extname(filePath);
+  return filePath.slice(0, -ext.length) + '.webp';
+}
+
+// Génère le sibling .webp (même nom de base) à partir du fichier JPEG/PNG déjà
+// compressé — idempotent, ignore les fichiers qui ont déjà leur .webp à jour.
+// Recherche de qualité comme compressOne (pas de valeur fixe) : une qualité WebP
+// fixe produisait parfois un fichier plus gros que le JPEG mozjpeg d'origine sur
+// des photos chantier très texturées (poussière, béton) — on cherche la meilleure
+// qualité sous la cible, et on abandonne le .webp si même au plancher il ne bat
+// pas le fichier source (aucun intérêt à le servir dans ce cas).
+async function generateWebp(filePath, sourceSize) {
+  const webpPath = webpPathFor(filePath);
+  const [source, existing] = await Promise.all([
+    fs.stat(filePath),
+    fs.stat(webpPath).catch(() => null),
+  ]);
+  if (existing && existing.mtimeMs >= source.mtimeMs) {
+    return { webpPath, skipped: true };
+  }
+
+  const original = await fs.readFile(filePath);
+  let quality = QUALITY_START;
+  let buffer;
+
+  for (; quality >= QUALITY_FLOOR; quality -= QUALITY_STEP) {
+    buffer = await sharp(original)
+      .rotate()
+      .resize({ width: MAX_WIDTH, withoutEnlargement: true })
+      .webp({ quality })
+      .toBuffer();
+    if (buffer.length <= TARGET_BYTES) break;
+  }
+
+  if (buffer.length >= sourceSize) {
+    return { webpPath, skipped: true, notWorthIt: true };
+  }
+
+  if (!DRY_RUN) {
+    await fs.writeFile(webpPath, buffer);
+  }
+  return { webpPath, skipped: false, finalSize: buffer.length, quality };
+}
+
 async function compressOne(filePath) {
   const original = await fs.readFile(filePath);
   const originalSize = original.length;
@@ -95,6 +140,7 @@ async function main() {
   let totalBefore = 0;
   let totalAfter = 0;
   let processedCount = 0;
+  let webpCount = 0;
 
   for (const filePath of files) {
     const result = await compressOne(filePath);
@@ -109,10 +155,20 @@ async function main() {
       const pct = (100 * (1 - result.finalSize / result.originalSize)).toFixed(0);
       console.log(`  ✓ ${name} — ${humanKB(result.originalSize)} -> ${humanKB(result.finalSize)} (-${pct}%, q${result.quality})`);
     }
+
+    // .webp sibling — servi en priorité par <Picture>, JPEG/PNG gardé en fallback
+    const webpResult = await generateWebp(filePath, result.finalSize);
+    if (!webpResult.skipped) {
+      webpCount++;
+      console.log(`    ↳ ${path.basename(webpResult.webpPath)} généré (${humanKB(webpResult.finalSize)})`);
+    } else if (webpResult.notWorthIt) {
+      console.log(`    ↳ .webp abandonné — pas plus léger que la source sur cette image`);
+    }
   }
 
   console.log(`\n${processedCount} image(s) compressée(s) sur ${files.length}.`);
   console.log(`Poids total : ${humanKB(totalBefore)} -> ${humanKB(totalAfter)} (-${(100 * (1 - totalAfter / totalBefore)).toFixed(0)}%)`);
+  console.log(`${webpCount} fichier(s) .webp généré(s) ou mis à jour.`);
   if (DRY_RUN) console.log('\n(dry-run : rien n\'a été écrit sur disque)');
 }
 

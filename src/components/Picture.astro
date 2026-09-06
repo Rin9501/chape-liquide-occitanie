@@ -1,0 +1,27 @@
+---
+// <picture> avec source .webp (si le sibling existe dans public/) + fallback JPEG/PNG.
+// Le pipeline scripts/compress-images.mjs ne génère pas toujours un .webp (abandonné
+// s'il ne bat pas la source, voir le script) — on vérifie sur disque au build plutôt
+// que de pointer vers un fichier potentiellement absent (source cassée en prod).
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  width?: number | string;
+  height?: number | string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const { src, alt, class: className, width, height, loading, fetchpriority } = Astro.props;
+
+const webpSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
+const hasWebp = webpSrc !== src && fs.existsSync(path.join(process.cwd(), 'public', webpSrc));
+---
+<picture>
+  {hasWebp && <source srcset={webpSrc} type="image/webp" />}
+  <img src={src} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} />
+</picture>

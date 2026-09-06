@@ -5,8 +5,11 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import TelClickTracker from '../components/TelClickTracker.astro';
+import Picture from '../components/Picture.astro';
 import { villes } from '../data/villes';
 import type { VilleData } from '../data/villes';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   return villes.map((ville) => ({
@@ -39,6 +42,14 @@ const faqAll = [
 
 const siteUrl = 'https://chapeliquide-occitanie.fr';
 const canonicalUrl = `${siteUrl}/chape-liquide-${ville.slug}`;
+
+// Preload de l'image hero (LCP) — même logique que Picture.astro : on ne préchage
+// le .webp que s'il existe vraiment sur disque (le pipeline l'abandonne parfois).
+const heroWebp = ville.heroImage.replace(/\.(jpe?g|png)$/i, '.webp');
+const heroPreloadSrc = heroWebp !== ville.heroImage && fs.existsSync(path.join(process.cwd(), 'public', heroWebp))
+  ? heroWebp
+  : ville.heroImage;
+const heroPreloadType = heroPreloadSrc === heroWebp ? 'image/webp' : undefined;
 
 const jsonLdLocalBusiness = {
   '@context': 'https://schema.org',
@@ -85,7 +96,7 @@ const jsonLdFaq = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preload" as="image" href={ville.heroImage} fetchpriority="high" />
+  <link rel="preload" as="image" href={heroPreloadSrc} type={heroPreloadType} fetchpriority="high" />
   <!-- Police auto-hébergée (voir global.css) — preload de la police du H1 -->
   <link rel="preload" href="/fonts/manrope-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
   <title>{ville.metaTitle}</title>
@@ -157,7 +168,7 @@ const jsonLdFaq = {
 
     <!-- Right image panel -->
     <div class="hero-img relative overflow-hidden bg-ink">
-      <img src={ville.heroImage} alt={ville.heroImageAlt}
+      <Picture src={ville.heroImage} alt={ville.heroImageAlt}
         width="1200" height="900" fetchpriority="high"
         class="w-full h-full object-cover brightness-[0.92]" />
       <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white">
@@ -177,9 +188,9 @@ const jsonLdFaq = {
   <div class="trust-grid grid grid-cols-[1.1fr_3fr] gap-16 items-center">
     <div class="flex items-center gap-[18px] px-[18px] py-[14px] border border-white/[0.18] rounded-[3px]">
       <div class="flex items-center gap-3 shrink-0">
-        <img src="/uploads/layout_sika_triangle.png" alt="Logo Sika" class="h-12 w-auto object-contain" />
+        <Picture src="/uploads/layout_sika_triangle.png" alt="Logo Sika" class="h-12 w-auto object-contain" />
         <span class="text-white/25 text-[15px] font-light">+</span>
-        <img src="/uploads/cemex.jpg" alt="Logo Cemex" class="h-12 w-auto object-contain rounded-[2px]" />
+        <Picture src="/uploads/cemex.jpg" alt="Logo Cemex" class="h-12 w-auto object-contain rounded-[2px]" />
       </div>
       <div>
         <div class="spec text-white/55 text-[10px] mb-1">Positionnement</div>
@@ -288,7 +299,7 @@ const jsonLdFaq = {
           </div>
         </div>
         <div class="service-img bg-ink overflow-hidden">
-          <img src={s.img} alt={s.imgAlt} loading="lazy" width="1200" height="900" class="w-full h-full object-cover" />
+          <Picture src={s.img} alt={s.imgAlt} loading="lazy" width="1200" height="900" class="w-full h-full object-cover" />
         </div>
       </div>
     ))}
@@ -315,7 +326,7 @@ const jsonLdFaq = {
 
   <div class="grid grid-cols-[1.1fr_1fr] gap-12 items-start">
     <div class="relative overflow-hidden bg-ink aspect-[4/3]">
-      <img src={ville.realisation.image} alt={ville.realisation.imageAlt}
+      <Picture src={ville.realisation.image} alt={ville.realisation.imageAlt}
         loading="lazy" width="1200" height="900"
         class="w-full h-full object-cover brightness-[0.92]" />
     </div>
@@ -366,7 +377,7 @@ const jsonLdFaq = {
      06 — CTA FINAL
 ═══════════════════════════════════════════════════════ -->
 <section id="devis" class="section-pad relative overflow-hidden bg-ink text-white py-[120px] px-16">
-  <img src="/uploads/chape-suzuki-pamiers-hall.jpeg" alt=""
+  <Picture src="/uploads/chape-suzuki-pamiers-hall.jpeg" alt=""
     loading="lazy" width="1200" height="900" class="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale" />
   <div class="relative cta-grid">
     <div>
